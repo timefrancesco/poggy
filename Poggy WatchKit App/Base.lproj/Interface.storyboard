@@ -61,7 +61,7 @@
                                     <items>
                                         <group width="84" height="84" alignment="center" verticalAlignment="center" radius="42" id="frv-Yk-mBy">
                                             <items>
-                                                <imageView width="90" height="90" alignment="center" verticalAlignment="center" image="User" contentMode="scaleAspectFit" id="U30-qX-R0m">
+                                                <imageView width="90" height="90" alignment="center" verticalAlignment="center" image="UserWatch" contentMode="scaleAspectFit" id="U30-qX-R0m">
                                                     <color key="tintColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </items>

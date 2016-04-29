@@ -39,6 +39,8 @@ class GlanceController: WKInterfaceController {
             
             if let imageData = action.recipientImage {
                 contactAvatarImage.setImage(UIImage(data: imageData))
+            } else {
+                contactAvatarImage.setImage(UIImage(named:"UserWatch"))
             }
         } else {
             contactNameLabel.setText("NOT SET")

@@ -226,7 +226,6 @@
 		AF98B0821CCCB0B900A97A94 /* Poggy WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AFE1809D1CCF696400A5BFC6 /* Models */,
 				AFE1809C1CCF648800A5BFC6 /* Poggy WatchKit Extension.entitlements */,
 				AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */,
 				AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */,
@@ -260,13 +259,6 @@
 				AFE180911CCEBCB100A5BFC6 /* PoggyConstants.swift */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		AFE1809D1CCF696400A5BFC6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
