@@ -33,18 +33,30 @@
                     <items>
                         <group alignment="left" id="gv7-I2-MZq">
                             <items>
-                                <label alignment="left" text="SMS" id="6nK-k9-uz8"/>
+                                <label alignment="left" text="Contact Name" id="H4z-5U-j5e"/>
                             </items>
                         </group>
-                        <group alignment="left" layout="vertical" id="eew-Gs-W6Y">
+                        <group alignment="left" contentMode="scaleAspectFit" layout="vertical" id="eew-Gs-W6Y">
                             <items>
-                                <label alignment="left" text="Contact Name" id="H4z-5U-j5e"/>
-                                <separator alignment="left" id="2ZA-Mf-JvD"/>
+                                <group width="90" height="90" alignment="center" radius="45" id="o6k-8f-XEi">
+                                    <items>
+                                        <group width="84" height="84" alignment="center" verticalAlignment="center" radius="42" id="frv-Yk-mBy">
+                                            <items>
+                                                <imageView width="90" height="90" alignment="center" verticalAlignment="center" image="User" contentMode="scaleAspectFit" id="U30-qX-R0m">
+                                                    <color key="tintColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                            </items>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </group>
+                                    </items>
+                                    <color key="backgroundColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </group>
                             </items>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
+                        <outlet property="contactAvatarImage" destination="U30-qX-R0m" id="jMf-Tf-Aml"/>
                         <outlet property="contactNameLabel" destination="H4z-5U-j5e" id="Zbh-lB-Bci"/>
                     </connections>
                 </glanceController>

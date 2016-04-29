@@ -52,6 +52,7 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate {
         newAction.message = messageTextField.text
         newAction.recipientNumber = numberTextField.text
         newAction.recipientName = contactName
+        newAction.recipientImage = contactImage
         newAction.isActive = true
         
         return newAction
@@ -85,7 +86,7 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate {
         numberTextField.text = phoneNumber.stringValue
         contactName = contact.givenName
         if contact.imageDataAvailable {
-            contactImage = contact.imageData
+            contactImage = contact.thumbnailImageData
         }
     }
 }
