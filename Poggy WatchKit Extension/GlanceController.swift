@@ -12,6 +12,7 @@ import Foundation
 
 class GlanceController: WKInterfaceController {
 
+    @IBOutlet var descriptionLabel: WKInterfaceLabel!
     @IBOutlet var contactNameLabel: WKInterfaceLabel!
     @IBOutlet var contactAvatarImage: WKInterfaceImage!
    
@@ -34,6 +35,7 @@ class GlanceController: WKInterfaceController {
         if let action = ActionsHelper.instance.getActiveAction() {
             let text = action.recipientName == nil ? action.recipientNumber! : action.recipientName
             contactNameLabel.setText(text)
+            descriptionLabel.setText(action.actionDescription)
             
             if let imageData = action.recipientImage {
                 contactAvatarImage.setImage(UIImage(data: imageData))
@@ -45,6 +47,5 @@ class GlanceController: WKInterfaceController {
 
     override func didDeactivate() {
         super.didDeactivate()
-        updateUserActivity(PoggyConstants.GLANCE_HANDOFF_URL, userInfo: [PoggyConstants.GLANCE_HANDOFF_ID:false], webpageURL: nil)
     }
 }

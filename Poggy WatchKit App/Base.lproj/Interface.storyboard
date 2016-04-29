@@ -10,9 +10,19 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Poggy_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Label" id="SiG-jf-xuy"/>
-                        <separator alignment="left" id="KS2-fV-kce"/>
-                        <button width="1" height="119.5" alignment="left" title="Button" id="Nfi-KA-szQ">
+                        <label alignment="left" text="Contact Name" id="SiG-jf-xuy">
+                            <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="Description" id="Vj7-f7-Jbb">
+                            <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <separator alignment="left" id="KS2-fV-kce">
+                            <color key="color" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <button width="1" height="67.5" alignment="left" verticalAlignment="bottom" title="Send" id="Nfi-KA-szQ">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onSendButtonTouchUpInside" destination="AgC-eL-Hgc" id="XfP-Oi-l6Q"/>
                             </connections>
@@ -31,9 +41,15 @@
             <objects>
                 <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="Poggy_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="gv7-I2-MZq">
+                        <group alignment="left" layout="vertical" id="gv7-I2-MZq">
                             <items>
-                                <label alignment="left" text="Contact Name" id="H4z-5U-j5e"/>
+                                <label alignment="left" text="Contact Name" id="H4z-5U-j5e">
+                                    <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label alignment="left" text="Description" id="i9A-rr-oOW">
+                                    <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
                             </items>
                         </group>
                         <group alignment="left" contentMode="scaleAspectFit" layout="vertical" id="eew-Gs-W6Y">
@@ -58,6 +74,7 @@
                     <connections>
                         <outlet property="contactAvatarImage" destination="U30-qX-R0m" id="jMf-Tf-Aml"/>
                         <outlet property="contactNameLabel" destination="H4z-5U-j5e" id="Zbh-lB-Bci"/>
+                        <outlet property="descriptionLabel" destination="i9A-rr-oOW" id="ftQ-6Y-uQ9"/>
                     </connections>
                 </glanceController>
             </objects>

@@ -16,8 +16,6 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var contactNameLabel: WKInterfaceLabel!
     @IBOutlet var sendButton: WKInterfaceButton!
     
-    var currentAction:PoggyAction?
-    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
     }
@@ -26,7 +24,7 @@ class InterfaceController: WKInterfaceController {
         super.willActivate()
         
         updateCurrentAction()
-
+        
         let nc = NSNotificationCenter.defaultCenter()
         nc.addObserver(self, selector: #selector(self.updateCurrentAction), name: PoggyConstants.NEW_DATA_NOTIFICATION, object: nil)
     }
@@ -37,7 +35,6 @@ class InterfaceController: WKInterfaceController {
     
     func updateCurrentAction() {
         if let action = ActionsHelper.instance.getActiveAction() {
-            currentAction = action
             let text = action.recipientName == nil ? action.recipientNumber! : action.recipientName
             contactNameLabel.setText(text)
             sendButton.setEnabled(true)
@@ -51,6 +48,7 @@ class InterfaceController: WKInterfaceController {
         if let info = userInfo {
             if let fromGlance = info[PoggyConstants.GLANCE_HANDOFF_ID] as? Bool {
                 if fromGlance {
+                    updateUserActivity(PoggyConstants.GLANCE_HANDOFF_URL, userInfo: [PoggyConstants.GLANCE_HANDOFF_ID:false], webpageURL: nil)
                     onSendButtonTouchUpInside()
                 }
             }
@@ -58,12 +56,10 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func onSendButtonTouchUpInside() {
-        if let action = currentAction {
+        if let action = ActionsHelper.instance.getActiveAction() {
             let urlSafeBody = action.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
             let phoneNumber = action.recipientNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
             if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?addresses=" + phoneNumber + ",&body=\(urlSafeBody)") {
-                print("URLSAFEBODY: \(urlSafeBody)")
-                print("URL:" + url.absoluteString)
                 WKExtension.sharedExtension().openSystemURL(url)
             }
         }
