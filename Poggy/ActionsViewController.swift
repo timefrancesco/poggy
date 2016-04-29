@@ -30,6 +30,8 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
             let session = WCSession.defaultSession()
             session.delegate = self
             session.activateSession()
+        } else {
+            NSLog("WCSession not supported")
         }
     }
 
@@ -46,6 +48,8 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func saveActions() {
         ActionsHelper.instance.setActions(actions)
+        tableView.reloadData()
+        syncActionsWithWatch()
     }
     
     func clearActiveAction(){
@@ -69,7 +73,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
             actionsDict[PoggyConstants.ACTIONS_DICT_ID] = NSKeyedArchiver.archivedDataWithRootObject(actions)
             try WCSession.defaultSession().updateApplicationContext(actionsDict)
         } catch {
-            print("ERROR")
+            NSLog("Error Syncing actions with watch: \(error)")
         }
     }
     
@@ -79,9 +83,6 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         clearActiveAction()
         actions.append(action)
         saveActions()
-        
-        tableView.reloadData()
-        syncActionsWithWatch()
     }
     
     //MARK: TableView Delegate Functions
@@ -100,13 +101,26 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         return actions.count
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            actions.removeAtIndex(indexPath.row)
+            if ActionsHelper.instance.getActiveAction() == nil && actions.count > 0 {
+                actions[0].isActive = true
+            }
+            saveActions()
+        }
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         clearActiveAction()
         actions[indexPath.row].isActive = true
         saveActions()
-        tableView.reloadData()
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        syncActionsWithWatch()
     }
 }
 

@@ -27,6 +27,9 @@
                                 <action selector="onSendButtonTouchUpInside" destination="AgC-eL-Hgc" id="XfP-Oi-l6Q"/>
                             </connections>
                         </button>
+                        <separator alignment="left" verticalAlignment="bottom" id="kWq-uy-BgP">
+                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
                     </items>
                     <connections>
                         <outlet property="contactNameLabel" destination="SiG-jf-xuy" id="CgW-Bu-MdZ"/>
