@@ -17,9 +17,11 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
 
     @IBOutlet weak var tableView: UITableView!
     var actions = [PoggyAction]()
+    @IBOutlet weak var addNewActionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Poggy"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -35,10 +37,16 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        addNewActionButton.layer.cornerRadius = addNewActionButton.frame.width / 2
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    
     func readActions() {
         if let readActions = ActionsHelper.instance.getActions() {
             actions = readActions
