@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class PoggyConstants {
     
@@ -22,4 +22,17 @@ class PoggyConstants {
     static let NEW_DATA_NOTIFICATION = "NewDataRetrieved"
     static let GLANCE_HANDOFF_URL = "io.timelabs.poggy.glance"
     static let GLANCE_HANDOFF_ID = "FromGlance"
+    
+    static let POGGY_BLUE = UIColor(rgb: 0x20CDF0)
+}
+
+extension UIColor {
+    convenience init(rgb: UInt) {
+        self.init(
+            red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgb & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
 }

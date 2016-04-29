@@ -133,7 +133,6 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="AbL-zH-oP4"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="addNewActionButton" destination="sCt-VR-FJG" id="Hgo-rI-bmy"/>
                         <outlet property="tableView" destination="iwN-0D-FIO" id="x8V-bp-JYu"/>
@@ -155,8 +154,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xBV-jO-fKv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9A-or-ew0">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="116" width="280" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xBV-jO-fKv">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -165,23 +176,13 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fHC-bj-uCS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="43" y="192" width="313" height="136"/>
                                 </variation>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1t-Pb-gCl">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="331" y="157" width="30" height="23"/>
-                                </variation>
-                                <connections>
-                                    <action selector="onloadContactsBtnTouchUpInside:" destination="5o1-hc-U1w" eventType="touchUpInside" id="S6H-PG-qmO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufD-RC-QOu">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,32 +194,34 @@
                                     <action selector="onAddButtonTouchUpInside:" destination="5o1-hc-U1w" eventType="touchUpInside" id="qTe-TQ-2fh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9A-or-ew0">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1t-Pb-gCl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="AddFromContacts"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="43" y="116" width="280" height="30"/>
+                                    <rect key="frame" x="331" y="159" width="25" height="25"/>
                                 </variation>
-                            </textField>
+                                <connections>
+                                    <action selector="onloadContactsBtnTouchUpInside:" destination="5o1-hc-U1w" eventType="touchUpInside" id="S6H-PG-qmO"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="v9A-or-ew0"/>
                                 <exclude reference="xBV-jO-fKv"/>
                                 <exclude reference="fHC-bj-uCS"/>
-                                <exclude reference="w1t-Pb-gCl"/>
                                 <exclude reference="ufD-RC-QOu"/>
-                                <exclude reference="v9A-or-ew0"/>
+                                <exclude reference="w1t-Pb-gCl"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="v9A-or-ew0"/>
                                 <include reference="xBV-jO-fKv"/>
                                 <include reference="fHC-bj-uCS"/>
-                                <include reference="w1t-Pb-gCl"/>
                                 <include reference="ufD-RC-QOu"/>
-                                <include reference="v9A-or-ew0"/>
+                                <include reference="w1t-Pb-gCl"/>
                             </mask>
                         </variation>
                     </view>
@@ -237,4 +240,7 @@
             <point key="canvasLocation" x="1612.5" y="889"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddFromContacts" width="50" height="50"/>
+    </resources>
 </document>

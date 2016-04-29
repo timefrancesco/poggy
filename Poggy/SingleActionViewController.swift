@@ -31,6 +31,32 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate {
         super.viewWillAppear(animated)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setStyle()
+    }
+    
+    func setStyle() {
+        descriptionTextField.backgroundColor = UIColor.clearColor()
+        numberTextField.backgroundColor = UIColor.clearColor()
+        
+        //bottom line under textFields
+        let descriptionBottomLine = UIView(frame: CGRectMake(descriptionTextField.frame.origin.x, descriptionTextField.frame.origin.y + descriptionTextField.frame.height, descriptionTextField.frame.size.width, 0.5))
+        descriptionBottomLine.backgroundColor = PoggyConstants.POGGY_BLUE
+        descriptionBottomLine.opaque = true
+        
+        let numberBottomLine = UIView(frame: CGRectMake(numberTextField.frame.origin.x, numberTextField.frame.origin.y + numberTextField.frame.height, numberTextField.frame.size.width, 0.5))
+        numberBottomLine.backgroundColor = PoggyConstants.POGGY_BLUE
+        numberBottomLine.opaque = true
+        
+        view.addSubview(descriptionBottomLine)
+        view.addSubview(numberBottomLine)
+        
+        //changing placeholder color
+        descriptionTextField.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
+        numberTextField.attributedPlaceholder = NSAttributedString(string: "Phone Number", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
+    }
+    
     func clearFields() {
         messageTextField.text = ""
         descriptionTextField.text = ""
