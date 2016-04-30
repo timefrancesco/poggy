@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Y4A-2O-ywW">
+                                <rect key="frame" x="172" y="172" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="Fb6-BC-akk"/>
+                                    <constraint firstAttribute="width" constant="256" id="ybC-vy-2Hy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y4A-2O-ywW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Wni-Sx-ffc"/>
+                            <constraint firstItem="Y4A-2O-ywW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="my8-zt-Xto"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchIcon" width="256" height="256"/>
+    </resources>
 </document>

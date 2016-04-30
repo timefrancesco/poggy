@@ -11,7 +11,7 @@ import UIKit
 import Contacts
 import ContactsUI
 
-class SingleActionViewController:UIViewController, CNContactPickerDelegate {
+class SingleActionViewController:UIViewController, CNContactPickerDelegate, PoggyToolbarDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var messageTextField: UITextView!
@@ -22,13 +22,25 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate {
     var newActionDelegate:NewActionDelegate?
     var contactName:String?
     var contactImage:NSData?
+    let poggyToolbar = PoggyToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = (NSLocalizedString("Add", comment: ""))
+        
+        //Set up keyboard toolbar
+        poggyToolbar.poggyDelegate = self
+        descriptionTextField.inputAccessoryView = poggyToolbar
+        numberTextField.inputAccessoryView = poggyToolbar
+        messageTextField.inputAccessoryView = poggyToolbar
+        
+        poggyToolbar.setButtonTitle(NSLocalizedString("NEXT", comment: ""))
+        poggyToolbar.sizeToFit()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        descriptionTextField.becomeFirstResponder()
     }
     
     override func viewDidLayoutSubviews() {
@@ -93,6 +105,9 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate {
     }
     
     @IBAction func onAddButtonTouchUpInside(sender: AnyObject) {
+            }
+    
+    func addNewAction() {
         if !textFieldsFilled() {
             //DISPLAY ERROR
             return
@@ -113,6 +128,21 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate {
         contactName = contact.givenName
         if contact.imageDataAvailable {
             contactImage = contact.thumbnailImageData
+        }
+    }
+    
+    //MARK: Toolbar delegate
+    func onPoggyToolbarButtonTouchUpInside() {
+        if descriptionTextField.isFirstResponder() {
+            poggyToolbar.setButtonTitle(NSLocalizedString("NEXT", comment: ""))
+            numberTextField.becomeFirstResponder()
+        } else if numberTextField.isFirstResponder() {
+            poggyToolbar.setButtonTitle(NSLocalizedString("ADD", comment: ""))
+            messageTextField.becomeFirstResponder()
+        } else if messageTextField.isFirstResponder() {
+            poggyToolbar.setButtonTitle(NSLocalizedString("ADD", comment: ""))
+            messageTextField.resignFirstResponder()
+            addNewAction()
         }
     }
 }
