@@ -15,6 +15,7 @@ class InterfaceController: WKInterfaceController {
 
     @IBOutlet var contactNameLabel: WKInterfaceLabel!
     @IBOutlet var sendButton: WKInterfaceButton!
+    @IBOutlet var descriptionLabel: WKInterfaceLabel!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -37,6 +38,7 @@ class InterfaceController: WKInterfaceController {
         if let action = ActionsHelper.instance.getActiveAction() {
             let text = action.recipientName == nil ? action.recipientNumber! : action.recipientName
             contactNameLabel.setText(text)
+            descriptionLabel.setText(action.actionDescription)
             sendButton.setEnabled(true)
         } else {
             contactNameLabel.setText(NSLocalizedString("Not Set", comment: ""))

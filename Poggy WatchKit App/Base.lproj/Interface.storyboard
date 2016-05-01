@@ -33,6 +33,7 @@
                     </items>
                     <connections>
                         <outlet property="contactNameLabel" destination="SiG-jf-xuy" id="CgW-Bu-MdZ"/>
+                        <outlet property="descriptionLabel" destination="Vj7-f7-Jbb" id="zti-Ru-7xm"/>
                         <outlet property="sendButton" destination="Nfi-KA-szQ" id="jcw-hO-PSD"/>
                     </connections>
                 </controller>
