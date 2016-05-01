@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */; };
+		AF467ABB1CD58B6C00A744EA /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */; };
+		AF467ABC1CD58B6C00A744EA /* SingleActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABA1CD58B6C00A744EA /* SingleActionViewController.swift */; };
+		AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
+		AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
 		AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */; };
-		AF98B04D1CCCB0B900A97A94 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B04C1CCCB0B900A97A94 /* ActionsViewController.swift */; };
 		AF98B0501CCCB0B900A97A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF98B04E1CCCB0B900A97A94 /* Main.storyboard */; };
 		AF98B0521CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0511CCCB0B900A97A94 /* Assets.xcassets */; };
 		AF98B0551CCCB0B900A97A94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0531CCCB0B900A97A94 /* LaunchScreen.storyboard */; };
@@ -24,12 +27,9 @@
 		AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0871CCCB0B900A97A94 /* GlanceController.swift */; };
 		AF98B08A1CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0891CCCB0B900A97A94 /* Assets.xcassets */; };
 		AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */; };
-		AFE180921CCEBCB100A5BFC6 /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180911CCEBCB100A5BFC6 /* PoggyConstants.swift */; };
 		AFE180951CCEBF0A00A5BFC6 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */; };
 		AFE180981CCEC0BC00A5BFC6 /* ActionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */; };
-		AFE1809A1CCF06D100A5BFC6 /* SingleActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180991CCF06D100A5BFC6 /* SingleActionViewController.swift */; };
 		AFE1809E1CCF69D800A5BFC6 /* PoggyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */; };
-		AFE1809F1CCF69EA00A5BFC6 /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180911CCEBCB100A5BFC6 /* PoggyConstants.swift */; };
 		AFE180A01CCF69F400A5BFC6 /* ActionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,9 +91,11 @@
 
 /* Begin PBXFileReference section */
 		AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyToolbar.swift; path = ViewControllers/PoggyToolbar.swift; sourceTree = "<group>"; };
+		AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsViewController.swift; path = ViewControllers/ActionsViewController.swift; sourceTree = "<group>"; };
+		AF467ABA1CD58B6C00A744EA /* SingleActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleActionViewController.swift; path = ViewControllers/SingleActionViewController.swift; sourceTree = "<group>"; };
+		AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyConstants.swift; path = Helpers/PoggyConstants.swift; sourceTree = "<group>"; };
 		AF98B0471CCCB0B900A97A94 /* Poggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF98B04C1CCCB0B900A97A94 /* ActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
 		AF98B04F1CCCB0B900A97A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF98B0511CCCB0B900A97A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF98B0541CCCB0B900A97A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,10 +117,8 @@
 		AF98B0891CCCB0B900A97A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF98B08B1CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyAction.swift; path = Models/PoggyAction.swift; sourceTree = "<group>"; };
-		AFE180911CCEBCB100A5BFC6 /* PoggyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoggyConstants.swift; sourceTree = "<group>"; };
 		AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCell.swift; path = TableCells/ActionCell.swift; sourceTree = "<group>"; };
 		AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsHelper.swift; path = Helpers/ActionsHelper.swift; sourceTree = "<group>"; };
-		AFE180991CCF06D100A5BFC6 /* SingleActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleActionViewController.swift; sourceTree = "<group>"; };
 		AFE1809B1CCF62B400A5BFC6 /* Poggy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Poggy.entitlements; sourceTree = "<group>"; };
 		AFE1809C1CCF648800A5BFC6 /* Poggy WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Poggy WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,9 +158,9 @@
 		AF467AB51CD4A47D00A744EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */,
+				AF467ABA1CD58B6C00A744EA /* SingleActionViewController.swift */,
 				AF98B04E1CCCB0B900A97A94 /* Main.storyboard */,
-				AF98B04C1CCCB0B900A97A94 /* ActionsViewController.swift */,
-				AFE180991CCF06D100A5BFC6 /* SingleActionViewController.swift */,
 				AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */,
 			);
 			name = ViewControllers;
@@ -275,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */,
-				AFE180911CCEBCB100A5BFC6 /* PoggyConstants.swift */,
+				AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -485,12 +485,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF98B04D1CCCB0B900A97A94 /* ActionsViewController.swift in Sources */,
+				AF467ABB1CD58B6C00A744EA /* ActionsViewController.swift in Sources */,
 				AFE180951CCEBF0A00A5BFC6 /* ActionCell.swift in Sources */,
+				AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */,
 				AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */,
-				AFE180921CCEBCB100A5BFC6 /* PoggyConstants.swift in Sources */,
+				AF467ABC1CD58B6C00A744EA /* SingleActionViewController.swift in Sources */,
 				AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */,
-				AFE1809A1CCF06D100A5BFC6 /* SingleActionViewController.swift in Sources */,
 				AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */,
 				AFE180981CCEC0BC00A5BFC6 /* ActionsHelper.swift in Sources */,
 			);
@@ -517,10 +517,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE1809E1CCF69D800A5BFC6 /* PoggyAction.swift in Sources */,
-				AFE1809F1CCF69EA00A5BFC6 /* PoggyConstants.swift in Sources */,
 				AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */,
 				AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */,
 				AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */,
+				AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */,
 				AFE180A01CCF69F400A5BFC6 /* ActionsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,7 +39,7 @@ class InterfaceController: WKInterfaceController {
             contactNameLabel.setText(text)
             sendButton.setEnabled(true)
         } else {
-            contactNameLabel.setText("Not Set")
+            contactNameLabel.setText(NSLocalizedString("Not Set", comment: ""))
             sendButton.setEnabled(false)
         }
     }

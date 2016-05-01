@@ -46,7 +46,6 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     
     func readActions() {
         if let readActions = ActionsHelper.instance.getActions() {
@@ -131,7 +130,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .Destructive, title: "Delete") { (action, indexPath) in
+        let delete = UITableViewRowAction(style: .Destructive, title: NSLocalizedString("Delete", comment: "")) { (action, indexPath) in
             self.actions.removeAtIndex(indexPath.row)
             if self.actions.count > 0 {
                 let active = self.actions.filter { $0.isActive! }.first
@@ -142,7 +141,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
             self.saveActions()
         }
         
-        let edit = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath) in
+        let edit = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Edit", comment: "")) { (action, indexPath) in
             let action = self.actions[indexPath.row]
             action.actionIndex = indexPath.row
             self.performSegueWithIdentifier("NewActionSegue", sender: action)

@@ -43,7 +43,7 @@ class GlanceController: WKInterfaceController {
                 contactAvatarImage.setImage(UIImage(named:"UserWatch"))
             }
         } else {
-            contactNameLabel.setText("NOT SET")
+            contactNameLabel.setText(NSLocalizedString("Not Set", comment: ""))
         }
     }
 
