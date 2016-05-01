@@ -10,7 +10,7 @@ import UIKit
 import WatchConnectivity
 
 protocol NewActionDelegate {
-    func addAction(action:PoggyAction)
+    func addAction(action:PoggyAction, update:Bool)
 }
 
 class ActionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewActionDelegate, WCSessionDelegate  {
@@ -70,7 +70,11 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "NewActionSegue" {
             if let destination = segue.destinationViewController as? SingleActionViewController {
-                destination.newActionDelegate = self                
+                destination.newActionDelegate = self
+                
+                if let action = sender as? PoggyAction {
+                    destination.updateFromActionsViewController(action)
+                }
             }
         }
     }
@@ -87,9 +91,14 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //MARK: NewAction Delegate Functions
     
-    func addAction(action:PoggyAction) {
+    func addAction(action:PoggyAction, update:Bool) {
         clearActiveAction()
-        actions.append(action)
+    
+        if !update {
+            actions.append(action)
+        } else if let index = action.actionIndex {
+            actions[index] = action
+        }
         saveActions()
     }
     
@@ -113,14 +122,27 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            actions.removeAtIndex(indexPath.row)
-            if ActionsHelper.instance.getActiveAction() == nil && actions.count > 0 {
-                actions[0].isActive = true
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .Destructive, title: "Delete") { (action, indexPath) in
+            self.actions.removeAtIndex(indexPath.row)
+            if self.actions.count > 0 {
+                let active = self.actions.filter { $0.isActive! }.first
+                if active == nil {
+                    self.actions[0].isActive = true
+                }
             }
-            saveActions()
+            self.saveActions()
         }
+        
+        let edit = UITableViewRowAction(style: .Normal, title: "Edit") { (action, indexPath) in
+            let action = self.actions[indexPath.row]
+            action.actionIndex = indexPath.row
+            self.performSegueWithIdentifier("NewActionSegue", sender: action)
+        }
+        
+        edit.backgroundColor = PoggyConstants.POGGY_BLUE
+        
+        return [delete, edit]
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){

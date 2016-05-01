@@ -15,6 +15,7 @@ class PoggyAction: NSObject, NSCoding {
     dynamic var recipientName:String?
     dynamic var recipientImage:NSData?
     var isActive:Bool? //if it's the one selected to be triggered
+    var actionIndex:Int? //used for update
     
     required convenience init(coder decoder: NSCoder) {
         self.init()
@@ -25,9 +26,10 @@ class PoggyAction: NSObject, NSCoding {
         self.recipientName = decoder.decodeObjectForKey("recipientName") as? String
         self.recipientImage = decoder.decodeObjectForKey("recipientImage") as? NSData
         self.isActive = decoder.decodeObjectForKey("isActive") as? Bool
+        self.actionIndex = decoder.decodeObjectForKey("actionIndex") as? Int
     }
     
-    convenience init(description: String, message: String, recipientNumber: String, recipientName: String, isActive:Bool ) {
+    convenience init(description: String, message: String, recipientNumber: String, recipientName: String, isActive:Bool, actionIndex:Int ) {
         self.init()
         
         self.actionDescription = description
@@ -35,6 +37,7 @@ class PoggyAction: NSObject, NSCoding {
         self.recipientNumber = recipientNumber
         self.recipientName = recipientName
         self.isActive = isActive
+        self.actionIndex = actionIndex
     }
     
     func encodeWithCoder(coder: NSCoder) {
@@ -44,5 +47,6 @@ class PoggyAction: NSObject, NSCoding {
         if let recipientName = recipientName { coder.encodeObject(recipientName, forKey: "recipientName") }
         if let recipientImage = recipientImage { coder.encodeObject(recipientImage, forKey: "recipientImage") }
         if let isActive = isActive { coder.encodeObject(isActive, forKey: "isActive") }
+        if let actionIndex = actionIndex { coder.encodeObject(actionIndex, forKey: "actionIndex") }
     }
 }

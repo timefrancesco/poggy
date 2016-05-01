@@ -11,7 +11,7 @@ import UIKit
 import Contacts
 import ContactsUI
 
-class SingleActionViewController:UIViewController, CNContactPickerDelegate, PoggyToolbarDelegate, UITextFieldDelegate {
+class SingleActionViewController:UIViewController, CNContactPickerDelegate, PoggyToolbarDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var messageTextField: UITextView!
@@ -20,38 +20,57 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
     @IBOutlet weak var loadContactsBtn: UIButton!
     
     var newActionDelegate:NewActionDelegate?
-    var contactName:String?
-    var contactImage:NSData?
-    let poggyToolbar = PoggyToolbar()
+    private var contactName:String?
+    private var contactImage:NSData?
+    private let poggyToolbar = PoggyToolbar()
+    private var actionToEdit:PoggyAction?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = (NSLocalizedString("Add", comment: ""))
+        title = NSLocalizedString("Add", comment: "")
+        
+        descriptionTextField.backgroundColor = UIColor.clearColor()
+        numberTextField.backgroundColor = UIColor.clearColor()
         
         //Set up keyboard toolbar
         poggyToolbar.poggyDelegate = self
         descriptionTextField.inputAccessoryView = poggyToolbar
         numberTextField.inputAccessoryView = poggyToolbar
         messageTextField.inputAccessoryView = poggyToolbar
-        
         poggyToolbar.setButtonTitle(NSLocalizedString("NEXT", comment: ""))
         poggyToolbar.sizeToFit()
+        
+        messageTextField.delegate = self
+        
+        //adding placeholder to textview
+        messageTextField.text = NSLocalizedString("Message to send", comment: "")
+        messageTextField.textColor = UIColor.darkGrayColor()
+        
+        //changing placeholder color
+        descriptionTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Description", comment: ""), attributes: [NSForegroundColorAttributeName:UIColor.darkGrayColor()])
+        numberTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Phone Number", comment: ""), attributes: [NSForegroundColorAttributeName:UIColor.darkGrayColor()])
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let action = actionToEdit {
+            messageTextField.text = action.message
+            contactName = action.recipientName
+            contactImage = action.recipientImage
+            numberTextField.text = action.recipientNumber
+            descriptionTextField.text = action.actionDescription
+        }
+        
         descriptionTextField.becomeFirstResponder()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setStyle()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setLines() //TODO: Use NSLayoutConstraints and move to ViewDidLoad
     }
     
-    func setStyle() {
-        descriptionTextField.backgroundColor = UIColor.clearColor()
-        numberTextField.backgroundColor = UIColor.clearColor()
-        
+    func setLines() {
         //bottom line under textFields
         let descriptionBottomLine = UIView(frame: CGRectMake(descriptionTextField.frame.origin.x, descriptionTextField.frame.origin.y + descriptionTextField.frame.height, descriptionTextField.frame.size.width, 0.5))
         descriptionBottomLine.backgroundColor = PoggyConstants.POGGY_BLUE
@@ -63,10 +82,10 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
         
         view.addSubview(descriptionBottomLine)
         view.addSubview(numberBottomLine)
-        
-        //changing placeholder color
-        descriptionTextField.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
-        numberTextField.attributedPlaceholder = NSAttributedString(string: "Phone Number", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
+    }
+    
+    func updateFromActionsViewController(action:PoggyAction) {
+        actionToEdit = action
     }
     
     func clearFields() {
@@ -75,6 +94,7 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
         numberTextField.text = ""
         contactImage = nil
         contactName = nil
+        actionToEdit = nil
     }
     
     func textFieldsFilled() -> Bool {
@@ -93,6 +113,10 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
         newAction.recipientImage = contactImage
         newAction.isActive = true
         
+        if let index = actionToEdit?.actionIndex {
+            newAction.actionIndex = index
+        }
+        
         return newAction
     }
     
@@ -109,12 +133,18 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
     
     func addNewAction() {
         if !textFieldsFilled() {
-            //DISPLAY ERROR
+            let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Fields cannot be empty", comment: ""), preferredStyle: .Alert)
+            let actionCancel = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertActionStyle.Cancel) { (action) -> Void in
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }
+            alert.addAction(actionCancel)
+            presentViewController(alert, animated: false, completion: nil)
             return
         }
         
         if let actionDelegate = newActionDelegate {
-            actionDelegate.addAction(createActionFromFields())
+            let update = actionToEdit == nil ? false : true
+            actionDelegate.addAction(createActionFromFields(), update:update)
             clearFields()
             navigationController?.popViewControllerAnimated(true)
         }
@@ -131,16 +161,33 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
         }
     }
     
+    //MARK: Textview delegate
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        poggyToolbar.setButtonTitle(NSLocalizedString("ADD", comment: ""))
+        
+        if messageTextField.text == NSLocalizedString("Message to send", comment: "") {
+            messageTextField.text = ""
+            messageTextField.textColor = PoggyConstants.POGGY_BLUE
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        poggyToolbar.setButtonTitle(NSLocalizedString("NEXT", comment: ""))
+        if messageTextField.text == "" {
+            messageTextField.text = NSLocalizedString("Message to send", comment: "")
+            messageTextField.textColor = UIColor.darkGrayColor()
+        }
+    }
+    
     //MARK: Toolbar delegate
+    
     func onPoggyToolbarButtonTouchUpInside() {
         if descriptionTextField.isFirstResponder() {
-            poggyToolbar.setButtonTitle(NSLocalizedString("NEXT", comment: ""))
             numberTextField.becomeFirstResponder()
         } else if numberTextField.isFirstResponder() {
-            poggyToolbar.setButtonTitle(NSLocalizedString("ADD", comment: ""))
             messageTextField.becomeFirstResponder()
         } else if messageTextField.isFirstResponder() {
-            poggyToolbar.setButtonTitle(NSLocalizedString("ADD", comment: ""))
             messageTextField.resignFirstResponder()
             addNewAction()
         }

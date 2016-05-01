@@ -12,14 +12,28 @@ import UIKit
 class ActionCell:UITableViewCell {
     
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var recipientLabel: UILabel!
+    @IBOutlet weak var currentActionImage: UIImageView!
     
     func updateData(action:PoggyAction) {
         if let description = action.actionDescription {
             descriptionLabel.text = description
         }
+        
+        if let recipientName = action.recipientName {
+            recipientLabel.text = recipientName
+        } else {
+            recipientLabel.text = action.recipientNumber
+        }
+        
+        if let active = action.isActive {
+            currentActionImage.hidden = !active
+        }
     }
     
     override func prepareForReuse() {
         descriptionLabel.text = ""
+        recipientLabel.text = ""
+        currentActionImage.hidden = true
     }
 }
