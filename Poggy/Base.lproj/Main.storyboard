@@ -190,39 +190,69 @@
                                     <segue destination="5o1-hc-U1w" kind="show" identifier="NewActionSegue" id="4vb-Mt-e0i"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no actions. Press the add button below to create the first one." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-Tl-wc5">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="ahV-Ia-jzt"/>
+                                    <constraint firstAttribute="height" constant="138" id="d5i-KI-hWh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ahV-Ia-jzt"/>
+                                        <exclude reference="d5i-KI-hWh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ahV-Ia-jzt"/>
+                                        <include reference="d5i-KI-hWh"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sCt-VR-FJG" firstAttribute="top" secondItem="iwN-0D-FIO" secondAttribute="bottom" constant="8" id="1gj-xl-XzP"/>
+                            <constraint firstItem="nNs-Tl-wc5" firstAttribute="centerX" secondItem="afu-hR-D3l" secondAttribute="centerX" id="408-LZ-aJt"/>
                             <constraint firstItem="iwN-0D-FIO" firstAttribute="leading" secondItem="afu-hR-D3l" secondAttribute="leading" id="A0B-79-wPU"/>
                             <constraint firstItem="iwN-0D-FIO" firstAttribute="top" secondItem="isw-ad-0qN" secondAttribute="bottom" id="Q40-y6-Xlb"/>
                             <constraint firstAttribute="trailing" secondItem="iwN-0D-FIO" secondAttribute="trailing" id="Vxv-bE-QQ2"/>
                             <constraint firstItem="sCt-VR-FJG" firstAttribute="centerX" secondItem="afu-hR-D3l" secondAttribute="centerX" id="oLq-JA-I5S"/>
                             <constraint firstItem="bq7-Mo-2n6" firstAttribute="top" secondItem="sCt-VR-FJG" secondAttribute="bottom" constant="13" id="tXo-vP-K49"/>
+                            <constraint firstItem="nNs-Tl-wc5" firstAttribute="centerY" secondItem="afu-hR-D3l" secondAttribute="centerY" id="yzs-nb-FNT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="sCt-VR-FJG"/>
+                                <exclude reference="nNs-Tl-wc5"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1gj-xl-XzP"/>
-                                <exclude reference="oLq-JA-I5S"/>
                                 <exclude reference="A0B-79-wPU"/>
                                 <exclude reference="Q40-y6-Xlb"/>
                                 <exclude reference="Vxv-bE-QQ2"/>
+                                <exclude reference="408-LZ-aJt"/>
+                                <exclude reference="yzs-nb-FNT"/>
+                                <exclude reference="1gj-xl-XzP"/>
+                                <exclude reference="oLq-JA-I5S"/>
                                 <exclude reference="tXo-vP-K49"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="sCt-VR-FJG"/>
+                                <include reference="nNs-Tl-wc5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1gj-xl-XzP"/>
-                                <include reference="oLq-JA-I5S"/>
                                 <include reference="A0B-79-wPU"/>
                                 <include reference="Q40-y6-Xlb"/>
                                 <include reference="Vxv-bE-QQ2"/>
+                                <include reference="408-LZ-aJt"/>
+                                <include reference="yzs-nb-FNT"/>
+                                <include reference="1gj-xl-XzP"/>
+                                <include reference="oLq-JA-I5S"/>
                                 <include reference="tXo-vP-K49"/>
                             </mask>
                         </variation>
@@ -230,6 +260,7 @@
                     <navigationItem key="navigationItem" id="AbL-zH-oP4"/>
                     <connections>
                         <outlet property="addNewActionButton" destination="sCt-VR-FJG" id="Hgo-rI-bmy"/>
+                        <outlet property="noActionsLabel" destination="nNs-Tl-wc5" id="dl5-57-rHe"/>
                         <outlet property="tableView" destination="iwN-0D-FIO" id="x8V-bp-JYu"/>
                     </connections>
                 </viewController>

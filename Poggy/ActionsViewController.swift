@@ -15,9 +15,10 @@ protocol NewActionDelegate {
 
 class ActionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewActionDelegate, WCSessionDelegate  {
 
+    @IBOutlet weak var noActionsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var actions = [PoggyAction]()
     @IBOutlet weak var addNewActionButton: UIButton!
+    var actions = [PoggyAction]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +53,17 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
             actions = readActions
             tableView.reloadData()
         }
+        
+        if actions.count > 0 {
+            noActionsLabel.hidden = true
+        } else {
+            noActionsLabel.hidden = false
+        }
     }
     
     func saveActions() {
         ActionsHelper.instance.setActions(actions)
+        readActions()
         tableView.reloadData()
         syncActionsWithWatch()
     }
@@ -141,7 +149,6 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         edit.backgroundColor = PoggyConstants.POGGY_BLUE
-        
         return [delete, edit]
     }
     

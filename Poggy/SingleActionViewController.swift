@@ -13,7 +13,6 @@ import ContactsUI
 
 class SingleActionViewController:UIViewController, CNContactPickerDelegate, PoggyToolbarDelegate, UITextFieldDelegate, UITextViewDelegate {
     
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var messageTextField: UITextView!
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
@@ -60,6 +59,7 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
             contactImage = action.recipientImage
             numberTextField.text = action.recipientNumber
             descriptionTextField.text = action.actionDescription
+            messageTextField.textColor = PoggyConstants.POGGY_BLUE
         }
         
         descriptionTextField.becomeFirstResponder()
@@ -127,9 +127,6 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
         
         presentViewController(contactPicker, animated: true, completion: nil)
     }
-    
-    @IBAction func onAddButtonTouchUpInside(sender: AnyObject) {
-            }
     
     func addNewAction() {
         if !textFieldsFilled() {
