@@ -61,7 +61,7 @@ class InterfaceController: WKInterfaceController {
         if let action = ActionsHelper.instance.getActiveAction() {
             let urlSafeBody = action.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
             let phoneNumber = action.recipientNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-            if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?addresses=" + phoneNumber + ",&body=\(urlSafeBody)") {
+            if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?address=" + phoneNumber + ",&body=\(urlSafeBody)") {
                 WKExtension.sharedExtension().openSystemURL(url)
             }
         }
