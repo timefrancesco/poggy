@@ -1,6 +1,8 @@
 # Poggy
 
 <p align="center">
+<img src="/Assets/PoggyIconRoundCorners.png" width="320">  
+<br/>
 The quickest way to trigger actions from your  Watch.  
 [![Language Swift 2](https://img.shields.io/badge/Language-Swift%202-orange.svg)](https://developer.apple.com/swift) [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=572691537ef57f01003942dd&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/572691537ef57f01003942dd/build/latest) 
 [![App Store](https://img.shields.io/badge/App%20Store-Download-blue.svg)](https://itunes.apple.com/us/app/poggy-text-quickly/id1109936777?ls=1&mt=8)
