@@ -8,6 +8,7 @@ target 'Poggy' do
   shared_pods
   pod 'OAuthSwift', '~> 0.5.0'
   pod 'AlamofireObjectMapper', '~> 2.1'
+  pod 'Eureka', '~> 1.5'
 end
 target 'Poggy WatchKit Extension' do
   platform :watchos, '2.0'

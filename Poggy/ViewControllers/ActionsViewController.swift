@@ -74,7 +74,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "NewActionSegue" {
             if let destination = segue.destinationViewController as? SingleActionViewController {
                 destination.newActionDelegate = self
@@ -84,7 +84,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
             }
         }
-    }
+    }*/
     
     func syncActionsWithWatch(){
         do {

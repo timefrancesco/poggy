@@ -1,2147 +1,1011 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0A5994FEAFC678E23E237EDE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Poggy/Pods-Poggy-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>0D3EE0A002BDE91746FED9C0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Poggy.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>20637C3DBF0FB9F922F12752</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>293879921A236A48611340F1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0D3EE0A002BDE91746FED9C0</string>
-				<string>5ABDC360471756C513620A2D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4A6AEEAB51BEE4E7313DD970</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5ABDC360471756C513620A2D</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Poggy_WatchKit_Extension.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5B1C106EDDF657F67E8F46CE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5ABDC360471756C513620A2D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>691E65BDA7AE4D22F832FB31</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Poggy/Pods-Poggy-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>70BBCE052E704E84ADBC1B23</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Poggy.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Poggy/Pods-Poggy.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>87B3EE843A707FA009246092</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A9D54409753D67684D7B76E0</string>
-				<string>70BBCE052E704E84ADBC1B23</string>
-				<string>F25B991464F932359E8F8474</string>
-				<string>F238D2AE5CD71FE3FF907795</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A9D54409753D67684D7B76E0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Poggy.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Poggy/Pods-Poggy.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF467AB51CD4A47D00A744EA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF467AB91CD58B6C00A744EA</string>
-				<string>AF467ABA1CD58B6C00A744EA</string>
-				<string>AF98B04E1CCCB0B900A97A94</string>
-				<string>AF467AB71CD4A5E500A744EA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ViewControllers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF467AB61CD4A5AA00A744EA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B0511CCCB0B900A97A94</string>
-				<string>AF98B0531CCCB0B900A97A94</string>
-				<string>AF98B0561CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF467AB71CD4A5E500A744EA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>PoggyToolbar.swift</string>
-			<key>path</key>
-			<string>ViewControllers/PoggyToolbar.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF467AB81CD4A5E500A744EA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF467AB71CD4A5E500A744EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF467AB91CD58B6C00A744EA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>ActionsViewController.swift</string>
-			<key>path</key>
-			<string>ViewControllers/ActionsViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF467ABA1CD58B6C00A744EA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>SingleActionViewController.swift</string>
-			<key>path</key>
-			<string>ViewControllers/SingleActionViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF467ABB1CD58B6C00A744EA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF467AB91CD58B6C00A744EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF467ABC1CD58B6C00A744EA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF467ABA1CD58B6C00A744EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF467ABD1CD58B8200A744EA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>PoggyConstants.swift</string>
-			<key>path</key>
-			<string>Helpers/PoggyConstants.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF467ABE1CD58B8200A744EA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF467ABD1CD58B8200A744EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF467ABF1CD58B8700A744EA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF467ABD1CD58B8200A744EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B03E1CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B0491CCCB0B900A97A94</string>
-				<string>AF98B05E1CCCB0B900A97A94</string>
-				<string>AF98B0691CCCB0B900A97A94</string>
-				<string>AF98B0731CCCB0B900A97A94</string>
-				<string>AF98B0821CCCB0B900A97A94</string>
-				<string>AF98B0481CCCB0B900A97A94</string>
-				<string>87B3EE843A707FA009246092</string>
-				<string>293879921A236A48611340F1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B03F1CCCB0B900A97A94</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Francesco Pretelli</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>AF98B0461CCCB0B900A97A94</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>DevelopmentTeam</key>
-						<string>J73C7W7YKH</string>
-						<key>SystemCapabilities</key>
-						<dict>
-							<key>com.apple.ApplicationGroups.iOS</key>
-							<dict>
-								<key>enabled</key>
-								<string>1</string>
-							</dict>
-						</dict>
-					</dict>
-					<key>AF98B05A1CCCB0B900A97A94</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>AF98B0461CCCB0B900A97A94</string>
-					</dict>
-					<key>AF98B0651CCCB0B900A97A94</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>AF98B0461CCCB0B900A97A94</string>
-					</dict>
-					<key>AF98B06E1CCCB0B900A97A94</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>DevelopmentTeam</key>
-						<string>J73C7W7YKH</string>
-					</dict>
-					<key>AF98B07D1CCCB0B900A97A94</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>DevelopmentTeam</key>
-						<string>J73C7W7YKH</string>
-						<key>SystemCapabilities</key>
-						<dict>
-							<key>com.apple.ApplicationGroups.iOS</key>
-							<dict>
-								<key>enabled</key>
-								<string>1</string>
-							</dict>
-						</dict>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>AF98B0421CCCB0B900A97A94</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>AF98B03E1CCCB0B900A97A94</string>
-			<key>productRefGroup</key>
-			<string>AF98B0481CCCB0B900A97A94</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>AF98B0461CCCB0B900A97A94</string>
-				<string>AF98B05A1CCCB0B900A97A94</string>
-				<string>AF98B0651CCCB0B900A97A94</string>
-				<string>AF98B06E1CCCB0B900A97A94</string>
-				<string>AF98B07D1CCCB0B900A97A94</string>
-			</array>
-		</dict>
-		<key>AF98B0421CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AF98B08C1CCCB0B900A97A94</string>
-				<string>AF98B08D1CCCB0B900A97A94</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AF98B0431CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AF467ABB1CD58B6C00A744EA</string>
-				<string>AFE180951CCEBF0A00A5BFC6</string>
-				<string>AF467ABE1CD58B8200A744EA</string>
-				<string>AFE180901CCEBB3E00A5BFC6</string>
-				<string>AF467ABC1CD58B6C00A744EA</string>
-				<string>AF98B04B1CCCB0B900A97A94</string>
-				<string>AF467AB81CD4A5E500A744EA</string>
-				<string>AFE180981CCEC0BC00A5BFC6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0441CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F4208126F5AE8B0C268651A9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0451CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AF98B0551CCCB0B900A97A94</string>
-				<string>AF98B0521CCCB0B900A97A94</string>
-				<string>AF98B0501CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0461CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AF98B0961CCCB0B900A97A94</string>
-			<key>buildPhases</key>
-			<array>
-				<string>4A6AEEAB51BEE4E7313DD970</string>
-				<string>AF98B0431CCCB0B900A97A94</string>
-				<string>AF98B0441CCCB0B900A97A94</string>
-				<string>AF98B0451CCCB0B900A97A94</string>
-				<string>AF98B0951CCCB0B900A97A94</string>
-				<string>691E65BDA7AE4D22F832FB31</string>
-				<string>0A5994FEAFC678E23E237EDE</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>AF98B0721CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Poggy</string>
-			<key>productName</key>
-			<string>Poggy</string>
-			<key>productReference</key>
-			<string>AF98B0471CCCB0B900A97A94</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>AF98B0471CCCB0B900A97A94</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Poggy.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AF98B0481CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B0471CCCB0B900A97A94</string>
-				<string>AF98B05B1CCCB0B900A97A94</string>
-				<string>AF98B0661CCCB0B900A97A94</string>
-				<string>AF98B06F1CCCB0B900A97A94</string>
-				<string>AF98B07E1CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0491CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AFE1809B1CCF62B400A5BFC6</string>
-				<string>AF98B04A1CCCB0B900A97A94</string>
-				<string>AFE180931CCEBEEE00A5BFC6</string>
-				<string>AFE180961CCEC09900A5BFC6</string>
-				<string>AFE1808E1CCEBB2000A5BFC6</string>
-				<string>AF467AB51CD4A47D00A744EA</string>
-				<string>AF467AB61CD4A5AA00A744EA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Poggy</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B04A1CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B04B1CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B04A1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B04E1CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B04F1CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B04F1CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0501CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B04E1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0511CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0521CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B0511CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0531CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B0541CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0541CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0551CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B0531CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0561CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0571CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AF98B0601CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0581CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0591CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B05A1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AF98B0991CCCB0B900A97A94</string>
-			<key>buildPhases</key>
-			<array>
-				<string>AF98B0571CCCB0B900A97A94</string>
-				<string>AF98B0581CCCB0B900A97A94</string>
-				<string>AF98B0591CCCB0B900A97A94</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>AF98B05D1CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PoggyTests</string>
-			<key>productName</key>
-			<string>PoggyTests</string>
-			<key>productReference</key>
-			<string>AF98B05B1CCCB0B900A97A94</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>AF98B05B1CCCB0B900A97A94</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PoggyTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AF98B05C1CCCB0B900A97A94</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>AF98B03F1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>AF98B0461CCCB0B900A97A94</string>
-			<key>remoteInfo</key>
-			<string>Poggy</string>
-		</dict>
-		<key>AF98B05D1CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>AF98B0461CCCB0B900A97A94</string>
-			<key>targetProxy</key>
-			<string>AF98B05C1CCCB0B900A97A94</string>
-		</dict>
-		<key>AF98B05E1CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B05F1CCCB0B900A97A94</string>
-				<string>AF98B0611CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PoggyTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B05F1CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PoggyTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0601CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B05F1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0611CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0621CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AF98B06B1CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0631CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0641CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0651CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AF98B09C1CCCB0B900A97A94</string>
-			<key>buildPhases</key>
-			<array>
-				<string>AF98B0621CCCB0B900A97A94</string>
-				<string>AF98B0631CCCB0B900A97A94</string>
-				<string>AF98B0641CCCB0B900A97A94</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>AF98B0681CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PoggyUITests</string>
-			<key>productName</key>
-			<string>PoggyUITests</string>
-			<key>productReference</key>
-			<string>AF98B0661CCCB0B900A97A94</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>AF98B0661CCCB0B900A97A94</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PoggyUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AF98B0671CCCB0B900A97A94</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>AF98B03F1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>AF98B0461CCCB0B900A97A94</string>
-			<key>remoteInfo</key>
-			<string>Poggy</string>
-		</dict>
-		<key>AF98B0681CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>AF98B0461CCCB0B900A97A94</string>
-			<key>targetProxy</key>
-			<string>AF98B0671CCCB0B900A97A94</string>
-		</dict>
-		<key>AF98B0691CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B06A1CCCB0B900A97A94</string>
-				<string>AF98B06C1CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PoggyUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B06A1CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PoggyUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B06B1CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B06A1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B06C1CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B06D1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AF98B0781CCCB0B900A97A94</string>
-				<string>AF98B0761CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B06E1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AF98B0921CCCB0B900A97A94</string>
-			<key>buildPhases</key>
-			<array>
-				<string>AF98B06D1CCCB0B900A97A94</string>
-				<string>AF98B0911CCCB0B900A97A94</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>AF98B0811CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Poggy WatchKit App</string>
-			<key>productName</key>
-			<string>Poggy WatchKit App</string>
-			<key>productReference</key>
-			<string>AF98B06F1CCCB0B900A97A94</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application.watchapp2</string>
-		</dict>
-		<key>AF98B06F1CCCB0B900A97A94</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Poggy WatchKit App.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AF98B0701CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B06F1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0711CCCB0B900A97A94</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>AF98B03F1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>AF98B06E1CCCB0B900A97A94</string>
-			<key>remoteInfo</key>
-			<string>Poggy WatchKit App</string>
-		</dict>
-		<key>AF98B0721CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>AF98B06E1CCCB0B900A97A94</string>
-			<key>targetProxy</key>
-			<string>AF98B0711CCCB0B900A97A94</string>
-		</dict>
-		<key>AF98B0731CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B0741CCCB0B900A97A94</string>
-				<string>AF98B0771CCCB0B900A97A94</string>
-				<string>AF98B0791CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Poggy WatchKit App</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0741CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF98B0751CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Interface.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0751CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Interface.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0761CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B0741CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0771CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0781CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B0771CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0791CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B07A1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AFE1809E1CCF69D800A5BFC6</string>
-				<string>AF98B0861CCCB0B900A97A94</string>
-				<string>AF98B0841CCCB0B900A97A94</string>
-				<string>AF98B0881CCCB0B900A97A94</string>
-				<string>AF467ABF1CD58B8700A744EA</string>
-				<string>AFE180A01CCF69F400A5BFC6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B07B1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5B1C106EDDF657F67E8F46CE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B07C1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AF98B08A1CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B07D1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AF98B08E1CCCB0B900A97A94</string>
-			<key>buildPhases</key>
-			<array>
-				<string>20637C3DBF0FB9F922F12752</string>
-				<string>AF98B07A1CCCB0B900A97A94</string>
-				<string>AF98B07B1CCCB0B900A97A94</string>
-				<string>AF98B07C1CCCB0B900A97A94</string>
-				<string>C120C2CD82E5DBD501347636</string>
-				<string>CC53692630927CF6A21CB57A</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Poggy WatchKit Extension</string>
-			<key>productName</key>
-			<string>Poggy WatchKit Extension</string>
-			<key>productReference</key>
-			<string>AF98B07E1CCCB0B900A97A94</string>
-			<key>productType</key>
-			<string>com.apple.product-type.watchkit2-extension</string>
-		</dict>
-		<key>AF98B07E1CCCB0B900A97A94</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.app-extension</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Poggy WatchKit Extension.appex</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AF98B07F1CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B07E1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>RemoveHeadersOnCopy</string>
-				</array>
-			</dict>
-		</dict>
-		<key>AF98B0801CCCB0B900A97A94</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>AF98B03F1CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>AF98B07D1CCCB0B900A97A94</string>
-			<key>remoteInfo</key>
-			<string>Poggy WatchKit Extension</string>
-		</dict>
-		<key>AF98B0811CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>AF98B07D1CCCB0B900A97A94</string>
-			<key>targetProxy</key>
-			<string>AF98B0801CCCB0B900A97A94</string>
-		</dict>
-		<key>AF98B0821CCCB0B900A97A94</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AFE1809C1CCF648800A5BFC6</string>
-				<string>AF98B0831CCCB0B900A97A94</string>
-				<string>AF98B0851CCCB0B900A97A94</string>
-				<string>AF98B0871CCCB0B900A97A94</string>
-				<string>AF98B0891CCCB0B900A97A94</string>
-				<string>AF98B08B1CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Poggy WatchKit Extension</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0831CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>InterfaceController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0841CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B0831CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0851CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ExtensionDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0861CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B0851CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0871CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GlanceController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B0881CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B0871CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B0891CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B08A1CCCB0B900A97A94</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF98B0891CCCB0B900A97A94</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AF98B08B1CCCB0B900A97A94</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF98B08C1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AF98B08D1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Distribution</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AF98B08E1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AF98B08F1CCCB0B900A97A94</string>
-				<string>AF98B0901CCCB0B900A97A94</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AF98B08F1CCCB0B900A97A94</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F25B991464F932359E8F8474</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>Poggy WatchKit Extension/Poggy WatchKit Extension.entitlements</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Poggy WatchKit Extension/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.Poggy.watchkitapp.watchkitextension</string>
-				<key>PRODUCT_NAME</key>
-				<string>${TARGET_NAME}</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AF98B0901CCCB0B900A97A94</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F238D2AE5CD71FE3FF907795</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>Poggy WatchKit Extension/Poggy WatchKit Extension.entitlements</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Poggy WatchKit Extension/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.Poggy.watchkitapp.watchkitextension</string>
-				<key>PRODUCT_NAME</key>
-				<string>${TARGET_NAME}</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AF98B0911CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string></string>
-			<key>dstSubfolderSpec</key>
-			<string>13</string>
-			<key>files</key>
-			<array>
-				<string>AF98B07F1CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>name</key>
-			<string>Embed App Extensions</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0921CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AF98B0931CCCB0B900A97A94</string>
-				<string>AF98B0941CCCB0B900A97A94</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AF98B0931CCCB0B900A97A94</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
-				<string>iPhone Developer</string>
-				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
-				<string>YES</string>
-				<key>IBSC_MODULE</key>
-				<string>Poggy_WatchKit_Extension</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Poggy WatchKit App/Info.plist</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.Poggy.watchkitapp</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AF98B0941CCCB0B900A97A94</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=watchos*]</key>
-				<string>iPhone Developer</string>
-				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
-				<string>YES</string>
-				<key>IBSC_MODULE</key>
-				<string>Poggy_WatchKit_Extension</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Poggy WatchKit App/Info.plist</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.Poggy.watchkitapp</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AF98B0951CCCB0B900A97A94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>$(CONTENTS_FOLDER_PATH)/Watch</string>
-			<key>dstSubfolderSpec</key>
-			<string>16</string>
-			<key>files</key>
-			<array>
-				<string>AF98B0701CCCB0B900A97A94</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>name</key>
-			<string>Embed Watch Content</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AF98B0961CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AF98B0971CCCB0B900A97A94</string>
-				<string>AF98B0981CCCB0B900A97A94</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AF98B0971CCCB0B900A97A94</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>A9D54409753D67684D7B76E0</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>Poggy/Poggy.entitlements</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer: Francesco Pretelli (J89CYEGYT4)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Poggy/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.Poggy</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AF98B0981CCCB0B900A97A94</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>70BBCE052E704E84ADBC1B23</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>Poggy/Poggy.entitlements</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer: Francesco Pretelli (J89CYEGYT4)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Poggy/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.Poggy</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AF98B0991CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AF98B09A1CCCB0B900A97A94</string>
-				<string>AF98B09B1CCCB0B900A97A94</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AF98B09A1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PoggyTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.PoggyTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Poggy.app/Poggy</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AF98B09B1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PoggyTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.PoggyTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Poggy.app/Poggy</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AF98B09C1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AF98B09D1CCCB0B900A97A94</string>
-				<string>AF98B09E1CCCB0B900A97A94</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AF98B09D1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>PoggyUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.PoggyUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Poggy</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AF98B09E1CCCB0B900A97A94</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>PoggyUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>io.timelabs.PoggyUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Poggy</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AFE1808E1CCEBB2000A5BFC6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AFE1808F1CCEBB3E00A5BFC6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Models</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFE1808F1CCEBB3E00A5BFC6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>PoggyAction.swift</string>
-			<key>path</key>
-			<string>Models/PoggyAction.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFE180901CCEBB3E00A5BFC6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AFE1808F1CCEBB3E00A5BFC6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AFE180931CCEBEEE00A5BFC6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AFE180941CCEBF0A00A5BFC6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>TableCells</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFE180941CCEBF0A00A5BFC6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>ActionCell.swift</string>
-			<key>path</key>
-			<string>TableCells/ActionCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFE180951CCEBF0A00A5BFC6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AFE180941CCEBF0A00A5BFC6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AFE180961CCEC09900A5BFC6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AFE180971CCEC0BC00A5BFC6</string>
-				<string>AF467ABD1CD58B8200A744EA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Helpers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFE180971CCEC0BC00A5BFC6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>ActionsHelper.swift</string>
-			<key>path</key>
-			<string>Helpers/ActionsHelper.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFE180981CCEC0BC00A5BFC6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AFE180971CCEC0BC00A5BFC6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AFE1809B1CCF62B400A5BFC6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xml</string>
-			<key>path</key>
-			<string>Poggy.entitlements</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFE1809C1CCF648800A5BFC6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xml</string>
-			<key>path</key>
-			<string>Poggy WatchKit Extension.entitlements</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFE1809E1CCF69D800A5BFC6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AFE1808F1CCEBB3E00A5BFC6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AFE180A01CCF69F400A5BFC6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AFE180971CCEC0BC00A5BFC6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C120C2CD82E5DBD501347636</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>CC53692630927CF6A21CB57A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>F238D2AE5CD71FE3FF907795</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Poggy WatchKit Extension.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F25B991464F932359E8F8474</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Poggy WatchKit Extension.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F4208126F5AE8B0C268651A9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0D3EE0A002BDE91746FED9C0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>AF98B03F1CCCB0B900A97A94</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B1C106EDDF657F67E8F46CE /* Pods_Poggy_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABDC360471756C513620A2D /* Pods_Poggy_WatchKit_Extension.framework */; };
+		AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */; };
+		AF467ABB1CD58B6C00A744EA /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */; };
+		AF467ABC1CD58B6C00A744EA /* SmsActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */; };
+		AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
+		AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
+		AF64FC311CDFE5B800D156F2 /* AddNewActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */; };
+		AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */; };
+		AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */; };
+		AF98B0501CCCB0B900A97A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF98B04E1CCCB0B900A97A94 /* Main.storyboard */; };
+		AF98B0521CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0511CCCB0B900A97A94 /* Assets.xcassets */; };
+		AF98B0551CCCB0B900A97A94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0531CCCB0B900A97A94 /* LaunchScreen.storyboard */; };
+		AF98B0601CCCB0B900A97A94 /* PoggyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B05F1CCCB0B900A97A94 /* PoggyTests.swift */; };
+		AF98B06B1CCCB0B900A97A94 /* PoggyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B06A1CCCB0B900A97A94 /* PoggyUITests.swift */; };
+		AF98B0701CCCB0B900A97A94 /* Poggy WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AF98B06F1CCCB0B900A97A94 /* Poggy WatchKit App.app */; };
+		AF98B0761CCCB0B900A97A94 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0741CCCB0B900A97A94 /* Interface.storyboard */; };
+		AF98B0781CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0771CCCB0B900A97A94 /* Assets.xcassets */; };
+		AF98B07F1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF98B07E1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */; };
+		AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */; };
+		AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0871CCCB0B900A97A94 /* GlanceController.swift */; };
+		AF98B08A1CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0891CCCB0B900A97A94 /* Assets.xcassets */; };
+		AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */; };
+		AFE180951CCEBF0A00A5BFC6 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */; };
+		AFE180981CCEC0BC00A5BFC6 /* ActionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */; };
+		AFE1809E1CCF69D800A5BFC6 /* PoggyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */; };
+		AFE180A01CCF69F400A5BFC6 /* ActionsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */; };
+		F4208126F5AE8B0C268651A9 /* Pods_Poggy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3EE0A002BDE91746FED9C0 /* Pods_Poggy.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF98B05C1CCCB0B900A97A94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF98B03F1CCCB0B900A97A94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF98B0461CCCB0B900A97A94;
+			remoteInfo = Poggy;
+		};
+		AF98B0671CCCB0B900A97A94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF98B03F1CCCB0B900A97A94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF98B0461CCCB0B900A97A94;
+			remoteInfo = Poggy;
+		};
+		AF98B0711CCCB0B900A97A94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF98B03F1CCCB0B900A97A94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF98B06E1CCCB0B900A97A94;
+			remoteInfo = "Poggy WatchKit App";
+		};
+		AF98B0801CCCB0B900A97A94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF98B03F1CCCB0B900A97A94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF98B07D1CCCB0B900A97A94;
+			remoteInfo = "Poggy WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF98B0911CCCB0B900A97A94 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AF98B07F1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B0951CCCB0B900A97A94 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				AF98B0701CCCB0B900A97A94 /* Poggy WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0D3EE0A002BDE91746FED9C0 /* Pods_Poggy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poggy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABDC360471756C513620A2D /* Pods_Poggy_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poggy_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70BBCE052E704E84ADBC1B23 /* Pods-Poggy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy/Pods-Poggy.release.xcconfig"; sourceTree = "<group>"; };
+		A9D54409753D67684D7B76E0 /* Pods-Poggy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy/Pods-Poggy.debug.xcconfig"; sourceTree = "<group>"; };
+		AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyToolbar.swift; path = ViewControllers/PoggyToolbar.swift; sourceTree = "<group>"; };
+		AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsViewController.swift; path = ViewControllers/ActionsViewController.swift; sourceTree = "<group>"; };
+		AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmsActionViewController.swift; path = ViewControllers/SmsActionViewController.swift; sourceTree = "<group>"; };
+		AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyConstants.swift; path = Helpers/PoggyConstants.swift; sourceTree = "<group>"; };
+		AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewActionViewController.swift; path = ViewControllers/AddNewActionViewController.swift; sourceTree = "<group>"; };
+		AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackActionViewController.swift; path = ViewControllers/SlackActionViewController.swift; sourceTree = "<group>"; };
+		AF98B0471CCCB0B900A97A94 /* Poggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF98B04F1CCCB0B900A97A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF98B0511CCCB0B900A97A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF98B0541CCCB0B900A97A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF98B0561CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF98B05B1CCCB0B900A97A94 /* PoggyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoggyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF98B05F1CCCB0B900A97A94 /* PoggyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoggyTests.swift; sourceTree = "<group>"; };
+		AF98B0611CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF98B0661CCCB0B900A97A94 /* PoggyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoggyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF98B06A1CCCB0B900A97A94 /* PoggyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoggyUITests.swift; sourceTree = "<group>"; };
+		AF98B06C1CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF98B06F1CCCB0B900A97A94 /* Poggy WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poggy WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF98B0751CCCB0B900A97A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		AF98B0771CCCB0B900A97A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF98B0791CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF98B07E1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Poggy WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		AF98B0871CCCB0B900A97A94 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		AF98B0891CCCB0B900A97A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF98B08B1CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyAction.swift; path = Models/PoggyAction.swift; sourceTree = "<group>"; };
+		AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCell.swift; path = TableCells/ActionCell.swift; sourceTree = "<group>"; };
+		AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsHelper.swift; path = Helpers/ActionsHelper.swift; sourceTree = "<group>"; };
+		AFE1809B1CCF62B400A5BFC6 /* Poggy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Poggy.entitlements; sourceTree = "<group>"; };
+		AFE1809C1CCF648800A5BFC6 /* Poggy WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Poggy WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		F238D2AE5CD71FE3FF907795 /* Pods-Poggy WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		F25B991464F932359E8F8474 /* Pods-Poggy WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF98B0441CCCB0B900A97A94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4208126F5AE8B0C268651A9 /* Pods_Poggy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B0581CCCB0B900A97A94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B0631CCCB0B900A97A94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B07B1CCCB0B900A97A94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B1C106EDDF657F67E8F46CE /* Pods_Poggy_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		293879921A236A48611340F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D3EE0A002BDE91746FED9C0 /* Pods_Poggy.framework */,
+				5ABDC360471756C513620A2D /* Pods_Poggy_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87B3EE843A707FA009246092 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9D54409753D67684D7B76E0 /* Pods-Poggy.debug.xcconfig */,
+				70BBCE052E704E84ADBC1B23 /* Pods-Poggy.release.xcconfig */,
+				F25B991464F932359E8F8474 /* Pods-Poggy WatchKit Extension.debug.xcconfig */,
+				F238D2AE5CD71FE3FF907795 /* Pods-Poggy WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF467AB51CD4A47D00A744EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF98B04E1CCCB0B900A97A94 /* Main.storyboard */,
+				AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */,
+				AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */,
+				AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */,
+				AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */,
+				AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AF467AB61CD4A5AA00A744EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF98B0511CCCB0B900A97A94 /* Assets.xcassets */,
+				AF98B0531CCCB0B900A97A94 /* LaunchScreen.storyboard */,
+				AF98B0561CCCB0B900A97A94 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF98B03E1CCCB0B900A97A94 = {
+			isa = PBXGroup;
+			children = (
+				AF98B0491CCCB0B900A97A94 /* Poggy */,
+				AF98B05E1CCCB0B900A97A94 /* PoggyTests */,
+				AF98B0691CCCB0B900A97A94 /* PoggyUITests */,
+				AF98B0731CCCB0B900A97A94 /* Poggy WatchKit App */,
+				AF98B0821CCCB0B900A97A94 /* Poggy WatchKit Extension */,
+				AF98B0481CCCB0B900A97A94 /* Products */,
+				87B3EE843A707FA009246092 /* Pods */,
+				293879921A236A48611340F1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF98B0481CCCB0B900A97A94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF98B0471CCCB0B900A97A94 /* Poggy.app */,
+				AF98B05B1CCCB0B900A97A94 /* PoggyTests.xctest */,
+				AF98B0661CCCB0B900A97A94 /* PoggyUITests.xctest */,
+				AF98B06F1CCCB0B900A97A94 /* Poggy WatchKit App.app */,
+				AF98B07E1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF98B0491CCCB0B900A97A94 /* Poggy */ = {
+			isa = PBXGroup;
+			children = (
+				AFE1809B1CCF62B400A5BFC6 /* Poggy.entitlements */,
+				AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */,
+				AFE180931CCEBEEE00A5BFC6 /* TableCells */,
+				AFE180961CCEC09900A5BFC6 /* Helpers */,
+				AFE1808E1CCEBB2000A5BFC6 /* Models */,
+				AF467AB51CD4A47D00A744EA /* ViewControllers */,
+				AF467AB61CD4A5AA00A744EA /* Supporting Files */,
+			);
+			path = Poggy;
+			sourceTree = "<group>";
+		};
+		AF98B05E1CCCB0B900A97A94 /* PoggyTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF98B05F1CCCB0B900A97A94 /* PoggyTests.swift */,
+				AF98B0611CCCB0B900A97A94 /* Info.plist */,
+			);
+			path = PoggyTests;
+			sourceTree = "<group>";
+		};
+		AF98B0691CCCB0B900A97A94 /* PoggyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF98B06A1CCCB0B900A97A94 /* PoggyUITests.swift */,
+				AF98B06C1CCCB0B900A97A94 /* Info.plist */,
+			);
+			path = PoggyUITests;
+			sourceTree = "<group>";
+		};
+		AF98B0731CCCB0B900A97A94 /* Poggy WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				AF98B0741CCCB0B900A97A94 /* Interface.storyboard */,
+				AF98B0771CCCB0B900A97A94 /* Assets.xcassets */,
+				AF98B0791CCCB0B900A97A94 /* Info.plist */,
+			);
+			path = "Poggy WatchKit App";
+			sourceTree = "<group>";
+		};
+		AF98B0821CCCB0B900A97A94 /* Poggy WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AFE1809C1CCF648800A5BFC6 /* Poggy WatchKit Extension.entitlements */,
+				AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */,
+				AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */,
+				AF98B0871CCCB0B900A97A94 /* GlanceController.swift */,
+				AF98B0891CCCB0B900A97A94 /* Assets.xcassets */,
+				AF98B08B1CCCB0B900A97A94 /* Info.plist */,
+			);
+			path = "Poggy WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		AFE1808E1CCEBB2000A5BFC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AFE180931CCEBEEE00A5BFC6 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		AFE180961CCEC09900A5BFC6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */,
+				AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF98B0461CCCB0B900A97A94 /* Poggy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF98B0961CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "Poggy" */;
+			buildPhases = (
+				4A6AEEAB51BEE4E7313DD970 /* Check Pods Manifest.lock */,
+				AF98B0431CCCB0B900A97A94 /* Sources */,
+				AF98B0441CCCB0B900A97A94 /* Frameworks */,
+				AF98B0451CCCB0B900A97A94 /* Resources */,
+				AF98B0951CCCB0B900A97A94 /* Embed Watch Content */,
+				691E65BDA7AE4D22F832FB31 /* Embed Pods Frameworks */,
+				0A5994FEAFC678E23E237EDE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF98B0721CCCB0B900A97A94 /* PBXTargetDependency */,
+			);
+			name = Poggy;
+			productName = Poggy;
+			productReference = AF98B0471CCCB0B900A97A94 /* Poggy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF98B05A1CCCB0B900A97A94 /* PoggyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF98B0991CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "PoggyTests" */;
+			buildPhases = (
+				AF98B0571CCCB0B900A97A94 /* Sources */,
+				AF98B0581CCCB0B900A97A94 /* Frameworks */,
+				AF98B0591CCCB0B900A97A94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF98B05D1CCCB0B900A97A94 /* PBXTargetDependency */,
+			);
+			name = PoggyTests;
+			productName = PoggyTests;
+			productReference = AF98B05B1CCCB0B900A97A94 /* PoggyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF98B0651CCCB0B900A97A94 /* PoggyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF98B09C1CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "PoggyUITests" */;
+			buildPhases = (
+				AF98B0621CCCB0B900A97A94 /* Sources */,
+				AF98B0631CCCB0B900A97A94 /* Frameworks */,
+				AF98B0641CCCB0B900A97A94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF98B0681CCCB0B900A97A94 /* PBXTargetDependency */,
+			);
+			name = PoggyUITests;
+			productName = PoggyUITests;
+			productReference = AF98B0661CCCB0B900A97A94 /* PoggyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		AF98B06E1CCCB0B900A97A94 /* Poggy WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF98B0921CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "Poggy WatchKit App" */;
+			buildPhases = (
+				AF98B06D1CCCB0B900A97A94 /* Resources */,
+				AF98B0911CCCB0B900A97A94 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF98B0811CCCB0B900A97A94 /* PBXTargetDependency */,
+			);
+			name = "Poggy WatchKit App";
+			productName = "Poggy WatchKit App";
+			productReference = AF98B06F1CCCB0B900A97A94 /* Poggy WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		AF98B07D1CCCB0B900A97A94 /* Poggy WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF98B08E1CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "Poggy WatchKit Extension" */;
+			buildPhases = (
+				20637C3DBF0FB9F922F12752 /* Check Pods Manifest.lock */,
+				AF98B07A1CCCB0B900A97A94 /* Sources */,
+				AF98B07B1CCCB0B900A97A94 /* Frameworks */,
+				AF98B07C1CCCB0B900A97A94 /* Resources */,
+				C120C2CD82E5DBD501347636 /* Embed Pods Frameworks */,
+				CC53692630927CF6A21CB57A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Poggy WatchKit Extension";
+			productName = "Poggy WatchKit Extension";
+			productReference = AF98B07E1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF98B03F1CCCB0B900A97A94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Francesco Pretelli";
+				TargetAttributes = {
+					AF98B0461CCCB0B900A97A94 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = J73C7W7YKH;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					AF98B05A1CCCB0B900A97A94 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = AF98B0461CCCB0B900A97A94;
+					};
+					AF98B0651CCCB0B900A97A94 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = AF98B0461CCCB0B900A97A94;
+					};
+					AF98B06E1CCCB0B900A97A94 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = J73C7W7YKH;
+					};
+					AF98B07D1CCCB0B900A97A94 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = J73C7W7YKH;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = AF98B0421CCCB0B900A97A94 /* Build configuration list for PBXProject "Poggy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF98B03E1CCCB0B900A97A94;
+			productRefGroup = AF98B0481CCCB0B900A97A94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF98B0461CCCB0B900A97A94 /* Poggy */,
+				AF98B05A1CCCB0B900A97A94 /* PoggyTests */,
+				AF98B0651CCCB0B900A97A94 /* PoggyUITests */,
+				AF98B06E1CCCB0B900A97A94 /* Poggy WatchKit App */,
+				AF98B07D1CCCB0B900A97A94 /* Poggy WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF98B0451CCCB0B900A97A94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF98B0551CCCB0B900A97A94 /* LaunchScreen.storyboard in Resources */,
+				AF98B0521CCCB0B900A97A94 /* Assets.xcassets in Resources */,
+				AF98B0501CCCB0B900A97A94 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B0591CCCB0B900A97A94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B0641CCCB0B900A97A94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B06D1CCCB0B900A97A94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF98B0781CCCB0B900A97A94 /* Assets.xcassets in Resources */,
+				AF98B0761CCCB0B900A97A94 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B07C1CCCB0B900A97A94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF98B08A1CCCB0B900A97A94 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A5994FEAFC678E23E237EDE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poggy/Pods-Poggy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20637C3DBF0FB9F922F12752 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A6AEEAB51BEE4E7313DD970 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		691E65BDA7AE4D22F832FB31 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poggy/Pods-Poggy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C120C2CD82E5DBD501347636 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC53692630927CF6A21CB57A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF98B0431CCCB0B900A97A94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF467ABB1CD58B6C00A744EA /* ActionsViewController.swift in Sources */,
+				AFE180951CCEBF0A00A5BFC6 /* ActionCell.swift in Sources */,
+				AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */,
+				AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */,
+				AF467ABC1CD58B6C00A744EA /* SmsActionViewController.swift in Sources */,
+				AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */,
+				AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */,
+				AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */,
+				AF64FC311CDFE5B800D156F2 /* AddNewActionViewController.swift in Sources */,
+				AFE180981CCEC0BC00A5BFC6 /* ActionsHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B0571CCCB0B900A97A94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF98B0601CCCB0B900A97A94 /* PoggyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B0621CCCB0B900A97A94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF98B06B1CCCB0B900A97A94 /* PoggyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF98B07A1CCCB0B900A97A94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFE1809E1CCF69D800A5BFC6 /* PoggyAction.swift in Sources */,
+				AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */,
+				AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */,
+				AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */,
+				AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */,
+				AFE180A01CCF69F400A5BFC6 /* ActionsHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF98B05D1CCCB0B900A97A94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF98B0461CCCB0B900A97A94 /* Poggy */;
+			targetProxy = AF98B05C1CCCB0B900A97A94 /* PBXContainerItemProxy */;
+		};
+		AF98B0681CCCB0B900A97A94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF98B0461CCCB0B900A97A94 /* Poggy */;
+			targetProxy = AF98B0671CCCB0B900A97A94 /* PBXContainerItemProxy */;
+		};
+		AF98B0721CCCB0B900A97A94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF98B06E1CCCB0B900A97A94 /* Poggy WatchKit App */;
+			targetProxy = AF98B0711CCCB0B900A97A94 /* PBXContainerItemProxy */;
+		};
+		AF98B0811CCCB0B900A97A94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF98B07D1CCCB0B900A97A94 /* Poggy WatchKit Extension */;
+			targetProxy = AF98B0801CCCB0B900A97A94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF98B04E1CCCB0B900A97A94 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF98B04F1CCCB0B900A97A94 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF98B0531CCCB0B900A97A94 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF98B0541CCCB0B900A97A94 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AF98B0741CCCB0B900A97A94 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF98B0751CCCB0B900A97A94 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF98B08C1CCCB0B900A97A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF98B08D1CCCB0B900A97A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF98B08F1CCCB0B900A97A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F25B991464F932359E8F8474 /* Pods-Poggy WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Poggy WatchKit Extension/Poggy WatchKit Extension.entitlements";
+				INFOPLIST_FILE = "Poggy WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		AF98B0901CCCB0B900A97A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F238D2AE5CD71FE3FF907795 /* Pods-Poggy WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Poggy WatchKit Extension/Poggy WatchKit Extension.entitlements";
+				INFOPLIST_FILE = "Poggy WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		AF98B0931CCCB0B900A97A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Poggy_WatchKit_Extension;
+				INFOPLIST_FILE = "Poggy WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		AF98B0941CCCB0B900A97A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Poggy_WatchKit_Extension;
+				INFOPLIST_FILE = "Poggy WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		AF98B0971CCCB0B900A97A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D54409753D67684D7B76E0 /* Pods-Poggy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Poggy/Poggy.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Francesco Pretelli (J89CYEGYT4)";
+				INFOPLIST_FILE = Poggy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AF98B0981CCCB0B900A97A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BBCE052E704E84ADBC1B23 /* Pods-Poggy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Poggy/Poggy.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Francesco Pretelli (J89CYEGYT4)";
+				INFOPLIST_FILE = Poggy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AF98B09A1CCCB0B900A97A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PoggyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.PoggyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Poggy.app/Poggy";
+			};
+			name = Debug;
+		};
+		AF98B09B1CCCB0B900A97A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PoggyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.PoggyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Poggy.app/Poggy";
+			};
+			name = Release;
+		};
+		AF98B09D1CCCB0B900A97A94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PoggyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.PoggyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Poggy;
+			};
+			name = Debug;
+		};
+		AF98B09E1CCCB0B900A97A94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PoggyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.PoggyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Poggy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF98B0421CCCB0B900A97A94 /* Build configuration list for PBXProject "Poggy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF98B08C1CCCB0B900A97A94 /* Debug */,
+				AF98B08D1CCCB0B900A97A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF98B08E1CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "Poggy WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF98B08F1CCCB0B900A97A94 /* Debug */,
+				AF98B0901CCCB0B900A97A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF98B0921CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "Poggy WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF98B0931CCCB0B900A97A94 /* Debug */,
+				AF98B0941CCCB0B900A97A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF98B0961CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "Poggy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF98B0971CCCB0B900A97A94 /* Debug */,
+				AF98B0981CCCB0B900A97A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF98B0991CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "PoggyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF98B09A1CCCB0B900A97A94 /* Debug */,
+				AF98B09B1CCCB0B900A97A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF98B09C1CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "PoggyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF98B09D1CCCB0B900A97A94 /* Debug */,
+				AF98B09E1CCCB0B900A97A94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF98B03F1CCCB0B900A97A94 /* Project object */;
+}

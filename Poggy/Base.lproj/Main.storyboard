@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zaW-AH-p6N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zaW-AH-p6N">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -48,13 +48,13 @@
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActionCell" id="axb-jc-aof" customClass="ActionCell" customModule="Poggy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="axb-jc-aof" id="dus-h8-xD5">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Action Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-Rw-0iY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Action Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-Rw-0iY">
                                                     <rect key="frame" x="21" y="19" width="141" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="TGa-2m-jOY"/>
@@ -92,7 +92,7 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-QE-Z6Q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-QE-Z6Q">
                                                     <rect key="frame" x="21" y="19" width="141" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="g2A-DL-aIH"/>
@@ -128,10 +128,10 @@
                                                     <exclude reference="DhN-QE-Z6Q"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="fg8-AZ-vpp"/>
-                                                    <exclude reference="ytS-Q2-S9j"/>
                                                     <exclude reference="9b5-Xu-cv8"/>
                                                     <exclude reference="AtN-UW-R2C"/>
+                                                    <exclude reference="fg8-AZ-vpp"/>
+                                                    <exclude reference="ytS-Q2-S9j"/>
                                                     <exclude reference="92U-mp-ko6"/>
                                                     <exclude reference="DrG-aH-ueh"/>
                                                     <exclude reference="pWx-2h-O9b"/>
@@ -144,10 +144,10 @@
                                                     <include reference="DhN-QE-Z6Q"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="fg8-AZ-vpp"/>
-                                                    <include reference="ytS-Q2-S9j"/>
                                                     <include reference="9b5-Xu-cv8"/>
                                                     <include reference="AtN-UW-R2C"/>
+                                                    <include reference="fg8-AZ-vpp"/>
+                                                    <include reference="ytS-Q2-S9j"/>
                                                     <include reference="92U-mp-ko6"/>
                                                     <include reference="DrG-aH-ueh"/>
                                                     <include reference="pWx-2h-O9b"/>
@@ -187,7 +187,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="5o1-hc-U1w" kind="show" identifier="NewActionSegue" id="4vb-Mt-e0i"/>
+                                    <segue destination="PzR-bU-rzz" kind="show" identifier="NewActionSegue" id="Cfn-dX-9GG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no actions. Press the add button below to create the first one." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-Tl-wc5">
@@ -230,13 +230,13 @@
                                 <exclude reference="nNs-Tl-wc5"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="1gj-xl-XzP"/>
+                                <exclude reference="oLq-JA-I5S"/>
+                                <exclude reference="408-LZ-aJt"/>
+                                <exclude reference="yzs-nb-FNT"/>
                                 <exclude reference="A0B-79-wPU"/>
                                 <exclude reference="Q40-y6-Xlb"/>
                                 <exclude reference="Vxv-bE-QQ2"/>
-                                <exclude reference="408-LZ-aJt"/>
-                                <exclude reference="yzs-nb-FNT"/>
-                                <exclude reference="1gj-xl-XzP"/>
-                                <exclude reference="oLq-JA-I5S"/>
                                 <exclude reference="tXo-vP-K49"/>
                             </mask>
                         </variation>
@@ -246,13 +246,13 @@
                                 <include reference="nNs-Tl-wc5"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="1gj-xl-XzP"/>
+                                <include reference="oLq-JA-I5S"/>
+                                <include reference="408-LZ-aJt"/>
+                                <include reference="yzs-nb-FNT"/>
                                 <include reference="A0B-79-wPU"/>
                                 <include reference="Q40-y6-Xlb"/>
                                 <include reference="Vxv-bE-QQ2"/>
-                                <include reference="408-LZ-aJt"/>
-                                <include reference="yzs-nb-FNT"/>
-                                <include reference="1gj-xl-XzP"/>
-                                <include reference="oLq-JA-I5S"/>
                                 <include reference="tXo-vP-K49"/>
                             </mask>
                         </variation>
@@ -267,6 +267,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gN-0k-SKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="795" y="889"/>
+        </scene>
+        <!--Add New Action View Controller-->
+        <scene sceneID="ts2-dp-LoR">
+            <objects>
+                <viewController id="PzR-bU-rzz" customClass="AddNewActionViewController" customModule="Poggy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j4Z-8K-YQW"/>
+                        <viewControllerLayoutGuide type="bottom" id="snx-nt-G5h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HvG-rN-5Fp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="5o1-hc-U1w" kind="show" identifier="NewSmsActionSegue" id="ZLF-x6-3B4"/>
+                        <segue destination="yn8-cZ-SLX" kind="show" identifier="NewSlackActionSegue" id="Dwc-Ml-737"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9u0-c1-yXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495.5" y="889"/>
+        </scene>
+        <!--Slack Action View Controller-->
+        <scene sceneID="zhT-Fy-3dF">
+            <objects>
+                <viewController id="yn8-cZ-SLX" customClass="SlackActionViewController" customModule="Poggy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="47A-xR-MVS"/>
+                        <viewControllerLayoutGuide type="bottom" id="nAi-rl-QAJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9D3-RJ-guN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9q-lx-FXc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="AUTH"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="180" y="285" width="41" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onAddSlackAuthTouchUpInside:" destination="yn8-cZ-SLX" eventType="touchUpInside" id="OoN-PL-XbX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="v9q-lx-FXc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="v9q-lx-FXc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Scq-SN-ai1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2334" y="1226"/>
         </scene>
         <!--Single Action View Controller-->
         <scene sceneID="qMQ-xP-Lh5">
@@ -394,13 +456,13 @@
                                 <exclude reference="uw9-5x-L6d"/>
                                 <exclude reference="PtI-B9-FSn"/>
                                 <exclude reference="QrZ-VB-By5"/>
-                                <exclude reference="7z8-fK-r7A"/>
-                                <exclude reference="D0v-SD-iPm"/>
-                                <exclude reference="OuO-VO-jaw"/>
                                 <exclude reference="TZv-GI-KJH"/>
                                 <exclude reference="To9-qI-CeS"/>
                                 <exclude reference="lJD-ao-ZAX"/>
                                 <exclude reference="q7x-6M-aqf"/>
+                                <exclude reference="7z8-fK-r7A"/>
+                                <exclude reference="D0v-SD-iPm"/>
+                                <exclude reference="OuO-VO-jaw"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -416,13 +478,13 @@
                                 <include reference="uw9-5x-L6d"/>
                                 <include reference="PtI-B9-FSn"/>
                                 <include reference="QrZ-VB-By5"/>
-                                <include reference="7z8-fK-r7A"/>
-                                <include reference="D0v-SD-iPm"/>
-                                <include reference="OuO-VO-jaw"/>
                                 <include reference="TZv-GI-KJH"/>
                                 <include reference="To9-qI-CeS"/>
                                 <include reference="lJD-ao-ZAX"/>
                                 <include reference="q7x-6M-aqf"/>
+                                <include reference="7z8-fK-r7A"/>
+                                <include reference="D0v-SD-iPm"/>
+                                <include reference="OuO-VO-jaw"/>
                             </mask>
                         </variation>
                     </view>
@@ -437,7 +499,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kir-7x-f8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612.5" y="889"/>
+            <point key="canvasLocation" x="2334" y="544"/>
         </scene>
     </scenes>
     <resources>
