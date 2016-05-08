@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,5 +40,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        if (options["UIApplicationOpenURLOptionsSourceApplicationKey"] as? String != "com.apple.SafariViewService") {
+            return false
+        }
+        
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handleOpenURL(url)
+        }
+        return true
+    }
 }
+
+// MARK: handle callback url
+/*extension AppDelegate {
+    
+    func applicationHandleOpenURL(url: NSURL) {
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handleOpenURL(url)
+        } else {
+            // Google provider is the only one wuth your.bundle.id url schema.
+            OAuthSwift.handleOpenURL(url)
+        }
+    }
+}*/
 
