@@ -19,12 +19,15 @@ class ActionCell:UITableViewCell {
         if let description = action.actionDescription {
             descriptionLabel.text = description
         }
-        
-        if let recipientName = action.recipientName {
-            recipientLabel.text = recipientName
-        } else {
-            recipientLabel.text = action.recipientNumber
-        }
+        if action.actionType == PoggyConstants.actionType.SMS.rawValue {
+            if let smsAction = action as? SmsAction {
+                if let recipientName = smsAction.recipientName {
+                    recipientLabel.text = recipientName
+                } else {
+                    recipientLabel.text = smsAction.recipientNumber
+                }
+            }
+        }        
         
         if let active = action.isActive {
             currentActionImage.hidden = !active

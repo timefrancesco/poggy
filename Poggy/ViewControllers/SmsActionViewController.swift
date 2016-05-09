@@ -22,7 +22,7 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
     private var contactName:String?
     private var contactImage:NSData?
     private let poggyToolbar = PoggyToolbar()
-    private var actionToEdit:PoggyAction?
+    private var actionToEdit:SmsAction?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,7 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
         view.addSubview(numberBottomLine)
     }
     
-    func updateFromActionsViewController(action:PoggyAction) {
+    func updateFromActionsViewController(action:SmsAction) {
         actionToEdit = action
     }
     
@@ -104,8 +104,8 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
         return false
     }
     
-    func createActionFromFields() -> PoggyAction {
-        let newAction = PoggyAction()
+    func createActionFromFields() -> SmsAction {
+        let newAction = SmsAction()
         newAction.actionDescription = descriptionTextField.text
         newAction.message = messageTextField.text
         newAction.recipientNumber = numberTextField.text

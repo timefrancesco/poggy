@@ -11,9 +11,9 @@ import UIKit
 
 class PoggyConstants {
     
-    enum actionType {
-        case SMS
-        case SLACK
+    enum actionType:Int {
+        case SMS = 0
+        case SLACK = 1
     }
     
     static let ACTIONS_STORE_KEY = "PoggyActions"

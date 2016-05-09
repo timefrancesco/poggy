@@ -33,15 +33,25 @@ class GlanceController: WKInterfaceController {
     
     func updateCurrentAction(){
         if let action = ActionsHelper.instance.getActiveAction() {
-            let text = action.recipientName == nil ? action.recipientNumber! : action.recipientName
-            contactNameLabel.setText(text)
+            
+            if action.actionType == PoggyConstants.actionType.SMS.rawValue {
+                if let smsAction = action as? SmsAction {
+                    let text = smsAction.recipientName == nil ? smsAction.recipientNumber! : smsAction.recipientName
+                    contactNameLabel.setText(text)
+                    if let imageData = smsAction.recipientImage {
+                        contactAvatarImage.setImage(UIImage(data: imageData))
+                    } else {
+                        contactAvatarImage.setImage(UIImage(named:"UserWatch"))
+                    }
+                }
+            } else if action.actionType == PoggyConstants.actionType.SLACK.rawValue {
+                if let slackAction = action as? SlackAction {
+                    contactNameLabel.setText(slackAction.slackChannel)
+                    contactAvatarImage.setImage(UIImage(named:"UserWatch"))
+                }
+            }
             descriptionLabel.setText(action.actionDescription)
             
-            if let imageData = action.recipientImage {
-                contactAvatarImage.setImage(UIImage(data: imageData))
-            } else {
-                contactAvatarImage.setImage(UIImage(named:"UserWatch"))
-            }
         } else {
             contactNameLabel.setText(NSLocalizedString("Not Set", comment: ""))
         }

@@ -79,7 +79,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
             if let destination = segue.destinationViewController as? SingleActionViewController {
                 destination.newActionDelegate = self
                 
-                if let action = sender as? PoggyAction {
+                if let action = sender as? SmsAction {
                     destination.updateFromActionsViewController(action)
                 }
             }

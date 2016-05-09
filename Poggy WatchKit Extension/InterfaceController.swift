@@ -36,10 +36,21 @@ class InterfaceController: WKInterfaceController {
     
     func updateCurrentAction() {
         if let action = ActionsHelper.instance.getActiveAction() {
-            let text = action.recipientName == nil ? action.recipientNumber! : action.recipientName
-            contactNameLabel.setText(text)
+            
+            if action.actionType == PoggyConstants.actionType.SMS.rawValue {
+                if let smsAction = action as? SmsAction {
+                    let text = smsAction.recipientName == nil ? smsAction.recipientNumber! : smsAction.recipientName
+                    contactNameLabel.setText(text)
+                    sendButton.setEnabled(true)
+                }
+            } else if  action.actionType == PoggyConstants.actionType.SLACK.rawValue {
+                if let slackAction = action as? SlackAction {
+                    contactNameLabel.setText(slackAction.slackChannel)
+                    sendButton.setEnabled(true)
+                }
+            }
             descriptionLabel.setText(action.actionDescription)
-            sendButton.setEnabled(true)
+            
         } else {
             contactNameLabel.setText(NSLocalizedString("Not Set", comment: ""))
             sendButton.setEnabled(false)
@@ -59,10 +70,14 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func onSendButtonTouchUpInside() {
         if let action = ActionsHelper.instance.getActiveAction() {
-            let urlSafeBody = action.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
-            let phoneNumber = action.recipientNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-            if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?address=" + phoneNumber + ",&body=\(urlSafeBody)") {
-                WKExtension.sharedExtension().openSystemURL(url)
+            if action.actionType == PoggyConstants.actionType.SMS.rawValue {
+                if let smsAction = action as? SmsAction {
+                    let urlSafeBody = smsAction.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
+                    let phoneNumber = smsAction.recipientNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+                    if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?address=" + phoneNumber + ",&body=\(urlSafeBody)") {
+                        WKExtension.sharedExtension().openSystemURL(url)
+                    }
+                }
             }
         }
     }
