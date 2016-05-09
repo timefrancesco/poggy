@@ -20,13 +20,9 @@ class AddNewActionViewController:FormViewController {
     }
     
     func setupTableView() {
-        
         ButtonRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = PoggyConstants.POGGY_BLUE
-            cell.backgroundColor = UIColor.blackColor()
-            cell.tintColor = PoggyConstants.POGGY_BLUE
         }
-        
         form
             +++ Section("") { section in
             }
@@ -40,5 +36,9 @@ class AddNewActionViewController:FormViewController {
                 row.title = NSLocalizedString("Slack", comment: "")
                 row.presentationMode = .SegueName(segueName: "NewSlackActionSegue", completionCallback: nil)
             }
+        
+        super.tableView?.backgroundColor = UIColor.blackColor()
+        super.tableView?.separatorColor = PoggyConstants.POGGY_BLUE
+        super.tableView?.tintColor = PoggyConstants.POGGY_BLUE
     }
 }

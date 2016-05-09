@@ -74,8 +74,8 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "NewActionSegue" {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EditSmsActionSegue" {
             if let destination = segue.destinationViewController as? SingleActionViewController {
                 destination.newActionDelegate = self
                 
@@ -84,7 +84,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
             }
         }
-    }*/
+    }
     
     func syncActionsWithWatch(){
         do {
@@ -144,7 +144,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         let edit = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Edit", comment: "")) { (action, indexPath) in
             let action = self.actions[indexPath.row]
             action.actionIndex = indexPath.row
-            self.performSegueWithIdentifier("NewActionSegue", sender: action)
+            self.performSegueWithIdentifier("EditSmsActionSegue", sender: action)
         }
         
         edit.backgroundColor = PoggyConstants.POGGY_BLUE

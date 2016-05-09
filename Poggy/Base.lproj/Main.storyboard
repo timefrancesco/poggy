@@ -262,6 +262,7 @@
                         <outlet property="addNewActionButton" destination="sCt-VR-FJG" id="Hgo-rI-bmy"/>
                         <outlet property="noActionsLabel" destination="nNs-Tl-wc5" id="dl5-57-rHe"/>
                         <outlet property="tableView" destination="iwN-0D-FIO" id="x8V-bp-JYu"/>
+                        <segue destination="5o1-hc-U1w" kind="show" identifier="EditSmsActionSegue" id="3IN-kq-AmU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gN-0k-SKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,7 +280,7 @@
                     <view key="view" contentMode="scaleToFill" id="HvG-rN-5Fp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <segue destination="5o1-hc-U1w" kind="show" identifier="NewSmsActionSegue" id="ZLF-x6-3B4"/>
@@ -313,7 +314,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="v9q-lx-FXc"/>
@@ -506,4 +507,7 @@
         <image name="AddFromContacts" width="50" height="50"/>
         <image name="Check" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZLF-x6-3B4"/>
+    </inferredMetricsTieBreakers>
 </document>

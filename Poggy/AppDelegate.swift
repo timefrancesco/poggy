@@ -53,16 +53,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-// MARK: handle callback url
-/*extension AppDelegate {
-    
-    func applicationHandleOpenURL(url: NSURL) {
-        if (url.host == "oauth-callback") {
-            OAuthSwift.handleOpenURL(url)
-        } else {
-            // Google provider is the only one wuth your.bundle.id url schema.
-            OAuthSwift.handleOpenURL(url)
-        }
-    }
-}*/
 
