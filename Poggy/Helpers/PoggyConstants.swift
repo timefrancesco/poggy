@@ -22,6 +22,7 @@ class PoggyConstants {
     static let NEW_DATA_NOTIFICATION = "NewDataRetrieved"
     static let GLANCE_HANDOFF_URL = "io.timelabs.poggy.glance"
     static let GLANCE_HANDOFF_ID = "FromGlance"
+    static let SLACK_TEAMS_STORE_KEY = "SlackTeams"
     
     static let POGGY_BLUE = UIColor(rgb: 0x20CDF0)
 }

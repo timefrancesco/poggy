@@ -15,6 +15,7 @@
 		AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
 		AF64FC311CDFE5B800D156F2 /* AddNewActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */; };
 		AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */; };
+		AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
 		AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */; };
 		AF98B0501CCCB0B900A97A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF98B04E1CCCB0B900A97A94 /* Main.storyboard */; };
 		AF98B0521CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0511CCCB0B900A97A94 /* Assets.xcassets */; };
@@ -104,6 +105,7 @@
 		AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyConstants.swift; path = Helpers/PoggyConstants.swift; sourceTree = "<group>"; };
 		AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewActionViewController.swift; path = ViewControllers/AddNewActionViewController.swift; sourceTree = "<group>"; };
 		AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackActionViewController.swift; path = ViewControllers/SlackActionViewController.swift; sourceTree = "<group>"; };
+		AF64FC341CE14DE400D156F2 /* SlackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackHelper.swift; path = Helpers/SlackHelper.swift; sourceTree = "<group>"; };
 		AF98B0471CCCB0B900A97A94 /* Poggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF98B04F1CCCB0B900A97A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			children = (
 				AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */,
 				AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */,
+				AF64FC341CE14DE400D156F2 /* SlackHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */,
 				AF64FC311CDFE5B800D156F2 /* AddNewActionViewController.swift in Sources */,
 				AFE180981CCEC0BC00A5BFC6 /* ActionsHelper.swift in Sources */,
+				AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
