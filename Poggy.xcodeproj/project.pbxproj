@@ -13,6 +13,7 @@
 		AF467ABC1CD58B6C00A744EA /* SmsActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */; };
 		AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
 		AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
+		AF4B8B601CE28A8F0074701C /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B8B5F1CE28A8F0074701C /* Slack.swift */; };
 		AF64FC311CDFE5B800D156F2 /* AddNewActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */; };
 		AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */; };
 		AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
@@ -103,6 +104,7 @@
 		AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsViewController.swift; path = ViewControllers/ActionsViewController.swift; sourceTree = "<group>"; };
 		AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmsActionViewController.swift; path = ViewControllers/SmsActionViewController.swift; sourceTree = "<group>"; };
 		AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyConstants.swift; path = Helpers/PoggyConstants.swift; sourceTree = "<group>"; };
+		AF4B8B5F1CE28A8F0074701C /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Slack.swift; path = Models/Slack.swift; sourceTree = "<group>"; };
 		AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewActionViewController.swift; path = ViewControllers/AddNewActionViewController.swift; sourceTree = "<group>"; };
 		AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackActionViewController.swift; path = ViewControllers/SlackActionViewController.swift; sourceTree = "<group>"; };
 		AF64FC341CE14DE400D156F2 /* SlackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackHelper.swift; path = Helpers/SlackHelper.swift; sourceTree = "<group>"; };
@@ -196,10 +198,10 @@
 			children = (
 				AF98B04E1CCCB0B900A97A94 /* Main.storyboard */,
 				AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */,
-				AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */,
-				AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */,
 				AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */,
+				AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */,
 				AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */,
+				AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */,
+				AF4B8B5F1CE28A8F0074701C /* Slack.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				AFE180951CCEBF0A00A5BFC6 /* ActionCell.swift in Sources */,
 				AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */,
 				AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */,
+				AF4B8B601CE28A8F0074701C /* Slack.swift in Sources */,
 				AF467ABC1CD58B6C00A744EA /* SmsActionViewController.swift in Sources */,
 				AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */,
 				AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */,

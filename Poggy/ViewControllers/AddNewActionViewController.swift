@@ -22,6 +22,7 @@ class AddNewActionViewController:FormViewController {
     func setupTableView() {
         ButtonRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = PoggyConstants.POGGY_BLUE
+            cell.backgroundColor = UIColor.blackColor()
         }
         form
             +++ Section("") { section in
