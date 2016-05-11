@@ -9,7 +9,7 @@
 import UIKit
 import Eureka
 
-class SlackActionViewController:FormViewController, SlackTeamSelectedDelegate {
+class SlackActionViewController:FormViewController, PoggySlackDelegate {
     
     var currentSlackAction = SlackAction()
     
@@ -50,25 +50,27 @@ class SlackActionViewController:FormViewController, SlackTeamSelectedDelegate {
                 row.title = NSLocalizedString("Description", comment: "")
             }.cellUpdate({ (cell, row) in
                 cell.textField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Enter Description", comment: ""), attributes: [NSForegroundColorAttributeName:UIColor.darkGrayColor()])
+                cell.textField.text = self.currentSlackAction.actionDescription
             })
             
             <<< PushRow<String>() { row in
                 row.title = NSLocalizedString("Slack Team", comment: "")
                 row.presentationMode = .SegueName(segueName: "TeamSelectionSegue", completionCallback: nil)
             }.cellUpdate({ (cell, row) in
-                row.value = self.currentSlackAction.slackTeam
+                cell.detailTextLabel?.text = self.currentSlackAction.slackTeam
             })
             
             <<< PushRow<String>() { row in
                 row.title = NSLocalizedString("Channel", comment: "")
                 row.presentationMode = .SegueName(segueName: "NewSlackActionSegue", completionCallback: nil)
             }.cellUpdate({ (cell, row) in
-                row.value = self.currentSlackAction.slackChannel
+                cell.detailTextLabel?.text = self.currentSlackAction.slackChannel
             })
             <<< TextRow() { row in
                 row.title = NSLocalizedString("Message", comment: "")
             }.cellUpdate({ (cell, row) in
                 cell.textField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Message To Send", comment: ""), attributes: [NSForegroundColorAttributeName:UIColor.darkGrayColor()])
+                cell.textField.text = self.currentSlackAction.message
             })
         
         super.tableView?.backgroundColor = UIColor.blackColor()
@@ -84,33 +86,37 @@ class SlackActionViewController:FormViewController, SlackTeamSelectedDelegate {
         }
     }
     
-    //MARK: - Team selection delegate
+    //MARK: - delegate functions
     
     func slackTeamSelected(teamName: String, teamToken: String) {
         currentSlackAction.slackTeam = teamName
         currentSlackAction.slackToken = teamToken
-        super.tableView?.reloadData()
+       // super.tableView?.reloadData()
     }
 }
 
-protocol SlackTeamSelectedDelegate {
+//MARK: - Slack protocol
+
+protocol PoggySlackDelegate {
     func slackTeamSelected(teamName: String, teamToken: String)
 }
 
-class SlackTeamSelectionViewController:FormViewController {
+//MARK: - Team Selection Class
+
+class SlackTeamSelectionViewController: FormViewController {
     
     var slackTeams:[String: String]?
-    var delegate:SlackTeamSelectedDelegate?
+    var delegate:PoggySlackDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        slackTeams = SlackHelper.instance.getAuthCredentials()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        form.removeAll()
+        slackTeams = SlackHelper.instance.getAuthCredentials()
         setupTableView()
     }
     
@@ -121,11 +127,9 @@ class SlackTeamSelectionViewController:FormViewController {
             cell.backgroundColor = UIColor.blackColor()
         }
         
-        form
-            +++ Section("") { section in
-        }
+        form +++ Section("") { section in
         
-        form.removeAll()
+        }
         
         if let availableTeams = slackTeams {
             for team in availableTeams {
@@ -135,19 +139,19 @@ class SlackTeamSelectionViewController:FormViewController {
                         print(team.1)
                         if self.delegate != nil {
                             self.delegate?.slackTeamSelected(team.0, teamToken: team.1)
+                            self.navigationController?.popViewControllerAnimated(true)
                         }
                     })
                 }
             }
         }
         
-        form.last!  <<< ButtonRow() { row in
+        form +++= ButtonRow() { row in
                 row.title = NSLocalizedString("Add Slack Team", comment: "")
                 row.onCellSelection({ (cell, row) in
                     self.doOAuthSlack()
                 })
         }
-        
         
         super.tableView?.backgroundColor = UIColor.blackColor()
         super.tableView?.separatorColor = PoggyConstants.POGGY_BLUE
@@ -163,3 +167,14 @@ class SlackTeamSelectionViewController:FormViewController {
         }
     }
 }
+
+//MARK: - Channel Selection Clas
+
+class SlackChannelSelectionViewController: FormViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
+
+

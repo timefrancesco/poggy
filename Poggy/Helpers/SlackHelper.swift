@@ -35,8 +35,8 @@ class SlackHelper {
 #if os (iOS) //no need to authenticate from watch
     func authenticate(viewController:UIViewController, callback: (slackDetails: SlackAuthResponse?) -> Void)  {
         let oauthswift = OAuth2Swift(
-            consumerKey:    "key",
-            consumerSecret: "secret",
+            consumerKey:    "",
+            consumerSecret: "",
             authorizeUrl:   OAUTH_ENDPOINT,
             accessTokenUrl: OUTH_TOKEN_ENDPOINT,
             responseType:   "code"
