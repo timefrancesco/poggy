@@ -302,34 +302,32 @@
                     <view key="view" contentMode="scaleToFill" id="9D3-RJ-guN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9q-lx-FXc">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="AUTH"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="180" y="285" width="41" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="onAddSlackAuthTouchUpInside:" destination="yn8-cZ-SLX" eventType="touchUpInside" id="OoN-PL-XbX"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="v9q-lx-FXc"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="v9q-lx-FXc"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <connections>
+                        <segue destination="uRG-02-Grt" kind="show" identifier="TeamSelectionSegue" id="p53-3A-dn1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scq-SN-ai1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2334" y="1226"/>
+        </scene>
+        <!--Slack Team Selection View Controller-->
+        <scene sceneID="7XQ-th-qBA">
+            <objects>
+                <viewController id="uRG-02-Grt" customClass="SlackTeamSelectionViewController" customModule="Poggy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9oT-Ml-vz8"/>
+                        <viewControllerLayoutGuide type="bottom" id="bSz-dh-Z9d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vp7-2U-OD0">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4NS-3n-hFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3111" y="1226"/>
         </scene>
         <!--Single Action View Controller-->
         <scene sceneID="qMQ-xP-Lh5">

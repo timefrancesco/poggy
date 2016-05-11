@@ -7,10 +7,12 @@
 //
 
 import Foundation
-import OAuthSwift
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
+#if os (iOS)
+import OAuthSwift
+#endif
 
 class SlackHelper {
     
@@ -29,7 +31,8 @@ class SlackHelper {
     
     static let instance = SlackHelper() // singleton
     private init() { } // This prevents others from using the default '()' initializer for this class.
-
+    
+#if os (iOS) //no need to authenticate from watch
     func authenticate(viewController:UIViewController, callback: (slackDetails: SlackAuthResponse?) -> Void)  {
         let oauthswift = OAuth2Swift(
             consumerKey:    "key",
@@ -54,6 +57,7 @@ class SlackHelper {
                 NSLog(error.localizedDescription)
         })
     }
+#endif
     
     private func saveAuthCredentials(teamName:String, token:String) {
         var newCredentials = [String: String]()

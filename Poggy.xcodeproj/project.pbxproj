@@ -14,6 +14,8 @@
 		AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
 		AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
 		AF4B8B601CE28A8F0074701C /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B8B5F1CE28A8F0074701C /* Slack.swift */; };
+		AF4B8B611CE299690074701C /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B8B5F1CE28A8F0074701C /* Slack.swift */; };
+		AF4B8B631CE3DC3F0074701C /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
 		AF64FC311CDFE5B800D156F2 /* AddNewActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */; };
 		AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */; };
 		AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
@@ -664,6 +666,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE1809E1CCF69D800A5BFC6 /* PoggyAction.swift in Sources */,
+				AF4B8B611CE299690074701C /* Slack.swift in Sources */,
+				AF4B8B631CE3DC3F0074701C /* SlackHelper.swift in Sources */,
 				AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */,
 				AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */,
 				AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */,
