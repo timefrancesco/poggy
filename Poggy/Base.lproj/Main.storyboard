@@ -306,6 +306,7 @@
                     </view>
                     <connections>
                         <segue destination="uRG-02-Grt" kind="show" identifier="TeamSelectionSegue" id="p53-3A-dn1"/>
+                        <segue destination="8Gb-9b-qZn" kind="show" identifier="ChannelSelectionSegue" id="2CK-wi-oLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scq-SN-ai1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,6 +329,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NS-3n-hFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3111" y="1226"/>
+        </scene>
+        <!--Slack Channel Selection View Controller-->
+        <scene sceneID="LMu-lZ-2TJ">
+            <objects>
+                <viewController id="8Gb-9b-qZn" customClass="SlackChannelSelectionViewController" customModule="Poggy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2wZ-2Q-FoW"/>
+                        <viewControllerLayoutGuide type="bottom" id="pUd-gr-rmo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y4X-Bm-bQC">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pa6-3y-2Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3088.5" y="1984"/>
         </scene>
         <!--Single Action View Controller-->
         <scene sceneID="qMQ-xP-Lh5">

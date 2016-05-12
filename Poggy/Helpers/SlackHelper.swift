@@ -44,7 +44,7 @@ class SlackHelper {
         oauthswift.authorize_url_handler = SafariURLHandler(viewController: viewController)
         let state: String = generateStateWithLength(20) as String
         
-        oauthswift.authorizeWithCallbackURL( NSURL(string: POGGY_OAUTH_CALLBACK_URL)!, scope: "channels:read groups:read chat:write:user", state: state, success: {
+        oauthswift.authorizeWithCallbackURL( NSURL(string: POGGY_OAUTH_CALLBACK_URL)!, scope: "channels:read groups:read im:read chat:write:user", state: state, success: {
             credential, response, parameters in
             
                 if let teamName = parameters["team_name"] {

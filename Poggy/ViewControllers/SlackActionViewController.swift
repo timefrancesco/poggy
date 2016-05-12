@@ -62,9 +62,11 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
             
             <<< PushRow<String>() { row in
                 row.title = NSLocalizedString("Channel", comment: "")
-                row.presentationMode = .SegueName(segueName: "NewSlackActionSegue", completionCallback: nil)
+                row.presentationMode = .SegueName(segueName: "ChannelSelectionSegue", completionCallback: nil)
             }.cellUpdate({ (cell, row) in
                 cell.detailTextLabel?.text = self.currentSlackAction.slackChannel
+                row.disabled = self.currentSlackAction.slackTeam == nil ? true : false
+                print (row.isDisabled)
             })
             <<< TextRow() { row in
                 row.title = NSLocalizedString("Message", comment: "")
@@ -83,6 +85,10 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
             if let destination = segue.destinationViewController as? SlackTeamSelectionViewController {
                destination.delegate = self
             }
+        } else if segue.identifier == "ChannelSelectionSegue" {
+            if let destination = segue.destinationViewController as? SlackChannelSelectionViewController {
+                destination.teamToken = currentSlackAction.slackToken
+            }
         }
     }
     
@@ -91,7 +97,11 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
     func slackTeamSelected(teamName: String, teamToken: String) {
         currentSlackAction.slackTeam = teamName
         currentSlackAction.slackToken = teamToken
-       // super.tableView?.reloadData()
+    }
+    
+    
+    func slackChannelSelected(channelName: String) {
+        currentSlackAction.slackChannel = channelName
     }
 }
 
@@ -99,6 +109,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
 
 protocol PoggySlackDelegate {
     func slackTeamSelected(teamName: String, teamToken: String)
+    func slackChannelSelected(channelName: String)
 }
 
 //MARK: - Team Selection Class
@@ -168,11 +179,136 @@ class SlackTeamSelectionViewController: FormViewController {
     }
 }
 
-//MARK: - Channel Selection Clas
+//MARK: - Channel Selection Class
 
 class SlackChannelSelectionViewController: FormViewController {
+    var teamToken:String?
+    var delegate:PoggySlackDelegate?
+    
+    private var publicChannels:[SlackChannel]?
+    private var privateChannels:[SlackChannel]?
+    private var users:[SlackUser]?
+    private let apiDispatchGroup = dispatch_group_create();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getPublicChannels()
+        getPrivateChannels()
+        getUsers()
+        
+        dispatch_group_notify(apiDispatchGroup, dispatch_get_main_queue(), {
+            self.setupTableView()
+        })
+    }
+    
+    func setupTableView() {
+        
+        form
+            +++ Section("") { section in
+            
+            }
+        
+        <<< SegmentedRow<String>("channels"){
+                $0.options = ["Public", "Private", "Users"]
+                $0.value = "Public"
+        }.cellUpdate({ (cell, row) in
+            cell.backgroundColor = UIColor.blackColor()
+            cell.tintColor = PoggyConstants.POGGY_BLUE
+        })
+        
+        +++ Section() { section in
+            section.tag = "Public"
+            section.hidden = "$channels != 'Public'"
+            
+            if let pubChannels = publicChannels {
+                for channel in pubChannels {
+                    section.append(ButtonRow() { row in
+                        row.title =  channel.name
+                        row.onCellSelection({ (cell, row) in
+                            if self.delegate != nil {
+                                self.delegate?.slackChannelSelected(channel.name!)
+                                self.navigationController?.popViewControllerAnimated(true)
+                            }
+                        })
+                    })
+                }
+            }
+        }
+        
+        form +++ Section() { section in
+            section.tag = "Private"
+            section.hidden = "$channels != 'Private'"
+       
+            if let privateChannels = privateChannels {
+                for channel in privateChannels {
+                    section.append( ButtonRow() { row in
+                        row.title =  channel.name
+                        row.onCellSelection({ (cell, row) in
+                            if self.delegate != nil {
+                                self.delegate?.slackChannelSelected(channel.name!)
+                                self.navigationController?.popViewControllerAnimated(true)
+                            }
+                        })
+                    })
+                }
+            }
+        }
+        
+        form +++ Section() { section in
+            section.tag = "Users"
+            section.hidden = "$channels != 'Users'"
+    
+            if let users = users {
+                for user in users {
+                    section.append(ButtonRow() { row in
+                        row.title =  user.username
+                        row.onCellSelection({ (cell, row) in
+                            if self.delegate != nil {
+                                self.delegate?.slackChannelSelected(user.username!)
+                                self.navigationController?.popViewControllerAnimated(true)
+                            }
+                        })
+                    })
+                }
+            }
+        }
+        
+        super.tableView?.backgroundColor = UIColor.blackColor()
+        super.tableView?.separatorColor = PoggyConstants.POGGY_BLUE
+        super.tableView?.tintColor = PoggyConstants.POGGY_BLUE
+    }
+    
+    //MARK: Api Calls
+    
+    func getPublicChannels() {
+        if let token = teamToken {
+            dispatch_group_enter(apiDispatchGroup)
+            SlackHelper.instance.getChannels(token, type: .PUBLIC, callback: { (data) in
+                self.publicChannels = data
+                dispatch_group_leave(self.apiDispatchGroup)
+            })
+        }
+    }
+    
+    func getPrivateChannels() {
+        if let token = teamToken {
+            dispatch_group_enter(apiDispatchGroup)
+            SlackHelper.instance.getChannels(token, type: .PRIVATE, callback: { (data) in
+                self.privateChannels = data
+                dispatch_group_leave(self.apiDispatchGroup)
+            })
+        }
+    }
+    
+    func getUsers() {
+        if let token = teamToken {
+            dispatch_group_enter(apiDispatchGroup)
+            SlackHelper.instance.getUsers(token, callback: { (data) in
+                self.users = data
+                dispatch_group_leave(self.apiDispatchGroup)
+            })
+        }
     }
 }
 

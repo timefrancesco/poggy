@@ -74,7 +74,7 @@ class SlackUser: Mappable {
     dynamic var id: String?
     var isIm: Bool?
     dynamic var username: String?
-    var created: Int?
+    //var created: Int?
     var isDeleted: Bool?
     
     required convenience init?(_ map: Map) { self.init() }
@@ -82,8 +82,8 @@ class SlackUser: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         isIm <- map["is_im"]
-        username <- map["username"]
-        created <- map["created"]
+        username <- map["user"]
+      //  created <- map["created"]
         isDeleted <- map["is_user_deleted"]
     }
 }
