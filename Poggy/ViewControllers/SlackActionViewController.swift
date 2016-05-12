@@ -19,9 +19,14 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
         setupTableView()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = ""
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        title = NSLocalizedString("Slack Action", comment: "")
     }
     
     func setupTableView() {
@@ -88,6 +93,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
         } else if segue.identifier == "ChannelSelectionSegue" {
             if let destination = segue.destinationViewController as? SlackChannelSelectionViewController {
                 destination.teamToken = currentSlackAction.slackToken
+                destination.delegate = self
             }
         }
     }
@@ -121,6 +127,8 @@ class SlackTeamSelectionViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = NSLocalizedString("Select Team", comment: "")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -161,6 +169,9 @@ class SlackTeamSelectionViewController: FormViewController {
                 row.title = NSLocalizedString("Add Slack Team", comment: "")
                 row.onCellSelection({ (cell, row) in
                     self.doOAuthSlack()
+                }).cellUpdate({ (cell, row) in
+                    cell.textLabel?.textColor = UIColor.blackColor()
+                    cell.backgroundColor = PoggyConstants.POGGY_BLUE
                 })
         }
         
@@ -193,6 +204,7 @@ class SlackChannelSelectionViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = NSLocalizedString("Select Channel", comment: "")
         getPublicChannels()
         getPrivateChannels()
         getUsers()
@@ -204,22 +216,27 @@ class SlackChannelSelectionViewController: FormViewController {
     
     func setupTableView() {
         
+        let publicSection = NSLocalizedString("Public", comment: "")
+        let privateSection = NSLocalizedString("Private", comment: "")
+        let usersSection = NSLocalizedString("Users", comment: "")
+        
         form
             +++ Section("") { section in
             
             }
-        
+            
         <<< SegmentedRow<String>("channels"){
-                $0.options = ["Public", "Private", "Users"]
-                $0.value = "Public"
+                $0.options = [publicSection, privateSection, usersSection]
+                $0.value = publicSection
         }.cellUpdate({ (cell, row) in
             cell.backgroundColor = UIColor.blackColor()
             cell.tintColor = PoggyConstants.POGGY_BLUE
         })
         
         +++ Section() { section in
-            section.tag = "Public"
-            section.hidden = "$channels != 'Public'"
+            section.tag = publicSection
+            let hiddenCondition = "$channels != '\(publicSection)'"
+            section.hidden = Condition(stringLiteral: hiddenCondition)
             
             if let pubChannels = publicChannels {
                 for channel in pubChannels {
@@ -237,8 +254,9 @@ class SlackChannelSelectionViewController: FormViewController {
         }
         
         form +++ Section() { section in
-            section.tag = "Private"
-            section.hidden = "$channels != 'Private'"
+            section.tag = privateSection
+            let hiddenCondition = "$channels != '\(privateSection)'"
+            section.hidden = Condition(stringLiteral: hiddenCondition)
        
             if let privateChannels = privateChannels {
                 for channel in privateChannels {
@@ -256,8 +274,9 @@ class SlackChannelSelectionViewController: FormViewController {
         }
         
         form +++ Section() { section in
-            section.tag = "Users"
-            section.hidden = "$channels != 'Users'"
+            section.tag = usersSection
+            let hiddenCondition = "$channels != '\(usersSection)'"
+            section.hidden = Condition(stringLiteral: hiddenCondition)
     
             if let users = users {
                 for user in users {

@@ -38,6 +38,16 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = ""
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "Poggy"
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         addNewActionButton.layer.cornerRadius = addNewActionButton.frame.width / 2

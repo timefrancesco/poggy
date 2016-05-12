@@ -19,6 +19,16 @@ class AddNewActionViewController:FormViewController {
         setupTableView()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = ""
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "Poggy"
+    }
+    
     func setupTableView() {
         ButtonRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = PoggyConstants.POGGY_BLUE

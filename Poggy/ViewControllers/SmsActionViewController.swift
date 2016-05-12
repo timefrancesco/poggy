@@ -26,7 +26,7 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("Add", comment: "")
+        title = NSLocalizedString("Sms Action", comment: "")
         
         descriptionTextField.backgroundColor = UIColor.clearColor()
         numberTextField.backgroundColor = UIColor.clearColor()
