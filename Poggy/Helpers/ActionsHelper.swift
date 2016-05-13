@@ -43,6 +43,7 @@ class ActionsHelper {
             for action in actions {
                 action.isActive = false
             }
+            action.isActive = true
             
             if !update {
                 actions.append(action)

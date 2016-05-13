@@ -53,7 +53,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
             +++ Section("") { section in
             }
             
-            <<< TextRow() { row in
+            <<< TextRow("Description") { row in
                 row.title = NSLocalizedString("Description", comment: "")
             }.cellUpdate({ (cell, row) in
                 cell.textField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Enter Description", comment: ""), attributes: [NSForegroundColorAttributeName:UIColor.darkGrayColor()])
@@ -75,7 +75,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
                 row.disabled = self.currentSlackAction.slackTeam == nil ? true : false
                 print (row.isDisabled)
             })
-            <<< TextRow() { row in
+            <<< TextRow("Message") { row in
                 row.title = NSLocalizedString("Message", comment: "")
             }.cellUpdate({ (cell, row) in
                 cell.textField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Message To Send", comment: ""), attributes: [NSForegroundColorAttributeName:UIColor.darkGrayColor()])
@@ -110,6 +110,12 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
     }
     
     func addNewAction() {
+        let descRow = form.rowByTag("Description") as? TextRow
+        currentSlackAction.actionDescription = descRow?.cell.textField.text
+        
+        let messageRow = form.rowByTag("Message") as? TextRow
+        currentSlackAction.message = messageRow?.cell.textField.text
+        
         if !actionIsReady() {
             let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Fields cannot be empty", comment: ""), preferredStyle: .Alert)
             let actionCancel = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertActionStyle.Cancel) { (action) -> Void in
@@ -120,6 +126,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
             return
         }
         
+        currentSlackAction.actionIndex = actionToEdit?.actionIndex
         let update = actionToEdit == nil ? false : true
         ActionsHelper.instance.addAction(currentSlackAction, update:update)
         NSNotificationCenter.defaultCenter().postNotificationName(PoggyConstants.NEW_ACTION_CREATED, object: nil)
@@ -127,7 +134,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
     }
     
     func actionIsReady() -> Bool {
-        if currentSlackAction.slackChannel != "" && currentSlackAction.slackTeam != "" && currentSlackAction.message != "" && currentSlackAction.description != "" {
+        if currentSlackAction.slackChannel != nil && currentSlackAction.slackTeam != nil && currentSlackAction.message != nil && currentSlackAction.actionDescription != nil {
             return true
         }
         return false
