@@ -35,4 +35,26 @@ class ActionsHelper {
         }
         return nil
     }
+    
+    func addAction(action:PoggyAction, update:Bool) {
+        let savedActions = getActions()
+        
+        if var actions = savedActions { //clear previously active actions, the last added actions is always the active one
+            for action in actions {
+                action.isActive = false
+            }
+            
+            if !update {
+                actions.append(action)
+            }else if let index = action.actionIndex {
+                actions[index] = action
+            }
+            
+            setActions(actions)
+        } else {
+            var actions = [PoggyAction]()
+            actions.append(action)
+            setActions(actions)
+        }
+    }
 }

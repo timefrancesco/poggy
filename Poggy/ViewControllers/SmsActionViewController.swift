@@ -18,7 +18,6 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var loadContactsBtn: UIButton!
     
-    var newActionDelegate:NewActionDelegate?
     private var contactName:String?
     private var contactImage:NSData?
     private let poggyToolbar = PoggyToolbar()
@@ -138,13 +137,12 @@ class SingleActionViewController:UIViewController, CNContactPickerDelegate, Pogg
             presentViewController(alert, animated: false, completion: nil)
             return
         }
-        
-        if let actionDelegate = newActionDelegate {
-            let update = actionToEdit == nil ? false : true
-            actionDelegate.addAction(createActionFromFields(), update:update)
-            clearFields()
-            navigationController?.popViewControllerAnimated(true)
-        }
+       
+        let update = actionToEdit == nil ? false : true
+        ActionsHelper.instance.addAction(createActionFromFields(), update:update)
+        NSNotificationCenter.defaultCenter().postNotificationName(PoggyConstants.NEW_ACTION_CREATED, object: nil)
+        clearFields()
+        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func contactPicker(picker: CNContactPickerViewController, didSelectContactProperty contactProperty: CNContactProperty) {

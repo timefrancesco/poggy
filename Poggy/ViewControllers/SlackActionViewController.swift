@@ -9,9 +9,11 @@
 import UIKit
 import Eureka
 
-class SlackActionViewController:FormViewController, PoggySlackDelegate {
+class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToolbarDelegate {
     
-    var currentSlackAction = SlackAction()
+    private var actionToEdit:PoggyAction?
+    private var currentSlackAction = SlackAction()
+    private let poggyToolbar = PoggyToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +80,11 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
             }.cellUpdate({ (cell, row) in
                 cell.textField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Message To Send", comment: ""), attributes: [NSForegroundColorAttributeName:UIColor.darkGrayColor()])
                 cell.textField.text = self.currentSlackAction.message
+            }).cellSetup({ (cell, row) in
+                self.poggyToolbar.poggyDelegate = self
+                self.poggyToolbar.setButtonTitle(NSLocalizedString("ADD", comment: ""))
+                cell.textField.inputAccessoryView = self.poggyToolbar
+                self.poggyToolbar.sizeToFit()
             })
         
         super.tableView?.backgroundColor = UIColor.blackColor()
@@ -98,6 +105,34 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
         }
     }
     
+    func updateFromActionsViewController(action:PoggyAction) {
+        actionToEdit = action
+    }
+    
+    func addNewAction() {
+        if !actionIsReady() {
+            let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Fields cannot be empty", comment: ""), preferredStyle: .Alert)
+            let actionCancel = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertActionStyle.Cancel) { (action) -> Void in
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }
+            alert.addAction(actionCancel)
+            presentViewController(alert, animated: false, completion: nil)
+            return
+        }
+        
+        let update = actionToEdit == nil ? false : true
+        ActionsHelper.instance.addAction(currentSlackAction, update:update)
+        NSNotificationCenter.defaultCenter().postNotificationName(PoggyConstants.NEW_ACTION_CREATED, object: nil)
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func actionIsReady() -> Bool {
+        if currentSlackAction.slackChannel != "" && currentSlackAction.slackTeam != "" && currentSlackAction.message != "" && currentSlackAction.description != "" {
+            return true
+        }
+        return false
+    }
+    
     //MARK: - delegate functions
     
     func slackTeamSelected(teamName: String, teamToken: String) {
@@ -105,9 +140,14 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate {
         currentSlackAction.slackToken = teamToken
     }
     
-    
     func slackChannelSelected(channelName: String) {
         currentSlackAction.slackChannel = channelName
+    }
+    
+    //Toolbar delegate
+    
+    func onPoggyToolbarButtonTouchUpInside() {
+        addNewAction()
     }
 }
 
@@ -228,7 +268,7 @@ class SlackChannelSelectionViewController: FormViewController {
         <<< SegmentedRow<String>("channels"){
                 $0.options = [publicSection, privateSection, usersSection]
                 $0.value = publicSection
-        }.cellUpdate({ (cell, row) in
+        }.cellSetup({ (cell, row) in
             cell.backgroundColor = UIColor.blackColor()
             cell.tintColor = PoggyConstants.POGGY_BLUE
         })
@@ -330,6 +370,3 @@ class SlackChannelSelectionViewController: FormViewController {
         }
     }
 }
-
-
-

@@ -27,7 +27,13 @@ class ActionCell:UITableViewCell {
                     recipientLabel.text = smsAction.recipientNumber
                 }
             }
-        }        
+        }  else if action.actionType == PoggyConstants.actionType.SLACK.rawValue {
+            if let slackAction = action as? SlackAction {
+                if let channel = slackAction.slackChannel {
+                    recipientLabel.text = channel
+                }
+            }
+        }
         
         if let active = action.isActive {
             currentActionImage.hidden = !active

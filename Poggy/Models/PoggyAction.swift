@@ -15,8 +15,7 @@ class PoggyAction: NSObject, NSCoding {
     var isActive:Bool? //if it's the one selected to be triggered
     var actionIndex:Int? //used for update
     
-    required convenience init(coder decoder: NSCoder) {
-        self.init()
+    required init(coder decoder: NSCoder) {
         
         self.actionDescription = decoder.decodeObjectForKey("actionDescription") as? String
         self.message = decoder.decodeObjectForKey("message") as? String
@@ -25,9 +24,7 @@ class PoggyAction: NSObject, NSCoding {
         self.actionType = decoder.decodeObjectForKey("actionType") as? Int
     }
     
-    convenience init(actionType: Int, description: String, message: String, isActive:Bool, actionIndex:Int ) {
-        self.init()
-        
+    init(actionType: Int? = nil, description: String? = nil, message: String? = nil, isActive:Bool? = nil, actionIndex:Int? = nil ) {
         self.actionDescription = description
         self.message = message
         self.isActive = isActive
@@ -49,28 +46,29 @@ class SmsAction:PoggyAction {
     dynamic var recipientName:String?
     dynamic var recipientImage:NSData?
     
-    required convenience init(coder decoder: NSCoder) {
-        self.init(coder: decoder)
-        
+    required init(coder decoder: NSCoder) {
         self.recipientNumber = decoder.decodeObjectForKey("recipientNumber") as? String
         self.recipientName = decoder.decodeObjectForKey("recipientName") as? String
         self.recipientImage = decoder.decodeObjectForKey("recipientImage") as? NSData
+        
+        super.init(coder: decoder)
     }
     
-    convenience init(description: String, message: String, recipientNumber: String, recipientName: String, recipientImage: NSData?, isActive:Bool, actionIndex:Int ) {
-        self.init(actionType: PoggyConstants.actionType.SMS.rawValue, description: description, message: message, isActive: isActive, actionIndex: actionIndex)
-
+    init (description: String? = nil, message: String? = nil, recipientNumber: String? = nil, recipientName: String? = nil, recipientImage: NSData? = nil, isActive:Bool? = nil, actionIndex:Int? = nil ) {
+        super.init(actionType: PoggyConstants.actionType.SMS.rawValue, description: description, message: message, isActive: isActive, actionIndex: actionIndex)
+        
         self.recipientNumber = recipientNumber
         self.recipientName = recipientName
         self.recipientImage = recipientImage
     }
     
     override func encodeWithCoder(coder: NSCoder) {
-        super.encodeWithCoder(coder)
-        
         if let recipientNumber = recipientNumber { coder.encodeObject(recipientNumber, forKey: "recipientNumber") }
         if let recipientName = recipientName { coder.encodeObject(recipientName, forKey: "recipientName") }
-        if let recipientImage = recipientImage { coder.encodeObject(recipientImage, forKey: "recipientImage") }    }
+        if let recipientImage = recipientImage { coder.encodeObject(recipientImage, forKey: "recipientImage") }
+        
+        super.encodeWithCoder(coder)
+    }
 }
 
 class SlackAction:PoggyAction {
@@ -78,16 +76,16 @@ class SlackAction:PoggyAction {
     dynamic var slackChannel:String?
     dynamic var slackTeam:String?
     
-    required convenience init(coder decoder: NSCoder) {
-        self.init(coder: decoder)
-        
+    required init(coder decoder: NSCoder) {
         self.slackToken = decoder.decodeObjectForKey("slackToken") as? String
         self.slackChannel = decoder.decodeObjectForKey("slackChannel") as? String
         self.slackTeam = decoder.decodeObjectForKey("slackTeam") as? String
+        
+        super.init(coder: decoder)
     }
     
-    convenience init(actionType: Int, description: String, message: String, isActive:Bool, actionIndex:Int, slackToken:String, slackChannel:String, slackTeam:String ) {
-        self.init(actionType: PoggyConstants.actionType.SLACK.rawValue, description: description, message: message, isActive: isActive, actionIndex: actionIndex)
+    init(actionType: Int? = nil, description: String? = nil, message: String? = nil, isActive:Bool? = nil, actionIndex:Int? = nil, slackToken:String? = nil, slackChannel:String? = nil, slackTeam:String? = nil ) {
+        super.init(actionType: PoggyConstants.actionType.SLACK.rawValue, description: description, message: message, isActive: isActive, actionIndex: actionIndex)
       
         self.slackToken = slackToken
         self.slackChannel = slackChannel
@@ -95,10 +93,10 @@ class SlackAction:PoggyAction {
     }
     
     override func encodeWithCoder(coder: NSCoder) {
-        super.encodeWithCoder(coder)
-        
         if let slackChannel = slackChannel { coder.encodeObject(slackChannel, forKey: "slackChannel") }
         if let slackToken = slackToken { coder.encodeObject(slackToken, forKey: "slackToken") }
         if let slackTeam = slackTeam { coder.encodeObject(slackTeam, forKey: "slackTeam") }
+        
+        super.encodeWithCoder(coder)
     }
 }

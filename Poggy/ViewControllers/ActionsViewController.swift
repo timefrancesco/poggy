@@ -9,11 +9,7 @@
 import UIKit
 import WatchConnectivity
 
-protocol NewActionDelegate {
-    func addAction(action:PoggyAction, update:Bool)
-}
-
-class ActionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewActionDelegate, WCSessionDelegate  {
+class ActionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate  {
 
     @IBOutlet weak var noActionsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -36,6 +32,8 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             NSLog("WCSession not supported")
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.newActionHasBeenAdded(_:)), name: PoggyConstants.NEW_ACTION_CREATED, object: nil)
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -72,9 +70,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func saveActions() {
         ActionsHelper.instance.setActions(actions)
-        readActions()
-        tableView.reloadData()
-        syncActionsWithWatch()
+        updateActions()
     }
     
     func clearActiveAction(){
@@ -86,9 +82,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "EditSmsActionSegue" {
-            if let destination = segue.destinationViewController as? SingleActionViewController {
-                destination.newActionDelegate = self
-                
+            if let destination = segue.destinationViewController as? SingleActionViewController {                
                 if let action = sender as? SmsAction {
                     destination.updateFromActionsViewController(action)
                 }
@@ -106,17 +100,14 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    //MARK: NewAction Delegate Functions
+    func newActionHasBeenAdded(notification: NSNotification) {
+        updateActions()
+    }
     
-    func addAction(action:PoggyAction, update:Bool) {
-        clearActiveAction()
-    
-        if !update {
-            actions.append(action)
-        } else if let index = action.actionIndex {
-            actions[index] = action
-        }
-        saveActions()
+    func updateActions() {
+        readActions()
+        tableView.reloadData()
+        syncActionsWithWatch()
     }
     
     //MARK: TableView Delegate Functions
