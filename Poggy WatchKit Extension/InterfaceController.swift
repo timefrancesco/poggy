@@ -68,15 +68,29 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    func sendSlackMessage(slackAction: SlackAction) {
+        SlackHelper.instance.postMessage(slackAction.slackToken!, channelName: slackAction.slackChannel!, message: slackAction.message!) { (data) in
+            print(data)
+        }
+    }
+    
+    func sendSms(smsAction:SmsAction) {
+        let urlSafeBody = smsAction.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
+        let phoneNumber = smsAction.recipientNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+        if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?address=" + phoneNumber + ",&body=\(urlSafeBody)") {
+            WKExtension.sharedExtension().openSystemURL(url)
+        }
+    }
+    
     @IBAction func onSendButtonTouchUpInside() {
         if let action = ActionsHelper.instance.getActiveAction() {
             if action.actionType == PoggyConstants.actionType.SMS.rawValue {
                 if let smsAction = action as? SmsAction {
-                    let urlSafeBody = smsAction.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
-                    let phoneNumber = smsAction.recipientNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-                    if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?address=" + phoneNumber + ",&body=\(urlSafeBody)") {
-                        WKExtension.sharedExtension().openSystemURL(url)
-                    }
+                    sendSms(smsAction)
+                }
+            } else if action.actionType == PoggyConstants.actionType.SLACK.rawValue {
+                if let slackAction = action as? SlackAction {
+                    sendSlackMessage(slackAction)
                 }
             }
         }
