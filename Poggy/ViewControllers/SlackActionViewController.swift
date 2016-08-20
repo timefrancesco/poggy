@@ -212,7 +212,7 @@ class SlackTeamSelectionViewController: FormViewController {
             }
         }
         
-        form +++= ButtonRow() { row in
+        form +++ ButtonRow() { row in
                 row.title = NSLocalizedString("Add Slack Team", comment: "")
                 row.onCellSelection({ (cell, row) in
                     self.doOAuthSlack()

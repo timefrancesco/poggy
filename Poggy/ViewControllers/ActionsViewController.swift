@@ -55,6 +55,22 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         super.didReceiveMemoryWarning()
     }
     
+    //MARK: WCSessionDelegate functions
+    
+    func sessionDidBecomeInactive(session: WCSession) {
+    
+    }
+    
+    func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+        
+    }
+    
+    func sessionDidDeactivate(session: WCSession) {
+    
+    }
+    
+    //MARK: Actions functions
+    
     func readActions() {
         if let readActions = ActionsHelper.instance.getActions() {
             actions = readActions

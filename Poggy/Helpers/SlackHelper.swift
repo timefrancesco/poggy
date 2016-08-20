@@ -41,14 +41,15 @@ class SlackHelper {
             accessTokenUrl: OUTH_TOKEN_ENDPOINT,
             responseType:   "code"
         )
-        oauthswift.authorize_url_handler = SafariURLHandler(viewController: viewController)
+    
+    oauthswift.authorize_url_handler = SafariURLHandler(viewController: viewController, oauthSwift:oauthswift )
         let state: String = generateStateWithLength(20) as String
         
         oauthswift.authorizeWithCallbackURL( NSURL(string: POGGY_OAUTH_CALLBACK_URL)!, scope: "channels:read groups:read im:read chat:write:user", state: state, success: {
             credential, response, parameters in
             
-                if let teamName = parameters["team_name"] {
-                    if let token = parameters["access_token"] {
+                if let teamName = parameters["team_name"] as? String{
+                    if let token = parameters["access_token"] as? String {
                         self.saveAuthCredentials(teamName, token: token)
                         callback(slackDetails: SlackAuthResponse(teamName: teamName, token: token))
                     }
@@ -103,7 +104,7 @@ class SlackHelper {
     private func sendRequestObject<T: Mappable>(endpoint: String, method: Alamofire.Method, headers: [String: String]? = nil, parameters: [String: AnyObject]? = nil, keyPath: String = "", encoding: ParameterEncoding? = .JSON, callback: (result: T?) -> Void) {
         NSLog("API Calling sendRequestObject: " + endpoint)
         
-        Alamofire.request(method, endpoint, headers: headers, parameters: parameters, encoding: encoding!).responseObject(keyPath) { (response: Response<T, NSError>) in
+        Alamofire.request(method, endpoint, headers: headers, parameters: parameters, encoding: encoding!).responseObject(keyPath: keyPath) { (response: Response<T, NSError>) in
             guard response.result.error == nil
                 else {
                     NSLog("error in API object request" + " -> " + String(response.result.error!))
@@ -116,7 +117,7 @@ class SlackHelper {
     
     private func sendRequestArray<T: Mappable>(endpoint: String, method: Alamofire.Method, headers: [String: String]? = nil, parameters: [String: AnyObject]? = nil, keyPath: String = "", encoding: ParameterEncoding? = .JSON,  callback: (result: [T]?) -> Void) {
         
-        Alamofire.request(method, endpoint, headers: headers).responseArray(keyPath) { (response: Response < [T], NSError >) in
+        Alamofire.request(method, endpoint, headers: headers).responseArray(keyPath: keyPath) { (response: Response < [T], NSError >) in
             guard response.result.error == nil
                 else {
                     NSLog("error in API array request" + " -> " + String(response.result.error!))
