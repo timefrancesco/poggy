@@ -212,6 +212,8 @@ class SlackTeamSelectionViewController: FormViewController {
             }
         }
         
+        
+        
         form +++ ButtonRow() { row in
                 row.title = NSLocalizedString("Add Slack Team", comment: "")
                 row.onCellSelection({ (cell, row) in
@@ -228,10 +230,14 @@ class SlackTeamSelectionViewController: FormViewController {
     }
     
     func doOAuthSlack(){
-        SlackHelper.instance.authenticate(self) { (slackDetails) in
+        SlackHelper.instance.authenticate(self) { [weak self] (slackDetails) in
             if let slack = slackDetails {
                 print (slack.teamName)
                 print (slack.token)
+                
+                self?.form.removeAll()
+                self?.slackTeams = SlackHelper.instance.getAuthCredentials()
+                self?.setupTableView()
             }
         }
     }
