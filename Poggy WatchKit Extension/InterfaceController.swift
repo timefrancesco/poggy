@@ -12,10 +12,9 @@ import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController {
-
-    @IBOutlet var contactNameLabel: WKInterfaceLabel!
-    @IBOutlet var sendButton: WKInterfaceButton!
-    @IBOutlet var descriptionLabel: WKInterfaceLabel!
+    
+    @IBOutlet var actionsTable: WKInterfaceTable!
+    var actions = [PoggyAction]()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -35,18 +34,28 @@ class InterfaceController: WKInterfaceController {
     }
     
     func updateActions() {
-       
+       reloadTableSource()
     }
 
     override func handleUserActivity(userInfo: [NSObject : AnyObject]?) {
-        if let info = userInfo {
-            if let fromGlance = info[PoggyConstants.GLANCE_HANDOFF_ID] as? Bool {
-                if fromGlance {
-                    updateUserActivity(PoggyConstants.GLANCE_HANDOFF_URL, userInfo: [PoggyConstants.GLANCE_HANDOFF_ID:false], webpageURL: nil)
-                    onSendButtonTouchUpInside()
+    }
+    
+    func reloadTableSource() {
+        if let pActions = ActionsHelper.instance.getActions() {
+            actions = pActions
+            actionsTable.setNumberOfRows(actions.count, withRowType: "ActionRow")
+            
+            for index in 0..<actionsTable.numberOfRows {
+                if let controller = actionsTable.rowControllerAtIndex(index) as? ActionRowController {
+                    controller.action = actions[index]
                 }
             }
         }
+    }
+    
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        let action = actions[rowIndex]
+        sendSlackMessage(action)
     }
     
     func sendSlackMessage(slackAction: PoggyAction) {
@@ -55,7 +64,4 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    @IBAction func onSendButtonTouchUpInside() {
-    
-    }
 }

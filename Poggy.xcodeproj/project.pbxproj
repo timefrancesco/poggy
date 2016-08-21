@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A4D5694CDFC79E912E38DA2 /* Pods_Poggy_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE8D2BCDAD7A4442B3CC6D5 /* Pods_Poggy_WatchKit_Extension.framework */; };
 		0FC6E328AAEB16C52496210D /* Pods_Poggy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FA9D51DD1C1343AD160379 /* Pods_Poggy.framework */; };
+		13C225B01D6955C10075A29A /* ActionRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C225AF1D6955C10075A29A /* ActionRowController.swift */; };
 		AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */; };
 		AF467ABB1CD58B6C00A744EA /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */; };
 		AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
@@ -96,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		0DE8D2BCDAD7A4442B3CC6D5 /* Pods_Poggy_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poggy_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13C225AF1D6955C10075A29A /* ActionRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionRowController.swift; sourceTree = "<group>"; };
 		1A2899CCF419A3F45306A4FB /* Pods-Poggy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy/Pods-Poggy.debug.xcconfig"; sourceTree = "<group>"; };
 		5B724A44558AD8D8EBFF2464 /* Pods-Poggy WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		61FA9D51DD1C1343AD160379 /* Pods_Poggy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poggy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,6 +284,7 @@
 				AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */,
 				AF98B0891CCCB0B900A97A94 /* Assets.xcassets */,
 				AF98B08B1CCCB0B900A97A94 /* Info.plist */,
+				13C225AF1D6955C10075A29A /* ActionRowController.swift */,
 			);
 			path = "Poggy WatchKit Extension";
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */,
 				AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */,
 				AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */,
+				13C225B01D6955C10075A29A /* ActionRowController.swift in Sources */,
 				AFE180A01CCF69F400A5BFC6 /* ActionsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

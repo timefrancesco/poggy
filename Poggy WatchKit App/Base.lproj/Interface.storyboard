@@ -10,31 +10,33 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Poggy_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Contact Name" id="SiG-jf-xuy">
-                            <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </label>
-                        <label alignment="left" text="Description" id="Vj7-f7-Jbb">
-                            <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                        </label>
-                        <separator alignment="left" id="KS2-fV-kce">
-                            <color key="color" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </separator>
-                        <button width="1" height="67.5" alignment="left" verticalAlignment="bottom" title="Send" id="Nfi-KA-szQ">
-                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="backgroundColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="onSendButtonTouchUpInside" destination="AgC-eL-Hgc" id="XfP-Oi-l6Q"/>
-                            </connections>
-                        </button>
-                        <separator alignment="left" verticalAlignment="bottom" id="kWq-uy-BgP">
-                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </separator>
+                        <table alignment="left" id="ecx-MF-lxv">
+                            <items>
+                                <tableRow identifier="ActionRow" id="a39-3s-Nbl" customClass="ActionRowController" customModule="Poggy_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="Ua6-JX-2y3">
+                                        <items>
+                                            <label alignment="left" text="Description" textAlignment="left" id="Nnk-kz-YC3">
+                                                <color key="textColor" red="0.14220970890000001" green="0.74375127169999999" blue="0.94469781090000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label alignment="left" text="Team" id="ta3-qG-cJN">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                            <label alignment="left" text="Channel" id="cmE-7n-DGb">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="actionDescriptionLabel" destination="Nnk-kz-YC3" id="KN7-dj-oZA"/>
+                                        <outlet property="slackChannelLabel" destination="cmE-7n-DGb" id="aF0-Ec-Wyu"/>
+                                        <outlet property="slackTeamLabel" destination="ta3-qG-cJN" id="X7a-lC-sea"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
-                        <outlet property="contactNameLabel" destination="SiG-jf-xuy" id="CgW-Bu-MdZ"/>
-                        <outlet property="descriptionLabel" destination="Vj7-f7-Jbb" id="zti-Ru-7xm"/>
-                        <outlet property="sendButton" destination="Nfi-KA-szQ" id="jcw-hO-PSD"/>
+                        <outlet property="actionsTable" destination="ecx-MF-lxv" id="dHK-tz-VAs"/>
                     </connections>
                 </controller>
             </objects>
