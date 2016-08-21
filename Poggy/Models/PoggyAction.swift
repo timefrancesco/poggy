@@ -16,7 +16,8 @@ class PoggyAction: Mappable {
     dynamic var actionDescription:String?
     dynamic var message:String?
     dynamic var slackToken:String?
-    dynamic var slackChannel:String?
+    var slackChannel:SlackChannel?
+    var slackUser:SlackUser?
     dynamic var slackTeam:String?
     
     
@@ -27,6 +28,7 @@ class PoggyAction: Mappable {
         actionDescription <- map["actionDescription"]
         slackToken <- map["slackToken"]
         slackChannel <- map["slackChannel"]
+        slackUser <- map["slackUser"]
         slackTeam <- map["slackTeam"]
         message <- map["message"]
         

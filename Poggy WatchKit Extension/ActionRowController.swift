@@ -19,7 +19,11 @@ class ActionRowController: NSObject {
             if let action = action {
                 actionDescriptionLabel.setText(action.actionDescription)
                 slackTeamLabel.setText(action.slackTeam)
-                slackChannelLabel.setText(action.slackChannel)
+                if let channel = action.slackChannel {
+                    slackChannelLabel.setText(channel.name)
+                } else if let user = action.slackUser {
+                    slackChannelLabel.setText(user.username)
+                }
             }
         }
     }

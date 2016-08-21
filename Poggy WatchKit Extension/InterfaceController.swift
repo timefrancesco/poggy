@@ -63,7 +63,9 @@ class InterfaceController: WKInterfaceController {
     
     func sendSlackMessage(slackAction: PoggyAction) {
         if let htmlString = slackAction.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
-            SlackHelper.instance.postMessage(slackAction.slackToken!, channelName: slackAction.slackChannel!, message: htmlString) { (data) in
+            let destination = slackAction.slackChannel != nil ? slackAction.slackChannel!.id : slackAction.slackUser!.id
+            
+            SlackHelper.instance.postMessage(slackAction.slackToken!, channelName: destination!, message: htmlString) { (data) in
                 print(data)
             }
         }

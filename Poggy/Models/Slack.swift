@@ -72,31 +72,29 @@ class SlackChannel: Mappable {
 class SlackUser: Mappable {
     
     dynamic var id: String?
-    var isIm: Bool?
     dynamic var username: String?
-    //var created: Int?
-    var isDeleted: Bool?
+    var deleted: Bool?
+    dynamic var profileImage:String?
     
     required convenience init?(_ map: Map) { self.init() }
     
     func mapping(map: Map) {
         id <- map["id"]
-        isIm <- map["is_im"]
-        username <- map["user"]
-      //  created <- map["created"]
-        isDeleted <- map["is_user_deleted"]
+        username <- map["name"]
+        profileImage <- map["profile.image_192"]
+        deleted <- map["deleted"]
     }
 }
 
 class SlackMessageResponse: Mappable {
-    
+ 
     var ok: Bool?
     dynamic var channel: String?
     dynamic var messageText: String?
     dynamic var messageUserName: String?
     dynamic var messageType: String?
     dynamic var messageSubType: String?
-    
+ 
     required convenience init?(_ map: Map) { self.init() }
     
     func mapping(map: Map) {

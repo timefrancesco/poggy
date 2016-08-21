@@ -21,7 +21,9 @@ class ActionCell:UITableViewCell {
         }
         
         if let channel = action.slackChannel {
-            recipientLabel.text = channel
+            recipientLabel.text = channel.name
+        } else if let user = action.slackUser {
+            recipientLabel.text = user.username
         }
     }
     

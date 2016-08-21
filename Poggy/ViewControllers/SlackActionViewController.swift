@@ -71,7 +71,12 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
                 row.title = NSLocalizedString("Channel", comment: "")
                 row.presentationMode = .SegueName(segueName: "ChannelSelectionSegue", completionCallback: nil)
             }.cellUpdate({ (cell, row) in
-                cell.detailTextLabel?.text = self.currentSlackAction.slackChannel
+                if let channel = self.currentSlackAction.slackChannel {
+                    cell.detailTextLabel?.text = channel.name
+                } else if let user = self.currentSlackAction.slackUser {
+                    cell.detailTextLabel?.text = user.username
+                }
+                
                 row.disabled = self.currentSlackAction.slackTeam == nil ? true : false
                 print (row.isDisabled)
             })
@@ -134,7 +139,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
     }
     
     func actionIsReady() -> Bool {
-        if currentSlackAction.slackChannel != nil && currentSlackAction.slackTeam != nil && currentSlackAction.message != nil && currentSlackAction.actionDescription != nil {
+        if (currentSlackAction.slackChannel != nil || currentSlackAction.slackUser != nil )  && currentSlackAction.slackTeam != nil && currentSlackAction.message != nil && currentSlackAction.actionDescription != nil {
             return true
         }
         return false
@@ -147,8 +152,12 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
         currentSlackAction.slackToken = teamToken
     }
     
-    func slackChannelSelected(channelName: String) {
-        currentSlackAction.slackChannel = channelName
+    func slackChannelSelected(channel: SlackChannel) {
+        currentSlackAction.slackChannel = channel
+    }
+    
+    func slackUserSelected(user: SlackUser) {
+        currentSlackAction.slackUser = user
     }
     
     //Toolbar delegate
@@ -162,7 +171,8 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
 
 protocol PoggySlackDelegate {
     func slackTeamSelected(teamName: String, teamToken: String)
-    func slackChannelSelected(channelName: String)
+    func slackChannelSelected(channel: SlackChannel)
+    func slackUserSelected(user:SlackUser)
 }
 
 //MARK: - Team Selection Class
@@ -297,7 +307,7 @@ class SlackChannelSelectionViewController: FormViewController {
                         row.title =  channel.name
                         row.onCellSelection({ (cell, row) in
                             if self.delegate != nil {
-                                self.delegate?.slackChannelSelected(channel.name!)
+                                self.delegate?.slackChannelSelected(channel)
                                 self.navigationController?.popViewControllerAnimated(true)
                             }
                         })
@@ -317,7 +327,7 @@ class SlackChannelSelectionViewController: FormViewController {
                         row.title =  channel.name
                         row.onCellSelection({ (cell, row) in
                             if self.delegate != nil {
-                                self.delegate?.slackChannelSelected(channel.name!)
+                                self.delegate?.slackChannelSelected(channel)
                                 self.navigationController?.popViewControllerAnimated(true)
                             }
                         })
@@ -337,7 +347,7 @@ class SlackChannelSelectionViewController: FormViewController {
                         row.title =  user.username
                         row.onCellSelection({ (cell, row) in
                             if self.delegate != nil {
-                                self.delegate?.slackChannelSelected(user.username!)
+                                self.delegate?.slackUserSelected(user)
                                 self.navigationController?.popViewControllerAnimated(true)
                             }
                         })

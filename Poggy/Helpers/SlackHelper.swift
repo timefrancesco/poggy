@@ -26,7 +26,7 @@ class SlackHelper {
     let POGGY_OAUTH_CALLBACK_URL = "poggy://oauth-callback/slack"
     let PUBLIC_CHANNELS_ENDPOINT = "https://slack.com/api/channels.list?token="
     let PRIVATE_CHANNELS_ENDPOINT = "https://slack.com/api/groups.list?token="
-    let USER_LIST_ENDPOINT = "https://slack.com/api/im.list?token="
+    let USER_LIST_ENDPOINT = "https://slack.com/api/users.list?token="
     let POST_MESSAGE_ENDPOINT = "https://slack.com/api/chat.postMessage?token="
     
     static let instance = SlackHelper() // singleton
@@ -45,7 +45,7 @@ class SlackHelper {
     oauthswift.authorize_url_handler = SafariURLHandler(viewController: viewController, oauthSwift:oauthswift )
         let state: String = generateStateWithLength(20) as String
         
-        oauthswift.authorizeWithCallbackURL( NSURL(string: POGGY_OAUTH_CALLBACK_URL)!, scope: "channels:read groups:read im:read chat:write:user", state: state, success: {
+        oauthswift.authorizeWithCallbackURL( NSURL(string: POGGY_OAUTH_CALLBACK_URL)!, scope: "channels:read groups:read users:read chat:write:user", state: state, success: {
             credential, response, parameters in
             
                 if let teamName = parameters["team_name"] as? String{
@@ -88,7 +88,7 @@ class SlackHelper {
     func getUsers(teamToken: String, callback: (data: [SlackUser]?) -> Void) {
         let endpoint = USER_LIST_ENDPOINT + teamToken
         
-        sendRequestArray(endpoint, method: Method.GET, keyPath: "ims") { (result: [SlackUser]?) in
+        sendRequestArray(endpoint, method: Method.GET, keyPath: "members") { (result: [SlackUser]?) in
             callback(data: result)
         }
     }
