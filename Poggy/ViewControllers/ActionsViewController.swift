@@ -8,6 +8,7 @@
 
 import UIKit
 import WatchConnectivity
+import ObjectMapper
 
 class ActionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate  {
 
@@ -102,8 +103,11 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     func syncActionsWithWatch(){
         do {
             var actionsDict = [String : AnyObject]()
-            actionsDict[PoggyConstants.ACTIONS_DICT_ID] = NSKeyedArchiver.archivedDataWithRootObject(actions)
-            try WCSession.defaultSession().updateApplicationContext(actionsDict)
+            let actions = ActionsHelper.instance.getActions()
+            if let actionData = Mapper().toJSONString(actions!, prettyPrint: true) {
+                actionsDict[PoggyConstants.ACTIONS_DICT_ID] =  actionData
+                try WCSession.defaultSession().updateApplicationContext(actionsDict)
+            }
         } catch {
             NSLog("Error Syncing actions with watch: \(error)")
         }

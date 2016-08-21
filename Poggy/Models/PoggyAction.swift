@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class PoggyAction: NSObject, NSCoding {
+class PoggyAction: Mappable {
     var actionType:Int?
     var actionIndex:Int? //used for update
     
@@ -18,34 +19,18 @@ class PoggyAction: NSObject, NSCoding {
     dynamic var slackChannel:String?
     dynamic var slackTeam:String?
     
-    required init(coder decoder: NSCoder) {
+    
+    required convenience init?(_ map: Map) { self.init() }
+    
+    // MARK: Mappable
+    func mapping(map: Map) {
+        actionDescription <- map["actionDescription"]
+        slackToken <- map["slackToken"]
+        slackChannel <- map["slackChannel"]
+        slackTeam <- map["slackTeam"]
+        message <- map["message"]
         
-        self.actionDescription = decoder.decodeObjectForKey("actionDescription") as? String
-        self.message = decoder.decodeObjectForKey("message") as? String
-        self.actionIndex = decoder.decodeObjectForKey("actionIndex") as? Int
-        self.actionType = decoder.decodeObjectForKey("actionType") as? Int
-        self.slackToken = decoder.decodeObjectForKey("slackToken") as? String
-        self.slackChannel = decoder.decodeObjectForKey("slackChannel") as? String
-        self.slackTeam = decoder.decodeObjectForKey("slackTeam") as? String
-    }
-    
-    init(actionType: Int? = nil, description: String? = nil, message: String? = nil, isActive:Bool? = nil, actionIndex:Int? = nil, slackToken:String? = nil, slackChannel:String? = nil, slackTeam:String? = nil ) {
-        self.actionDescription = description
-        self.message = message
-        self.actionIndex = actionIndex
-        self.actionType = actionType
-        self.slackToken = slackToken
-        self.slackChannel = slackChannel
-        self.slackTeam = slackTeam
-    }
-    
-    func encodeWithCoder(coder: NSCoder) {
-        if let actionDescription = actionDescription { coder.encodeObject(actionDescription, forKey: "actionDescription") }
-        if let message = message { coder.encodeObject(message, forKey: "message") }
-        if let actionIndex = actionIndex { coder.encodeObject(actionIndex, forKey: "actionIndex") }
-        if let actionType = actionType { coder.encodeObject(actionType, forKey: "actionType") }
-        if let slackChannel = slackChannel { coder.encodeObject(slackChannel, forKey: "slackChannel") }
-        if let slackToken = slackToken { coder.encodeObject(slackToken, forKey: "slackToken") }
-        if let slackTeam = slackTeam { coder.encodeObject(slackTeam, forKey: "slackTeam") }
+        actionType <- map["actionType"]
+        actionIndex <- map["actionIndex"]
     }
 }

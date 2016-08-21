@@ -10,11 +10,9 @@ import WatchKit
 
 class ActionRowController: NSObject {
     
-
     @IBOutlet var actionDescriptionLabel: WKInterfaceLabel!
     @IBOutlet var slackTeamLabel: WKInterfaceLabel!
     @IBOutlet var slackChannelLabel: WKInterfaceLabel!
-    
     
     var action: PoggyAction? {
         didSet {
