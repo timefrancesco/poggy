@@ -29,22 +29,12 @@ class ActionsHelper {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    func getActiveAction() -> PoggyAction? {
-        if let actions = getActions() {
-            return actions.filter{ $0.isActive!}.first
-        }
-        return nil
-    }
+    
     
     func addAction(action:PoggyAction, update:Bool) {
         let savedActions = getActions()
         
         if var actions = savedActions { //clear previously active actions, the last added actions is always the active one
-            for action in actions {
-                action.isActive = false
-            }
-            action.isActive = true
-            
             if !update {
                 actions.append(action)
             }else if let index = action.actionIndex {

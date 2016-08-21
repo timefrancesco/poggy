@@ -12,7 +12,7 @@ import Eureka
 class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToolbarDelegate {
     
     private var actionToEdit:PoggyAction?
-    private var currentSlackAction = SlackAction()
+    private var currentSlackAction = PoggyAction()
     private let poggyToolbar = PoggyToolbar()
     
     override func viewDidLoad() {

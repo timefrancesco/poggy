@@ -24,37 +24,18 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
         
-        updateCurrentAction()
+        updateActions()
         
         let nc = NSNotificationCenter.defaultCenter()
-        nc.addObserver(self, selector: #selector(self.updateCurrentAction), name: PoggyConstants.NEW_DATA_NOTIFICATION, object: nil)
+        nc.addObserver(self, selector: #selector(self.updateActions), name: PoggyConstants.NEW_DATA_NOTIFICATION, object: nil)
     }
     
     override func didDeactivate() {
         super.didDeactivate()
     }
     
-    func updateCurrentAction() {
-        if let action = ActionsHelper.instance.getActiveAction() {
-            
-            if action.actionType == PoggyConstants.actionType.SMS.rawValue {
-                if let smsAction = action as? SmsAction {
-                    let text = smsAction.recipientName == nil ? smsAction.recipientNumber! : smsAction.recipientName
-                    contactNameLabel.setText(text)
-                    sendButton.setEnabled(true)
-                }
-            } else if  action.actionType == PoggyConstants.actionType.SLACK.rawValue {
-                if let slackAction = action as? SlackAction {
-                    contactNameLabel.setText(slackAction.slackChannel)
-                    sendButton.setEnabled(true)
-                }
-            }
-            descriptionLabel.setText(action.actionDescription)
-            
-        } else {
-            contactNameLabel.setText(NSLocalizedString("Not Set", comment: ""))
-            sendButton.setEnabled(false)
-        }
+    func updateActions() {
+       
     }
 
     override func handleUserActivity(userInfo: [NSObject : AnyObject]?) {
@@ -68,31 +49,13 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    func sendSlackMessage(slackAction: SlackAction) {
+    func sendSlackMessage(slackAction: PoggyAction) {
         SlackHelper.instance.postMessage(slackAction.slackToken!, channelName: slackAction.slackChannel!, message: slackAction.message!) { (data) in
             print(data)
         }
     }
     
-    func sendSms(smsAction:SmsAction) {
-        let urlSafeBody = smsAction.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
-        let phoneNumber = smsAction.recipientNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-        if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?address=" + phoneNumber + ",&body=\(urlSafeBody)") {
-            WKExtension.sharedExtension().openSystemURL(url)
-        }
-    }
-    
     @IBAction func onSendButtonTouchUpInside() {
-        if let action = ActionsHelper.instance.getActiveAction() {
-            if action.actionType == PoggyConstants.actionType.SMS.rawValue {
-                if let smsAction = action as? SmsAction {
-                    sendSms(smsAction)
-                }
-            } else if action.actionType == PoggyConstants.actionType.SLACK.rawValue {
-                if let slackAction = action as? SlackAction {
-                    sendSlackMessage(slackAction)
-                }
-            }
-        }
+    
     }
 }

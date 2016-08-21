@@ -19,24 +19,9 @@ class ActionCell:UITableViewCell {
         if let description = action.actionDescription {
             descriptionLabel.text = description
         }
-        if action.actionType == PoggyConstants.actionType.SMS.rawValue {
-            if let smsAction = action as? SmsAction {
-                if let recipientName = smsAction.recipientName {
-                    recipientLabel.text = recipientName
-                } else {
-                    recipientLabel.text = smsAction.recipientNumber
-                }
-            }
-        }  else if action.actionType == PoggyConstants.actionType.SLACK.rawValue {
-            if let slackAction = action as? SlackAction {
-                if let channel = slackAction.slackChannel {
-                    recipientLabel.text = channel
-                }
-            }
-        }
         
-        if let active = action.isActive {
-            currentActionImage.hidden = !active
+        if let channel = action.slackChannel {
+            recipientLabel.text = channel
         }
     }
     

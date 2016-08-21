@@ -11,13 +11,11 @@
 		0FC6E328AAEB16C52496210D /* Pods_Poggy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FA9D51DD1C1343AD160379 /* Pods_Poggy.framework */; };
 		AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */; };
 		AF467ABB1CD58B6C00A744EA /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */; };
-		AF467ABC1CD58B6C00A744EA /* SmsActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */; };
 		AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
 		AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
 		AF4B8B601CE28A8F0074701C /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B8B5F1CE28A8F0074701C /* Slack.swift */; };
 		AF4B8B611CE299690074701C /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B8B5F1CE28A8F0074701C /* Slack.swift */; };
 		AF4B8B631CE3DC3F0074701C /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
-		AF64FC311CDFE5B800D156F2 /* AddNewActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */; };
 		AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */; };
 		AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
 		AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */; };
@@ -32,7 +30,6 @@
 		AF98B07F1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF98B07E1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */; };
 		AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */; };
-		AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0871CCCB0B900A97A94 /* GlanceController.swift */; };
 		AF98B08A1CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0891CCCB0B900A97A94 /* Assets.xcassets */; };
 		AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */; };
 		AFE180951CCEBF0A00A5BFC6 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */; };
@@ -104,10 +101,8 @@
 		61FA9D51DD1C1343AD160379 /* Pods_Poggy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poggy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyToolbar.swift; path = ViewControllers/PoggyToolbar.swift; sourceTree = "<group>"; };
 		AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsViewController.swift; path = ViewControllers/ActionsViewController.swift; sourceTree = "<group>"; };
-		AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmsActionViewController.swift; path = ViewControllers/SmsActionViewController.swift; sourceTree = "<group>"; };
 		AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyConstants.swift; path = Helpers/PoggyConstants.swift; sourceTree = "<group>"; };
 		AF4B8B5F1CE28A8F0074701C /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Slack.swift; path = Models/Slack.swift; sourceTree = "<group>"; };
-		AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewActionViewController.swift; path = ViewControllers/AddNewActionViewController.swift; sourceTree = "<group>"; };
 		AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackActionViewController.swift; path = ViewControllers/SlackActionViewController.swift; sourceTree = "<group>"; };
 		AF64FC341CE14DE400D156F2 /* SlackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackHelper.swift; path = Helpers/SlackHelper.swift; sourceTree = "<group>"; };
 		AF98B0471CCCB0B900A97A94 /* Poggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +124,6 @@
 		AF98B07E1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Poggy WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		AF98B0871CCCB0B900A97A94 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		AF98B0891CCCB0B900A97A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF98B08B1CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyAction.swift; path = Models/PoggyAction.swift; sourceTree = "<group>"; };
@@ -196,8 +190,6 @@
 			children = (
 				AF98B04E1CCCB0B900A97A94 /* Main.storyboard */,
 				AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */,
-				AF64FC301CDFE5B800D156F2 /* AddNewActionViewController.swift */,
-				AF467ABA1CD58B6C00A744EA /* SmsActionViewController.swift */,
 				AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */,
 				AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */,
 			);
@@ -288,7 +280,6 @@
 				AFE1809C1CCF648800A5BFC6 /* Poggy WatchKit Extension.entitlements */,
 				AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */,
 				AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */,
-				AF98B0871CCCB0B900A97A94 /* GlanceController.swift */,
 				AF98B0891CCCB0B900A97A94 /* Assets.xcassets */,
 				AF98B08B1CCCB0B900A97A94 /* Info.plist */,
 			);
@@ -439,7 +430,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Francesco Pretelli";
 				TargetAttributes = {
 					AF98B0461CCCB0B900A97A94 = {
@@ -648,11 +639,9 @@
 				AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */,
 				AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */,
 				AF4B8B601CE28A8F0074701C /* Slack.swift in Sources */,
-				AF467ABC1CD58B6C00A744EA /* SmsActionViewController.swift in Sources */,
 				AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */,
 				AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */,
 				AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */,
-				AF64FC311CDFE5B800D156F2 /* AddNewActionViewController.swift in Sources */,
 				AFE180981CCEC0BC00A5BFC6 /* ActionsHelper.swift in Sources */,
 				AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */,
 			);
@@ -683,7 +672,6 @@
 				AF4B8B631CE3DC3F0074701C /* SlackHelper.swift in Sources */,
 				AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */,
 				AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */,
-				AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */,
 				AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */,
 				AFE180A01CCF69F400A5BFC6 /* ActionsHelper.swift in Sources */,
 			);
@@ -756,8 +744,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -803,8 +793,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -823,6 +815,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -833,6 +826,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B724A44558AD8D8EBFF2464 /* Pods-Poggy WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Poggy WatchKit Extension/Poggy WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "Poggy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -850,6 +844,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2C184797B985ABC8B79F4DF /* Pods-Poggy WatchKit Extension.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Poggy WatchKit Extension/Poggy WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "Poggy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -866,10 +861,10 @@
 		AF98B0931CCCB0B900A97A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Poggy_WatchKit_Extension;
 				INFOPLIST_FILE = "Poggy WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy.watchkitapp;
@@ -886,10 +881,10 @@
 		AF98B0941CCCB0B900A97A94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Poggy_WatchKit_Extension;
 				INFOPLIST_FILE = "Poggy WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy.watchkitapp;
@@ -907,6 +902,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A2899CCF419A3F45306A4FB /* Pods-Poggy.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Poggy/Poggy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Francesco Pretelli (J89CYEGYT4)";
@@ -924,6 +920,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C95E49CB5E3CB11401495349 /* Pods-Poggy.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Poggy/Poggy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Francesco Pretelli (J89CYEGYT4)";

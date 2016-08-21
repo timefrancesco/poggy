@@ -89,21 +89,14 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         updateActions()
     }
     
-    func clearActiveAction(){
-        let activeActions = actions.filter {$0.isActive!}
-        for action in activeActions {
-            action.isActive = false
-        }
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "EditSmsActionSegue" {
+       /* if segue.identifier == "EditSmsActionSegue" {
             if let destination = segue.destinationViewController as? SingleActionViewController {                
                 if let action = sender as? SmsAction {
                     destination.updateFromActionsViewController(action)
                 }
             }
-        }
+        }*/
     }
     
     func syncActionsWithWatch(){
@@ -149,29 +142,16 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .Destructive, title: NSLocalizedString("Delete", comment: "")) { (action, indexPath) in
             self.actions.removeAtIndex(indexPath.row)
-            if self.actions.count > 0 {
-                let active = self.actions.filter { $0.isActive! }.first
-                if active == nil {
-                    self.actions[0].isActive = true
-                }
-            }
             self.saveActions()
         }
         
-        let edit = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Edit", comment: "")) { (action, indexPath) in
-            let action = self.actions[indexPath.row]
-            action.actionIndex = indexPath.row
-            self.performSegueWithIdentifier("EditSmsActionSegue", sender: action)
-        }
-        
-        edit.backgroundColor = PoggyConstants.POGGY_BLUE
-        return [delete, edit]
+        return [delete]
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        clearActiveAction()
-        actions[indexPath.row].isActive = true
-        saveActions()
+        let action = self.actions[indexPath.row]
+        action.actionIndex = indexPath.row
+        self.performSegueWithIdentifier("EditSmsActionSegue", sender: action)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
