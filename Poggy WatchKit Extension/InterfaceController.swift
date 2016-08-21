@@ -13,6 +13,7 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
     
+    @IBOutlet var noMsgLabel: WKInterfaceLabel!
     @IBOutlet var actionsTable: WKInterfaceTable!
     var actions = [PoggyAction]()
     
@@ -51,6 +52,8 @@ class InterfaceController: WKInterfaceController {
                 }
             }
         }
+        
+        noMsgLabel.setHidden(actions.count > 0)
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {

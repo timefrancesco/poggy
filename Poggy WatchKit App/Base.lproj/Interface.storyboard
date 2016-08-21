@@ -34,9 +34,13 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <label width="136" height="95" alignment="left" text="No Messages Defined  Use the iOS app to set up canned Slack messages " textAlignment="center" numberOfLines="0" id="oW2-yN-o90">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="actionsTable" destination="ecx-MF-lxv" id="dHK-tz-VAs"/>
+                        <outlet property="noMsgLabel" destination="oW2-yN-o90" id="jnv-1b-UOV"/>
                     </connections>
                 </controller>
             </objects>
