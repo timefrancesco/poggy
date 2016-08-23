@@ -6,6 +6,9 @@ PODS:
   - Eureka (1.7.0)
   - OAuthSwift (0.6.0)
   - ObjectMapper (1.4.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift2.3`)
@@ -13,6 +16,7 @@ DEPENDENCIES:
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `swift2.3`)
   - OAuthSwift (from `https://github.com/OAuthSwift/OAuthSwift.git`, branch `swift2.3`)
   - ObjectMapper
+  - SDWebImage
 
 EXTERNAL SOURCES:
   Alamofire:
@@ -42,7 +46,8 @@ SPEC CHECKSUMS:
   Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
   OAuthSwift: 8895267fbd6437a52aea26541572a617c7a8c7c1
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 82e0d3e5f79996b74fc8f522af41166364dbb47b
+PODFILE CHECKSUM: a626daa895bb6cf896d1354b4a046df423c7b406
 
 COCOAPODS: 1.1.0.beta.1

@@ -21,6 +21,40 @@ class SlackAuthResponse {
     }
 }
 
+class SlackTeamResponse: Mappable {
+    
+    dynamic var ok: Bool = false
+    var teamInfo: SlackTeam?
+    
+    required convenience init?(_ map: Map) { self.init() }
+    
+    // MARK: Mappable
+    func mapping(map: Map) {
+        ok <- map["ok"]
+        teamInfo <- map["team"]
+    }
+}
+
+class SlackTeam: Mappable {
+    
+    dynamic var id: String?
+    dynamic var name: String?
+    dynamic var domain: String?
+    dynamic var icon: String?
+    var image_default: Bool?
+    
+    required convenience init?(_ map: Map) { self.init() }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        domain <- map["domain"]
+        icon <- map["icon.image_132"]
+        image_default <- map["icon.image_default"]
+    }
+}
+
+
 class SlackChannelsResponse: Mappable {
     
     dynamic var ok: Bool = false
@@ -49,6 +83,7 @@ class SlackChannel: Mappable {
     var is_member: Bool?
     var created: Int?
     dynamic var name: String?
+    dynamic var teamIcon: String? //not part of Slack Apis
     
     required convenience init?(_ map: Map) { self.init() }
     
@@ -66,6 +101,7 @@ class SlackChannel: Mappable {
         is_member <- map["is_member"]
         created <- map["created"]
         name <- map["name"]
+        teamIcon <- map["teamIcon"] //not part of Slack Apis   
     }
 }
 

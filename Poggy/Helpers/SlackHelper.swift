@@ -28,6 +28,7 @@ class SlackHelper {
     let PRIVATE_CHANNELS_ENDPOINT = "https://slack.com/api/groups.list?token="
     let USER_LIST_ENDPOINT = "https://slack.com/api/users.list?token="
     let POST_MESSAGE_ENDPOINT = "https://slack.com/api/chat.postMessage?token="
+    let TEAM_INFO_ENDPOINT = "https://slack.com/api/team.info?token="
     
     static let instance = SlackHelper() // singleton
     private init() { } // This prevents others from using the default '()' initializer for this class.
@@ -45,7 +46,7 @@ class SlackHelper {
     oauthswift.authorize_url_handler = SafariURLHandler(viewController: viewController, oauthSwift:oauthswift )
         let state: String = generateStateWithLength(20) as String
         
-        oauthswift.authorizeWithCallbackURL( NSURL(string: POGGY_OAUTH_CALLBACK_URL)!, scope: "channels:read groups:read users:read chat:write:user", state: state, success: {
+        oauthswift.authorizeWithCallbackURL( NSURL(string: POGGY_OAUTH_CALLBACK_URL)!, scope: "channels:read groups:read users:read chat:write:user team:read", state: state, success: {
             credential, response, parameters in
             
                 if let teamName = parameters["team_name"] as? String{
@@ -90,6 +91,14 @@ class SlackHelper {
         
         sendRequestArray(endpoint, method: Method.GET, keyPath: "members") { (result: [SlackUser]?) in
             callback(data: result)
+        }
+    }
+    
+    func getTeamInfo(teamToken: String, callback: (data: SlackTeam?) -> Void) {
+        let endpoint = TEAM_INFO_ENDPOINT + teamToken
+        
+        sendRequestObject(endpoint, method: Method.GET) { (result: SlackTeamResponse?) in
+            callback(data: result?.teamInfo)
         }
     }
     

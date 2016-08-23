@@ -25,7 +25,9 @@ class PoggyConstants {
     static let SLACK_TEAMS_STORE_KEY = "SlackTeams"
     static let NEW_ACTION_CREATED = "NewPoggyAction"
     
-    static let POGGY_BLUE = UIColor(rgb: 0x20CDF0)
+    //static let POGGY_BLUE = UIColor(rgb: 0x20CDF0)
+    static let POGGY_BLUE = UIColor(rgb: 0x009EF4)
+    static let POGGY_BLACK = UIColor(rgb: 0x1E1E1E)
 }
 
 extension UIColor {

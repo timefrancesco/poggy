@@ -34,18 +34,18 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
     func setupTableView() {
         ButtonRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = PoggyConstants.POGGY_BLUE
-            cell.backgroundColor = UIColor.blackColor()
+            cell.backgroundColor = PoggyConstants.POGGY_BLACK
         }
         
         PushRow<String>.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = PoggyConstants.POGGY_BLUE
-            cell.backgroundColor = UIColor.blackColor()
+            cell.backgroundColor = PoggyConstants.POGGY_BLACK
             cell.detailTextLabel?.textColor = UIColor.whiteColor()
         }
         
         TextRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = PoggyConstants.POGGY_BLUE
-            cell.backgroundColor = UIColor.blackColor()
+            cell.backgroundColor = PoggyConstants.POGGY_BLACK
             cell.textField.textColor = UIColor.whiteColor()
         }
         
@@ -70,15 +70,21 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
             <<< PushRow<String>() { row in
                 row.title = NSLocalizedString("Channel", comment: "")
                 row.presentationMode = .SegueName(segueName: "ChannelSelectionSegue", completionCallback: nil)
-            }.cellUpdate({ (cell, row) in
-                if let channel = self.currentSlackAction.slackChannel {
+            }.cellUpdate({ [weak self] (cell, row) in
+                if let channel = self?.currentSlackAction.slackChannel {
                     cell.detailTextLabel?.text = channel.name
-                } else if let user = self.currentSlackAction.slackUser {
+                } else if let user = self?.currentSlackAction.slackUser {
                     cell.detailTextLabel?.text = user.username
                 }
+               
+                if self?.currentSlackAction.slackTeam == nil {
+                    row.disabled = true
+                } else {
+                    row.disabled = false
+                }
                 
-                row.disabled = self.currentSlackAction.slackTeam == nil ? true : false
-                print (row.isDisabled)
+                //row.isDisabled = self?.currentSlackAction.slackTeam == nil ? true : false
+                print (row.disabled)
             })
             <<< TextRow("Message") { row in
                 row.title = NSLocalizedString("Message", comment: "")
@@ -92,7 +98,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
                 self.poggyToolbar.sizeToFit()
             })
         
-        super.tableView?.backgroundColor = UIColor.blackColor()
+        super.tableView?.backgroundColor = PoggyConstants.POGGY_BLACK
         super.tableView?.separatorColor = PoggyConstants.POGGY_BLUE
         super.tableView?.tintColor = PoggyConstants.POGGY_BLUE
     }
@@ -200,7 +206,7 @@ class SlackTeamSelectionViewController: FormViewController {
         
         ButtonRow.defaultCellUpdate = { cell, row in
             cell.textLabel?.textColor = PoggyConstants.POGGY_BLUE
-            cell.backgroundColor = UIColor.blackColor()
+            cell.backgroundColor =  PoggyConstants.POGGY_BLACK
         }
         
         form +++ Section("") { section in
@@ -229,12 +235,12 @@ class SlackTeamSelectionViewController: FormViewController {
                 row.onCellSelection({ (cell, row) in
                     self.doOAuthSlack()
                 }).cellUpdate({ (cell, row) in
-                    cell.textLabel?.textColor = UIColor.blackColor()
+                    cell.textLabel?.textColor =  PoggyConstants.POGGY_BLACK
                     cell.backgroundColor = PoggyConstants.POGGY_BLUE
                 })
         }
         
-        super.tableView?.backgroundColor = UIColor.blackColor()
+        super.tableView?.backgroundColor =  PoggyConstants.POGGY_BLACK
         super.tableView?.separatorColor = PoggyConstants.POGGY_BLUE
         super.tableView?.tintColor = PoggyConstants.POGGY_BLUE
     }
@@ -243,7 +249,7 @@ class SlackTeamSelectionViewController: FormViewController {
         SlackHelper.instance.authenticate(self) { [weak self] (slackDetails) in
             if let slack = slackDetails {
                 print (slack.teamName)
-                print (slack.token)
+               // print (slack.token)
                 
                 self?.form.removeAll()
                 self?.slackTeams = SlackHelper.instance.getAuthCredentials()
@@ -262,7 +268,10 @@ class SlackChannelSelectionViewController: FormViewController {
     private var publicChannels:[SlackChannel]?
     private var privateChannels:[SlackChannel]?
     private var users:[SlackUser]?
+    private var teamIcon:String?
     private let apiDispatchGroup = dispatch_group_create();
+    
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -271,9 +280,16 @@ class SlackChannelSelectionViewController: FormViewController {
         getPublicChannels()
         getPrivateChannels()
         getUsers()
+        getTeamInfo()
+        
+        super.tableView?.hidden = true
+        activityIndicatorView.startAnimating()
         
         dispatch_group_notify(apiDispatchGroup, dispatch_get_main_queue(), {
             self.setupTableView()
+            super.tableView?.hidden = false
+            self.activityIndicatorView.stopAnimating()
+            self.activityIndicatorView.hidden = true
         })
     }
     
@@ -292,7 +308,7 @@ class SlackChannelSelectionViewController: FormViewController {
                 $0.options = [publicSection, privateSection, usersSection]
                 $0.value = publicSection
         }.cellSetup({ (cell, row) in
-            cell.backgroundColor = UIColor.blackColor()
+            cell.backgroundColor =  PoggyConstants.POGGY_BLACK
             cell.tintColor = PoggyConstants.POGGY_BLUE
         })
         
@@ -304,11 +320,13 @@ class SlackChannelSelectionViewController: FormViewController {
             if let pubChannels = publicChannels {
                 for channel in pubChannels {
                     section.append(ButtonRow() { row in
-                        row.title =  channel.name
-                        row.onCellSelection({ (cell, row) in
-                            if self.delegate != nil {
-                                self.delegate?.slackChannelSelected(channel)
-                                self.navigationController?.popViewControllerAnimated(true)
+                        let channelName = "#" + channel.name!
+                        row.title =  channelName
+                        row.onCellSelection({ [weak self] (cell, row) in
+                            if self?.delegate != nil {
+                                channel.teamIcon = self?.teamIcon
+                                self?.delegate?.slackChannelSelected(channel)
+                                self?.navigationController?.popViewControllerAnimated(true)
                             }
                         })
                     })
@@ -325,10 +343,10 @@ class SlackChannelSelectionViewController: FormViewController {
                 for channel in privateChannels {
                     section.append( ButtonRow() { row in
                         row.title =  channel.name
-                        row.onCellSelection({ (cell, row) in
-                            if self.delegate != nil {
-                                self.delegate?.slackChannelSelected(channel)
-                                self.navigationController?.popViewControllerAnimated(true)
+                        row.onCellSelection({ [weak self] (cell, row) in
+                            if self?.delegate != nil {
+                                self?.delegate?.slackChannelSelected(channel)
+                                self?.navigationController?.popViewControllerAnimated(true)
                             }
                         })
                     })
@@ -345,10 +363,10 @@ class SlackChannelSelectionViewController: FormViewController {
                 for user in users {
                     section.append(ButtonRow() { row in
                         row.title =  user.username
-                        row.onCellSelection({ (cell, row) in
-                            if self.delegate != nil {
-                                self.delegate?.slackUserSelected(user)
-                                self.navigationController?.popViewControllerAnimated(true)
+                        row.onCellSelection({ [weak self] (cell, row) in
+                            if self?.delegate != nil {
+                                self?.delegate?.slackUserSelected(user)
+                                self?.navigationController?.popViewControllerAnimated(true)
                             }
                         })
                     })
@@ -356,7 +374,7 @@ class SlackChannelSelectionViewController: FormViewController {
             }
         }
         
-        super.tableView?.backgroundColor = UIColor.blackColor()
+        super.tableView?.backgroundColor =  PoggyConstants.POGGY_BLACK
         super.tableView?.separatorColor = PoggyConstants.POGGY_BLUE
         super.tableView?.tintColor = PoggyConstants.POGGY_BLUE
     }
@@ -366,9 +384,11 @@ class SlackChannelSelectionViewController: FormViewController {
     func getPublicChannels() {
         if let token = teamToken {
             dispatch_group_enter(apiDispatchGroup)
-            SlackHelper.instance.getChannels(token, type: .PUBLIC, callback: { (data) in
-                self.publicChannels = data
-                dispatch_group_leave(self.apiDispatchGroup)
+            SlackHelper.instance.getChannels(token, type: .PUBLIC, callback: { [weak self] (data) in
+                self?.publicChannels = data
+                if let dispatchGroup = self?.apiDispatchGroup {
+                    dispatch_group_leave(dispatchGroup)
+                }
             })
         }
     }
@@ -376,9 +396,11 @@ class SlackChannelSelectionViewController: FormViewController {
     func getPrivateChannels() {
         if let token = teamToken {
             dispatch_group_enter(apiDispatchGroup)
-            SlackHelper.instance.getChannels(token, type: .PRIVATE, callback: { (data) in
-                self.privateChannels = data
-                dispatch_group_leave(self.apiDispatchGroup)
+            SlackHelper.instance.getChannels(token, type: .PRIVATE, callback: { [weak self] (data) in
+                self?.privateChannels = data
+                if let dispatchGroup = self?.apiDispatchGroup {
+                    dispatch_group_leave(dispatchGroup)
+                }
             })
         }
     }
@@ -386,10 +408,24 @@ class SlackChannelSelectionViewController: FormViewController {
     func getUsers() {
         if let token = teamToken {
             dispatch_group_enter(apiDispatchGroup)
-            SlackHelper.instance.getUsers(token, callback: { (data) in
-                self.users = data
-                dispatch_group_leave(self.apiDispatchGroup)
+            SlackHelper.instance.getUsers(token, callback: { [weak self] (data) in
+                self?.users = data
+                if let dispatchGroup = self?.apiDispatchGroup {
+                    dispatch_group_leave(dispatchGroup)
+                }
             })
+        }
+    }
+    
+    func getTeamInfo() {
+        if let token = teamToken {
+            dispatch_group_enter(apiDispatchGroup)
+            SlackHelper.instance.getTeamInfo(token) { [weak self] (data) in
+                self?.teamIcon = data?.icon
+                if let dispatchGroup = self?.apiDispatchGroup {
+                    dispatch_group_leave(dispatchGroup)
+                }
+            }
         }
     }
 }

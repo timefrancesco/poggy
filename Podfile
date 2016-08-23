@@ -9,6 +9,7 @@ target 'Poggy' do
   shared_pods
   pod 'OAuthSwift', :git => 'https://github.com/OAuthSwift/OAuthSwift.git', :branch => 'swift2.3'
   pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'swift2.3'
+  pod 'SDWebImage'
   
 end
 target 'Poggy WatchKit Extension' do

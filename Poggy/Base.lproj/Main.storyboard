@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A294a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zaW-AH-p6N">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zaW-AH-p6N">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -10,11 +10,11 @@
         <scene sceneID="sci-CH-4Ih">
             <objects>
                 <navigationController id="zaW-AH-p6N" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lWg-os-rYe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lWg-os-rYe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.61960784313725492" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,17 +41,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iwN-0D-FIO">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActionCell" id="axb-jc-aof" customClass="ActionCell" customModule="Poggy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="axb-jc-aof" id="dus-h8-xD5">
-                                            <frame key="frameInset" width="375" height="70"/>
+                                            <frame key="frameInset" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Action Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-Rw-0iY">
@@ -60,7 +59,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="TGa-2m-jOY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -73,11 +72,17 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-xW-Jbe">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slack-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-xW-Jbe">
+                                                    <color key="tintColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="D9w-9h-uXw"/>
-                                                        <constraint firstAttribute="height" constant="25" id="IWd-go-khy"/>
+                                                        <constraint firstAttribute="width" constant="30" id="D9w-9h-uXw"/>
+                                                        <constraint firstAttribute="height" constant="30" id="IWd-go-khy"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="D9w-9h-uXw"/>
@@ -96,7 +101,7 @@
                                                         <constraint firstAttribute="height" constant="13" id="g2A-DL-aIH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -126,10 +131,10 @@
                                                     <exclude reference="DhN-QE-Z6Q"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="9b5-Xu-cv8"/>
-                                                    <exclude reference="AtN-UW-R2C"/>
                                                     <exclude reference="fg8-AZ-vpp"/>
                                                     <exclude reference="ytS-Q2-S9j"/>
+                                                    <exclude reference="9b5-Xu-cv8"/>
+                                                    <exclude reference="AtN-UW-R2C"/>
                                                     <exclude reference="92U-mp-ko6"/>
                                                     <exclude reference="DrG-aH-ueh"/>
                                                     <exclude reference="pWx-2h-O9b"/>
@@ -142,10 +147,10 @@
                                                     <include reference="DhN-QE-Z6Q"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="9b5-Xu-cv8"/>
-                                                    <include reference="AtN-UW-R2C"/>
                                                     <include reference="fg8-AZ-vpp"/>
                                                     <include reference="ytS-Q2-S9j"/>
+                                                    <include reference="9b5-Xu-cv8"/>
+                                                    <include reference="AtN-UW-R2C"/>
                                                     <include reference="92U-mp-ko6"/>
                                                     <include reference="DrG-aH-ueh"/>
                                                     <include reference="pWx-2h-O9b"/>
@@ -153,7 +158,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="currentActionImage" destination="Ya5-xW-Jbe" id="XZR-Ln-0YF"/>
                                             <outlet property="descriptionLabel" destination="hlB-Rw-0iY" id="vw6-Jm-Zpq"/>
@@ -163,13 +168,13 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCt-VR-FJG">
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="6yp-K3-l7j"/>
                                     <constraint firstAttribute="width" constant="70" id="ojh-FG-6I5"/>
                                 </constraints>
                                 <state key="normal" title="ADD">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -193,7 +198,7 @@
                                     <constraint firstAttribute="height" constant="138" id="d5i-KI-hWh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -209,7 +214,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sCt-VR-FJG" firstAttribute="top" secondItem="iwN-0D-FIO" secondAttribute="bottom" constant="8" id="1gj-xl-XzP"/>
                             <constraint firstItem="nNs-Tl-wc5" firstAttribute="centerX" secondItem="afu-hR-D3l" secondAttribute="centerX" id="408-LZ-aJt"/>
@@ -226,14 +231,14 @@
                                 <exclude reference="nNs-Tl-wc5"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1gj-xl-XzP"/>
-                                <exclude reference="oLq-JA-I5S"/>
-                                <exclude reference="408-LZ-aJt"/>
-                                <exclude reference="yzs-nb-FNT"/>
                                 <exclude reference="A0B-79-wPU"/>
                                 <exclude reference="Q40-y6-Xlb"/>
                                 <exclude reference="Vxv-bE-QQ2"/>
                                 <exclude reference="tXo-vP-K49"/>
+                                <exclude reference="408-LZ-aJt"/>
+                                <exclude reference="yzs-nb-FNT"/>
+                                <exclude reference="1gj-xl-XzP"/>
+                                <exclude reference="oLq-JA-I5S"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -242,14 +247,14 @@
                                 <include reference="nNs-Tl-wc5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1gj-xl-XzP"/>
-                                <include reference="oLq-JA-I5S"/>
-                                <include reference="408-LZ-aJt"/>
-                                <include reference="yzs-nb-FNT"/>
                                 <include reference="A0B-79-wPU"/>
                                 <include reference="Q40-y6-Xlb"/>
                                 <include reference="Vxv-bE-QQ2"/>
                                 <include reference="tXo-vP-K49"/>
+                                <include reference="408-LZ-aJt"/>
+                                <include reference="yzs-nb-FNT"/>
+                                <include reference="1gj-xl-XzP"/>
+                                <include reference="oLq-JA-I5S"/>
                             </mask>
                         </variation>
                     </view>
@@ -275,7 +280,7 @@
                     <view key="view" contentMode="scaleToFill" id="9D3-RJ-guN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="uRG-02-Grt" kind="show" identifier="TeamSelectionSegue" id="p53-3A-dn1"/>
@@ -297,7 +302,7 @@
                     <view key="view" contentMode="scaleToFill" id="Vp7-2U-OD0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NS-3n-hFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,16 +312,29 @@
         <!--Slack Channel Selection View Controller-->
         <scene sceneID="LMu-lZ-2TJ">
             <objects>
-                <viewController id="8Gb-9b-qZn" customClass="SlackChannelSelectionViewController" customModule="Poggy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8Gb-9b-qZn" customClass="SlackChannelSelectionViewController" customModule="Poggy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2wZ-2Q-FoW"/>
                         <viewControllerLayoutGuide type="bottom" id="pUd-gr-rmo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="y4X-Bm-bQC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="y4X-Bm-bQC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9nU-Ss-Fch">
+                                <color key="color" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9nU-Ss-Fch" firstAttribute="centerX" secondItem="y4X-Bm-bQC" secondAttribute="centerX" id="XvV-rO-uTy"/>
+                            <constraint firstItem="9nU-Ss-Fch" firstAttribute="centerY" secondItem="y4X-Bm-bQC" secondAttribute="centerY" id="oFZ-vf-02F"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="9nU-Ss-Fch" id="faK-zb-BJG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pa6-3y-2Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -324,6 +342,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Check" width="25" height="25"/>
+        <image name="Slack-Icon" width="32" height="32"/>
     </resources>
 </document>
