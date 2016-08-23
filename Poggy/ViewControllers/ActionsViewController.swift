@@ -91,7 +91,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "EditActionSegue" {
+        if segue.identifier == "NewActionSegue" {
             if let destination = segue.destinationViewController as? SlackActionViewController {
                 if let action = sender as? PoggyAction {
                     destination.updateFromActionsViewController(action)
@@ -155,7 +155,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         let action = self.actions[indexPath.row]
         action.actionIndex = indexPath.row
-        self.performSegueWithIdentifier("EditActionSegue", sender: action)
+        self.performSegueWithIdentifier("NewActionSegue", sender: action)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

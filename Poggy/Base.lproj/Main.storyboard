@@ -10,7 +10,7 @@
         <scene sceneID="sci-CH-4Ih">
             <objects>
                 <navigationController id="zaW-AH-p6N" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lWg-os-rYe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lWg-os-rYe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,7 +37,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bq7-Mo-2n6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="afu-hR-D3l">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iwN-0D-FIO">
@@ -263,7 +263,6 @@
                         <outlet property="addNewActionButton" destination="sCt-VR-FJG" id="Hgo-rI-bmy"/>
                         <outlet property="noActionsLabel" destination="nNs-Tl-wc5" id="dl5-57-rHe"/>
                         <outlet property="tableView" destination="iwN-0D-FIO" id="x8V-bp-JYu"/>
-                        <segue destination="yn8-cZ-SLX" kind="show" identifier="EditActionSegue" id="Qaj-1j-UV2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gN-0k-SKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,7 +278,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nAi-rl-QAJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9D3-RJ-guN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -301,7 +300,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bSz-dh-Z9d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vp7-2U-OD0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -345,7 +344,4 @@
     <resources>
         <image name="Slack-Icon" width="32" height="32"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Qaj-1j-UV2"/>
-    </inferredMetricsTieBreakers>
 </document>
