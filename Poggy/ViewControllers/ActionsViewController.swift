@@ -91,13 +91,13 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       /* if segue.identifier == "EditSmsActionSegue" {
-            if let destination = segue.destinationViewController as? SingleActionViewController {                
-                if let action = sender as? SmsAction {
+        if segue.identifier == "EditActionSegue" {
+            if let destination = segue.destinationViewController as? SlackActionViewController {
+                if let action = sender as? PoggyAction {
                     destination.updateFromActionsViewController(action)
                 }
             }
-        }*/
+        }
     }
     
     func syncActionsWithWatch(){
@@ -155,7 +155,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         let action = self.actions[indexPath.row]
         action.actionIndex = indexPath.row
-        self.performSegueWithIdentifier("EditSmsActionSegue", sender: action)
+        self.performSegueWithIdentifier("EditActionSegue", sender: action)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

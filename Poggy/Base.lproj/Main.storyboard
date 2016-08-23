@@ -96,9 +96,9 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-QE-Z6Q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipientg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-QE-Z6Q">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="13" id="g2A-DL-aIH"/>
+                                                        <constraint firstAttribute="height" constant="16" id="g2A-DL-aIH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -263,6 +263,7 @@
                         <outlet property="addNewActionButton" destination="sCt-VR-FJG" id="Hgo-rI-bmy"/>
                         <outlet property="noActionsLabel" destination="nNs-Tl-wc5" id="dl5-57-rHe"/>
                         <outlet property="tableView" destination="iwN-0D-FIO" id="x8V-bp-JYu"/>
+                        <segue destination="yn8-cZ-SLX" kind="show" identifier="EditActionSegue" id="Qaj-1j-UV2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gN-0k-SKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -344,4 +345,7 @@
     <resources>
         <image name="Slack-Icon" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qaj-1j-UV2"/>
+    </inferredMetricsTieBreakers>
 </document>

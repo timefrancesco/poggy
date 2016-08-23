@@ -118,6 +118,7 @@ class SlackActionViewController:FormViewController, PoggySlackDelegate, PoggyToo
     
     func updateFromActionsViewController(action:PoggyAction) {
         actionToEdit = action
+        currentSlackAction = action
     }
     
     func addNewAction() {

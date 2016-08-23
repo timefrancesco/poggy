@@ -25,14 +25,12 @@ class ActionCell:UITableViewCell {
             recipientLabel.text = channel.name
             if let teamIcon = channel.teamIcon {
                 currentActionImage.sd_setImageWithURL(NSURL(string: (teamIcon)),placeholderImage:  UIImage(named:"Slack-Icon"),  options: [SDWebImageOptions.RetryFailed ])
-              //  currentActionImage.layer.cornerRadius = currentActionImage.frame.width / 2
             }
             
         } else if let user = action.slackUser {
             recipientLabel.text = user.username
             if let userIcon = user.profileImage {
                 currentActionImage.sd_setImageWithURL(NSURL(string: (userIcon)),placeholderImage:  UIImage(named:"Alien-Icon"),  options: [SDWebImageOptions.RetryFailed ])
-               // currentActionImage.layer.cornerRadius = currentActionImage.frame.width / 2
             }
         }
         
@@ -44,7 +42,5 @@ class ActionCell:UITableViewCell {
     override func prepareForReuse() {
         descriptionLabel.text = ""
         recipientLabel.text = ""
-        
-        //currentActionImage.layer.cornerRadius = 0
     }
 }
