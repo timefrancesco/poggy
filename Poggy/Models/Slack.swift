@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class SlackAuthResponse {
+    
     dynamic var teamName:String?
     dynamic var token:String?
     
@@ -53,7 +54,6 @@ class SlackTeam: Mappable {
         image_default <- map["icon.image_default"]
     }
 }
-
 
 class SlackChannelsResponse: Mappable {
     

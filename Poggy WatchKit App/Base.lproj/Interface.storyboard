@@ -46,5 +46,23 @@
             </objects>
             <point key="canvasLocation" x="164" y="201"/>
         </scene>
+        <!--LoadingController-->
+        <scene sceneID="fxF-xF-uAI">
+            <objects>
+                <controller identifier="LoadingController" id="r4w-oI-4wB" customClass="SendingController" customModule="Poggy_WatchKit_Extension">
+                    <items>
+                        <imageView width="136" height="119" alignment="left" image="Activity1" contentMode="center" id="hNp-Fe-27y"/>
+                        <label width="136" alignment="left" text="SENDING" textAlignment="center" id="ASh-Ke-oek">
+                            <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="loadingAnimationImage" destination="hNp-Fe-27y" id="7kH-rG-om3"/>
+                        <outlet property="statusLabel" destination="ASh-Ke-oek" id="tZp-Rt-Ea0"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="437" y="201"/>
+        </scene>
     </scenes>
 </document>

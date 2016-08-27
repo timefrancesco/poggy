@@ -36,8 +36,8 @@ class SlackHelper {
 #if os (iOS) //no need to authenticate from watch
     func authenticate(viewController:UIViewController, callback: (slackDetails: SlackAuthResponse?) -> Void)  {
         let oauthswift = OAuth2Swift(
-            consumerKey:    "41121903398.41135431681",
-            consumerSecret: "3481b8cc6da070f9957e1da380906ef5",
+            consumerKey:    getSlackConsumerKey(),
+            consumerSecret: getSlackConsumerSecret(),
             authorizeUrl:   OAUTH_ENDPOINT,
             accessTokenUrl: OUTH_TOKEN_ENDPOINT,
             responseType:   "code"
@@ -74,6 +74,24 @@ class SlackHelper {
     
     func getAuthCredentials() -> [String: String]? {
         return NSUserDefaults.standardUserDefaults().valueForKey(PoggyConstants.SLACK_TEAMS_STORE_KEY) as? [String: String]
+    }
+    
+    func setSlackConsumerKey(key:String) {
+        NSUserDefaults.standardUserDefaults().setValue(key, forKey: PoggyConstants.SLACK_CONSUMER_KEY)
+    }
+    
+    func getSlackConsumerKey() -> String {
+        let key = NSUserDefaults.standardUserDefaults().valueForKey(PoggyConstants.SLACK_CONSUMER_KEY)
+        return key != nil ? key as! String : ""
+    }
+    
+    func setSlackConsumerSecret(key:String) {
+        NSUserDefaults.standardUserDefaults().setValue(key, forKey: PoggyConstants.SLACK_CONSUMER_SECRET)
+    }
+    
+    func getSlackConsumerSecret() -> String {
+        let key = NSUserDefaults.standardUserDefaults().valueForKey(PoggyConstants.SLACK_CONSUMER_SECRET)
+        return key != nil ? key as! String : ""
     }
     
     //MARK: - API Calls

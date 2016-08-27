@@ -19,7 +19,6 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Poggy"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,6 +33,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
             NSLog("WCSession not supported")
         }
         
+        getSlackKeys()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.newActionHasBeenAdded(_:)), name: PoggyConstants.NEW_ACTION_CREATED, object: nil)
     }
 
@@ -54,6 +54,29 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "NewActionSegue" {
+            if let destination = segue.destinationViewController as? SlackActionViewController {
+                if let action = sender as? PoggyAction {
+                    destination.updateFromActionsViewController(action)
+                }
+            }
+        }
+    }
+    
+    func getSlackKeys() {
+        SlackHelper.instance.setSlackConsumerKey(BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_KEY))
+        SlackHelper.instance.setSlackConsumerSecret(BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_SECRET))
+        
+        NSLog("Got SlackKeys")
+        
+       /* print(SlackHelper.instance.getSlackConsumerKey())
+        print(SlackHelper.instance.getSlackConsumerSecret())*/
+        
+     /*   let a = BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_KEY)
+        print(BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_KEY))*/
     }
     
     //MARK: WCSessionDelegate functions
@@ -88,16 +111,6 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     func saveActions() {
         ActionsHelper.instance.setActions(actions)
         updateActions()
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "NewActionSegue" {
-            if let destination = segue.destinationViewController as? SlackActionViewController {
-                if let action = sender as? PoggyAction {
-                    destination.updateFromActionsViewController(action)
-                }
-            }
-        }
     }
     
     func syncActionsWithWatch(){

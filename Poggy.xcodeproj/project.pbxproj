@@ -19,6 +19,7 @@
 		AF4B8B631CE3DC3F0074701C /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
 		AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */; };
 		AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
+		AF93D4C31D6D1E5400ECB555 /* SendingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93D4C21D6D1E5400ECB555 /* SendingController.swift */; };
 		AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */; };
 		AF98B0501CCCB0B900A97A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF98B04E1CCCB0B900A97A94 /* Main.storyboard */; };
 		AF98B0521CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0511CCCB0B900A97A94 /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		AF4B8B5F1CE28A8F0074701C /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Slack.swift; path = Models/Slack.swift; sourceTree = "<group>"; };
 		AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackActionViewController.swift; path = ViewControllers/SlackActionViewController.swift; sourceTree = "<group>"; };
 		AF64FC341CE14DE400D156F2 /* SlackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackHelper.swift; path = Helpers/SlackHelper.swift; sourceTree = "<group>"; };
+		AF93D4C21D6D1E5400ECB555 /* SendingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendingController.swift; sourceTree = "<group>"; };
 		AF98B0471CCCB0B900A97A94 /* Poggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF98B04F1CCCB0B900A97A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		AF98B0891CCCB0B900A97A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF98B08B1CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC8DF141D71ABA5005D090A /* Poggy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Poggy-Bridging-Header.h"; sourceTree = "<group>"; };
 		AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyAction.swift; path = Models/PoggyAction.swift; sourceTree = "<group>"; };
 		AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCell.swift; path = TableCells/ActionCell.swift; sourceTree = "<group>"; };
 		AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsHelper.swift; path = Helpers/ActionsHelper.swift; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 				AF98B0511CCCB0B900A97A94 /* Assets.xcassets */,
 				AF98B0531CCCB0B900A97A94 /* LaunchScreen.storyboard */,
 				AF98B0561CCCB0B900A97A94 /* Info.plist */,
+				AFC8DF141D71ABA5005D090A /* Poggy-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -281,10 +285,11 @@
 			children = (
 				AFE1809C1CCF648800A5BFC6 /* Poggy WatchKit Extension.entitlements */,
 				AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */,
+				13C225AF1D6955C10075A29A /* ActionRowController.swift */,
+				AF93D4C21D6D1E5400ECB555 /* SendingController.swift */,
 				AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */,
 				AF98B0891CCCB0B900A97A94 /* Assets.xcassets */,
 				AF98B08B1CCCB0B900A97A94 /* Info.plist */,
-				13C225AF1D6955C10075A29A /* ActionRowController.swift */,
 			);
 			path = "Poggy WatchKit Extension";
 			sourceTree = "<group>";
@@ -672,6 +677,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE1809E1CCF69D800A5BFC6 /* PoggyAction.swift in Sources */,
+				AF93D4C31D6D1E5400ECB555 /* SendingController.swift in Sources */,
 				AF4B8B611CE299690074701C /* Slack.swift in Sources */,
 				AF4B8B631CE3DC3F0074701C /* SlackHelper.swift in Sources */,
 				AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */,
@@ -867,7 +873,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-watch";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				IBSC_MODULE = Poggy_WatchKit_Extension;
@@ -879,7 +885,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
@@ -887,7 +893,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-watch";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				IBSC_MODULE = Poggy_WatchKit_Extension;
@@ -899,7 +905,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -909,17 +915,20 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Poggy/Poggy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Francesco Pretelli (J89CYEGYT4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Poggy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Poggy/Poggy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -931,17 +940,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Poggy/Poggy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Francesco Pretelli (J89CYEGYT4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Poggy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Poggy/Poggy-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

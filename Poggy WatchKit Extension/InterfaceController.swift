@@ -16,18 +16,12 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var noMsgLabel: WKInterfaceLabel!
     @IBOutlet var actionsTable: WKInterfaceTable!
     var actions = [PoggyAction]()
-    
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
-    }
 
     override func willActivate() {
         super.willActivate()
         
-        updateActions()
-        
-        let nc = NSNotificationCenter.defaultCenter()
-        nc.addObserver(self, selector: #selector(self.updateActions), name: PoggyConstants.NEW_DATA_NOTIFICATION, object: nil)
+        updateActions()        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updateActions), name: PoggyConstants.NEW_DATA_NOTIFICATION, object: nil)
     }
     
     override func didDeactivate() {
@@ -57,8 +51,8 @@ class InterfaceController: WKInterfaceController {
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        let action = actions[rowIndex]
-        sendSlackMessage(action)
+        let selectedAction = actions[rowIndex]
+        pushControllerWithName("LoadingController", context: selectedAction)
     }
     
     func sendSlackMessage(slackAction: PoggyAction) {
@@ -69,8 +63,5 @@ class InterfaceController: WKInterfaceController {
                 print(data)
             }
         }
-    }
-    
-    
-    
+    }    
 }

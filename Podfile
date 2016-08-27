@@ -10,7 +10,7 @@ target 'Poggy' do
   pod 'OAuthSwift', :git => 'https://github.com/OAuthSwift/OAuthSwift.git', :branch => 'swift2.3'
   pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'swift2.3'
   pod 'SDWebImage'
-  
+  pod 'BuddyBuildSDK'
 end
 target 'Poggy WatchKit Extension' do
   platform :watchos, '3.0'

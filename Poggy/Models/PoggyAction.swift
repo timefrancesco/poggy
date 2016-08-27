@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class PoggyAction: Mappable {
+    
     var actionType:Int?
     var actionIndex:Int? //used for update
     
@@ -19,7 +20,6 @@ class PoggyAction: Mappable {
     var slackChannel:SlackChannel?
     var slackUser:SlackUser?
     dynamic var slackTeam:String?
-    
     
     required convenience init?(_ map: Map) { self.init() }
     
