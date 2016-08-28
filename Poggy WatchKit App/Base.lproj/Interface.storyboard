@@ -34,7 +34,8 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <label width="136" height="95" alignment="left" text="No Messages Defined  Use the iOS app to set up canned Slack messages " textAlignment="center" numberOfLines="0" id="oW2-yN-o90">
+                        <label width="156" height="95" alignment="left" text="No Messages Defined  Use the iOS app to set up canned Slack messages " textAlignment="center" numberOfLines="0" id="oW2-yN-o90">
+                            <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
                     </items>
@@ -44,15 +45,15 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="164" y="201"/>
+            <point key="canvasLocation" x="163.89743589743591" y="200.94871794871796"/>
         </scene>
         <!--LoadingController-->
         <scene sceneID="fxF-xF-uAI">
             <objects>
                 <controller identifier="LoadingController" id="r4w-oI-4wB" customClass="SendingController" customModule="Poggy_WatchKit_Extension">
                     <items>
-                        <imageView width="136" height="119" alignment="left" image="Activity1" contentMode="center" id="hNp-Fe-27y"/>
-                        <label width="136" alignment="left" text="SENDING" textAlignment="center" id="ASh-Ke-oek">
+                        <imageView width="156" height="119" alignment="left" image="Activity1" contentMode="center" id="hNp-Fe-27y"/>
+                        <label width="156" alignment="left" text="SENDING" textAlignment="center" id="ASh-Ke-oek">
                             <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </label>
                     </items>
@@ -62,7 +63,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="437" y="201"/>
+            <point key="canvasLocation" x="435.89743589743591" y="200.94871794871796"/>
         </scene>
     </scenes>
 </document>

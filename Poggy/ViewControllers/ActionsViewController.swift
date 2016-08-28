@@ -69,14 +69,6 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     func getSlackKeys() {
         SlackHelper.instance.setSlackConsumerKey(BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_KEY))
         SlackHelper.instance.setSlackConsumerSecret(BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_SECRET))
-        
-        NSLog("Got SlackKeys")
-        
-       /* print(SlackHelper.instance.getSlackConsumerKey())
-        print(SlackHelper.instance.getSlackConsumerSecret())*/
-        
-     /*   let a = BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_KEY)
-        print(BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_KEY))*/
     }
     
     //MARK: WCSessionDelegate functions
@@ -157,9 +149,9 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .Destructive, title: NSLocalizedString("Delete", comment: "")) { (action, indexPath) in
-            self.actions.removeAtIndex(indexPath.row)
-            self.saveActions()
+        let delete = UITableViewRowAction(style: .Destructive, title: NSLocalizedString("Delete", comment: "")) { [weak self] (action, indexPath) in
+            self?.actions.removeAtIndex(indexPath.row)
+            self?.saveActions()
         }
         
         return [delete]

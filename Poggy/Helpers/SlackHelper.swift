@@ -129,7 +129,7 @@ class SlackHelper {
     }
     
     private func sendRequestObject<T: Mappable>(endpoint: String, method: Alamofire.Method, headers: [String: String]? = nil, parameters: [String: AnyObject]? = nil, keyPath: String = "", encoding: ParameterEncoding? = .JSON, callback: (result: T?) -> Void) {
-        NSLog("API Calling sendRequestObject: " + endpoint)
+       // NSLog("API Calling sendRequestObject: " + endpoint)
         
         Alamofire.request(method, endpoint, headers: headers, parameters: parameters, encoding: encoding!).responseObject(keyPath: keyPath) { (response: Response<T, NSError>) in
             guard response.result.error == nil
