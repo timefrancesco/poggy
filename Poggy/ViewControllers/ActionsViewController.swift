@@ -8,12 +8,9 @@
 
 import UIKit
 import WatchConnectivity
+import ObjectMapper
 
-protocol NewActionDelegate {
-    func addAction(action:PoggyAction, update:Bool)
-}
-
-class ActionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewActionDelegate, WCSessionDelegate  {
+class ActionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate  {
 
     @IBOutlet weak var noActionsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -22,12 +19,12 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Poggy"
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         readActions()
+        addNavBarButtons()
         
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
@@ -36,8 +33,21 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             NSLog("WCSession not supported")
         }
+        
+        getSlackKeys()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.newActionHasBeenAdded(_:)), name: PoggyConstants.NEW_ACTION_CREATED, object: nil)
     }
 
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = ""
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "Poggy"
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         addNewActionButton.layer.cornerRadius = addNewActionButton.frame.width / 2
@@ -46,6 +56,37 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "NewActionSegue" {
+            if let destination = segue.destinationViewController as? SlackActionViewController {
+                if let action = sender as? PoggyAction {
+                    destination.updateFromActionsViewController(action)
+                }
+            }
+        }
+    }
+    
+    func getSlackKeys() {
+        SlackHelper.instance.setSlackConsumerKey(BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_KEY))
+        SlackHelper.instance.setSlackConsumerSecret(BuddyBuildSDK.valueForDeviceKey(PoggyConstants.SLACK_CONSUMER_SECRET))
+    }
+    
+    //MARK: WCSessionDelegate functions
+    
+    func sessionDidBecomeInactive(session: WCSession) {
+    
+    }
+    
+    func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+        
+    }
+    
+    func sessionDidDeactivate(session: WCSession) {
+    
+    }
+    
+    //MARK: Actions functions
     
     func readActions() {
         if let readActions = ActionsHelper.instance.getActions() {
@@ -62,51 +103,30 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func saveActions() {
         ActionsHelper.instance.setActions(actions)
-        readActions()
-        tableView.reloadData()
-        syncActionsWithWatch()
-    }
-    
-    func clearActiveAction(){
-        let activeActions = actions.filter {$0.isActive!}
-        for action in activeActions {
-            action.isActive = false
-        }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "NewActionSegue" {
-            if let destination = segue.destinationViewController as? SingleActionViewController {
-                destination.newActionDelegate = self
-                
-                if let action = sender as? PoggyAction {
-                    destination.updateFromActionsViewController(action)
-                }
-            }
-        }
+        updateActions()
     }
     
     func syncActionsWithWatch(){
         do {
             var actionsDict = [String : AnyObject]()
-            actionsDict[PoggyConstants.ACTIONS_DICT_ID] = NSKeyedArchiver.archivedDataWithRootObject(actions)
-            try WCSession.defaultSession().updateApplicationContext(actionsDict)
+            let actions = ActionsHelper.instance.getActions()
+            if let actionData = Mapper().toJSONString(actions!, prettyPrint: true) {
+                actionsDict[PoggyConstants.ACTIONS_DICT_ID] =  actionData
+                try WCSession.defaultSession().updateApplicationContext(actionsDict)
+            }
         } catch {
             NSLog("Error Syncing actions with watch: \(error)")
         }
     }
     
-    //MARK: NewAction Delegate Functions
+    func newActionHasBeenAdded(notification: NSNotification) {
+        updateActions()
+    }
     
-    func addAction(action:PoggyAction, update:Bool) {
-        clearActiveAction()
-    
-        if !update {
-            actions.append(action)
-        } else if let index = action.actionIndex {
-            actions[index] = action
-        }
-        saveActions()
+    func updateActions() {
+        readActions()
+        tableView.reloadData()
+        syncActionsWithWatch()
     }
     
     //MARK: TableView Delegate Functions
@@ -130,31 +150,18 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .Destructive, title: NSLocalizedString("Delete", comment: "")) { (action, indexPath) in
-            self.actions.removeAtIndex(indexPath.row)
-            if self.actions.count > 0 {
-                let active = self.actions.filter { $0.isActive! }.first
-                if active == nil {
-                    self.actions[0].isActive = true
-                }
-            }
-            self.saveActions()
+        let delete = UITableViewRowAction(style: .Destructive, title: NSLocalizedString("Delete", comment: "")) { [weak self] (action, indexPath) in
+            self?.actions.removeAtIndex(indexPath.row)
+            self?.saveActions()
         }
         
-        let edit = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Edit", comment: "")) { (action, indexPath) in
-            let action = self.actions[indexPath.row]
-            action.actionIndex = indexPath.row
-            self.performSegueWithIdentifier("NewActionSegue", sender: action)
-        }
-        
-        edit.backgroundColor = PoggyConstants.POGGY_BLUE
-        return [delete, edit]
+        return [delete]
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        clearActiveAction()
-        actions[indexPath.row].isActive = true
-        saveActions()
+        let action = self.actions[indexPath.row]
+        action.actionIndex = indexPath.row
+        self.performSegueWithIdentifier("NewActionSegue", sender: action)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

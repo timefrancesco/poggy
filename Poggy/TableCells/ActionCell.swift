@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class ActionCell:UITableViewCell {
     
@@ -20,20 +21,26 @@ class ActionCell:UITableViewCell {
             descriptionLabel.text = description
         }
         
-        if let recipientName = action.recipientName {
-            recipientLabel.text = recipientName
-        } else {
-            recipientLabel.text = action.recipientNumber
+        if let channel = action.slackChannel {
+            recipientLabel.text = channel.name
+            if let teamIcon = channel.teamIcon {
+                currentActionImage.sd_setImageWithURL(NSURL(string: (teamIcon)),placeholderImage:  UIImage(named:"Slack-Icon"),  options: [SDWebImageOptions.RetryFailed ])
+            }
+            
+        } else if let user = action.slackUser {
+            recipientLabel.text = user.username
+            if let userIcon = user.profileImage {
+                currentActionImage.sd_setImageWithURL(NSURL(string: (userIcon)),placeholderImage:  UIImage(named:"Alien-Icon"),  options: [SDWebImageOptions.RetryFailed ])
+            }
         }
         
-        if let active = action.isActive {
-            currentActionImage.hidden = !active
+        if let team = action.slackTeam {
+            recipientLabel.text = recipientLabel.text! + " - " + team
         }
     }
     
     override func prepareForReuse() {
         descriptionLabel.text = ""
         recipientLabel.text = ""
-        currentActionImage.hidden = true
     }
 }

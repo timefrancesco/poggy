@@ -12,58 +12,56 @@ import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController {
-
-    @IBOutlet var contactNameLabel: WKInterfaceLabel!
-    @IBOutlet var sendButton: WKInterfaceButton!
-    @IBOutlet var descriptionLabel: WKInterfaceLabel!
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
-    }
+    @IBOutlet var noMsgLabel: WKInterfaceLabel!
+    @IBOutlet var actionsTable: WKInterfaceTable!
+    var actions = [PoggyAction]()
 
     override func willActivate() {
         super.willActivate()
         
-        updateCurrentAction()
-        
-        let nc = NSNotificationCenter.defaultCenter()
-        nc.addObserver(self, selector: #selector(self.updateCurrentAction), name: PoggyConstants.NEW_DATA_NOTIFICATION, object: nil)
+        updateActions()        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updateActions), name: PoggyConstants.NEW_DATA_NOTIFICATION, object: nil)
     }
     
     override func didDeactivate() {
         super.didDeactivate()
     }
     
-    func updateCurrentAction() {
-        if let action = ActionsHelper.instance.getActiveAction() {
-            let text = action.recipientName == nil ? action.recipientNumber! : action.recipientName
-            contactNameLabel.setText(text)
-            descriptionLabel.setText(action.actionDescription)
-            sendButton.setEnabled(true)
-        } else {
-            contactNameLabel.setText(NSLocalizedString("Not Set", comment: ""))
-            sendButton.setEnabled(false)
-        }
+    func updateActions() {
+       reloadTableSource()
     }
 
     override func handleUserActivity(userInfo: [NSObject : AnyObject]?) {
-        if let info = userInfo {
-            if let fromGlance = info[PoggyConstants.GLANCE_HANDOFF_ID] as? Bool {
-                if fromGlance {
-                    updateUserActivity(PoggyConstants.GLANCE_HANDOFF_URL, userInfo: [PoggyConstants.GLANCE_HANDOFF_ID:false], webpageURL: nil)
-                    onSendButtonTouchUpInside()
+    }
+    
+    func reloadTableSource() {
+        if let pActions = ActionsHelper.instance.getActions() {
+            actions = pActions
+            actionsTable.setNumberOfRows(actions.count, withRowType: "ActionRow")
+            
+            for index in 0..<actionsTable.numberOfRows {
+                if let controller = actionsTable.rowControllerAtIndex(index) as? ActionRowController {
+                    controller.action = actions[index]
                 }
             }
         }
+        
+        noMsgLabel.setHidden(actions.count > 0)
     }
     
-    @IBAction func onSendButtonTouchUpInside() {
-        if let action = ActionsHelper.instance.getActiveAction() {
-            let urlSafeBody = action.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
-            let phoneNumber = action.recipientNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-            if let urlSafeBody = urlSafeBody, url = NSURL(string: "sms:/open?address=" + phoneNumber + ",&body=\(urlSafeBody)") {
-                WKExtension.sharedExtension().openSystemURL(url)
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        let selectedAction = actions[rowIndex]
+        pushControllerWithName("LoadingController", context: selectedAction)
+    }
+    
+    func sendSlackMessage(slackAction: PoggyAction) {
+        if let htmlString = slackAction.message!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
+            let destination = slackAction.slackChannel != nil ? slackAction.slackChannel!.id : slackAction.slackUser!.id
+            
+            SlackHelper.instance.postMessage(slackAction.slackToken!, channelName: destination!, message: htmlString) { (data) in
+                print(data)
             }
         }
-    }
+    }    
 }

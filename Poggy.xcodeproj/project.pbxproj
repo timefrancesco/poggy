@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A4D5694CDFC79E912E38DA2 /* Pods_Poggy_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE8D2BCDAD7A4442B3CC6D5 /* Pods_Poggy_WatchKit_Extension.framework */; };
+		0FC6E328AAEB16C52496210D /* Pods_Poggy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FA9D51DD1C1343AD160379 /* Pods_Poggy.framework */; };
+		13C225B01D6955C10075A29A /* ActionRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C225AF1D6955C10075A29A /* ActionRowController.swift */; };
 		AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */; };
 		AF467ABB1CD58B6C00A744EA /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */; };
-		AF467ABC1CD58B6C00A744EA /* SingleActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABA1CD58B6C00A744EA /* SingleActionViewController.swift */; };
 		AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
 		AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */; };
+		AF4B8B601CE28A8F0074701C /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B8B5F1CE28A8F0074701C /* Slack.swift */; };
+		AF4B8B611CE299690074701C /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B8B5F1CE28A8F0074701C /* Slack.swift */; };
+		AF4B8B631CE3DC3F0074701C /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
+		AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */; };
+		AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64FC341CE14DE400D156F2 /* SlackHelper.swift */; };
+		AF93D4C31D6D1E5400ECB555 /* SendingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93D4C21D6D1E5400ECB555 /* SendingController.swift */; };
 		AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */; };
 		AF98B0501CCCB0B900A97A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF98B04E1CCCB0B900A97A94 /* Main.storyboard */; };
 		AF98B0521CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0511CCCB0B900A97A94 /* Assets.xcassets */; };
@@ -24,7 +32,6 @@
 		AF98B07F1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF98B07E1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */; };
 		AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */; };
-		AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98B0871CCCB0B900A97A94 /* GlanceController.swift */; };
 		AF98B08A1CCCB0B900A97A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF98B0891CCCB0B900A97A94 /* Assets.xcassets */; };
 		AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */; };
 		AFE180951CCEBF0A00A5BFC6 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */; };
@@ -90,10 +97,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0DE8D2BCDAD7A4442B3CC6D5 /* Pods_Poggy_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poggy_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13C225AF1D6955C10075A29A /* ActionRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionRowController.swift; sourceTree = "<group>"; };
+		1A2899CCF419A3F45306A4FB /* Pods-Poggy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy/Pods-Poggy.debug.xcconfig"; sourceTree = "<group>"; };
+		5B724A44558AD8D8EBFF2464 /* Pods-Poggy WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		61FA9D51DD1C1343AD160379 /* Pods_Poggy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poggy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyToolbar.swift; path = ViewControllers/PoggyToolbar.swift; sourceTree = "<group>"; };
 		AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsViewController.swift; path = ViewControllers/ActionsViewController.swift; sourceTree = "<group>"; };
-		AF467ABA1CD58B6C00A744EA /* SingleActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleActionViewController.swift; path = ViewControllers/SingleActionViewController.swift; sourceTree = "<group>"; };
 		AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyConstants.swift; path = Helpers/PoggyConstants.swift; sourceTree = "<group>"; };
+		AF4B8B5F1CE28A8F0074701C /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Slack.swift; path = Models/Slack.swift; sourceTree = "<group>"; };
+		AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackActionViewController.swift; path = ViewControllers/SlackActionViewController.swift; sourceTree = "<group>"; };
+		AF64FC341CE14DE400D156F2 /* SlackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackHelper.swift; path = Helpers/SlackHelper.swift; sourceTree = "<group>"; };
+		AF93D4C21D6D1E5400ECB555 /* SendingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendingController.swift; sourceTree = "<group>"; };
 		AF98B0471CCCB0B900A97A94 /* Poggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF98B04A1CCCB0B900A97A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF98B04F1CCCB0B900A97A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,14 +128,16 @@
 		AF98B07E1CCCB0B900A97A94 /* Poggy WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Poggy WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		AF98B0871CCCB0B900A97A94 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		AF98B0891CCCB0B900A97A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF98B08B1CCCB0B900A97A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC8DF141D71ABA5005D090A /* Poggy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Poggy-Bridging-Header.h"; sourceTree = "<group>"; };
 		AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoggyAction.swift; path = Models/PoggyAction.swift; sourceTree = "<group>"; };
 		AFE180941CCEBF0A00A5BFC6 /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionCell.swift; path = TableCells/ActionCell.swift; sourceTree = "<group>"; };
 		AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsHelper.swift; path = Helpers/ActionsHelper.swift; sourceTree = "<group>"; };
 		AFE1809B1CCF62B400A5BFC6 /* Poggy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Poggy.entitlements; sourceTree = "<group>"; };
 		AFE1809C1CCF648800A5BFC6 /* Poggy WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Poggy WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		C95E49CB5E3CB11401495349 /* Pods-Poggy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy/Pods-Poggy.release.xcconfig"; sourceTree = "<group>"; };
+		D2C184797B985ABC8B79F4DF /* Pods-Poggy WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poggy WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC6E328AAEB16C52496210D /* Pods_Poggy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,18 +167,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4D5694CDFC79E912E38DA2 /* Pods_Poggy_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD449A91FAFF8800C9AEFE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6112598B20172D6E4AACF620 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61FA9D51DD1C1343AD160379 /* Pods_Poggy.framework */,
+				0DE8D2BCDAD7A4442B3CC6D5 /* Pods_Poggy_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF467AB51CD4A47D00A744EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */,
-				AF467ABA1CD58B6C00A744EA /* SingleActionViewController.swift */,
 				AF98B04E1CCCB0B900A97A94 /* Main.storyboard */,
+				AF467AB91CD58B6C00A744EA /* ActionsViewController.swift */,
+				AF64FC321CDFE75300D156F2 /* SlackActionViewController.swift */,
 				AF467AB71CD4A5E500A744EA /* PoggyToolbar.swift */,
 			);
 			name = ViewControllers;
@@ -172,6 +207,7 @@
 				AF98B0511CCCB0B900A97A94 /* Assets.xcassets */,
 				AF98B0531CCCB0B900A97A94 /* LaunchScreen.storyboard */,
 				AF98B0561CCCB0B900A97A94 /* Info.plist */,
+				AFC8DF141D71ABA5005D090A /* Poggy-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -185,6 +221,8 @@
 				AF98B0731CCCB0B900A97A94 /* Poggy WatchKit App */,
 				AF98B0821CCCB0B900A97A94 /* Poggy WatchKit Extension */,
 				AF98B0481CCCB0B900A97A94 /* Products */,
+				E2706F25315A31F0E42B37A4 /* Pods */,
+				6112598B20172D6E4AACF620 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,8 +285,9 @@
 			children = (
 				AFE1809C1CCF648800A5BFC6 /* Poggy WatchKit Extension.entitlements */,
 				AF98B0831CCCB0B900A97A94 /* InterfaceController.swift */,
+				13C225AF1D6955C10075A29A /* ActionRowController.swift */,
+				AF93D4C21D6D1E5400ECB555 /* SendingController.swift */,
 				AF98B0851CCCB0B900A97A94 /* ExtensionDelegate.swift */,
-				AF98B0871CCCB0B900A97A94 /* GlanceController.swift */,
 				AF98B0891CCCB0B900A97A94 /* Assets.xcassets */,
 				AF98B08B1CCCB0B900A97A94 /* Info.plist */,
 			);
@@ -259,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				AFE1808F1CCEBB3E00A5BFC6 /* PoggyAction.swift */,
+				AF4B8B5F1CE28A8F0074701C /* Slack.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -276,8 +316,20 @@
 			children = (
 				AFE180971CCEC0BC00A5BFC6 /* ActionsHelper.swift */,
 				AF467ABD1CD58B8200A744EA /* PoggyConstants.swift */,
+				AF64FC341CE14DE400D156F2 /* SlackHelper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E2706F25315A31F0E42B37A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A2899CCF419A3F45306A4FB /* Pods-Poggy.debug.xcconfig */,
+				C95E49CB5E3CB11401495349 /* Pods-Poggy.release.xcconfig */,
+				5B724A44558AD8D8EBFF2464 /* Pods-Poggy WatchKit Extension.debug.xcconfig */,
+				D2C184797B985ABC8B79F4DF /* Pods-Poggy WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,10 +339,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF98B0961CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "Poggy" */;
 			buildPhases = (
+				08821C92FA3137CA6883822E /* [CP] Check Pods Manifest.lock */,
 				AF98B0431CCCB0B900A97A94 /* Sources */,
 				AF98B0441CCCB0B900A97A94 /* Frameworks */,
 				AF98B0451CCCB0B900A97A94 /* Resources */,
 				AF98B0951CCCB0B900A97A94 /* Embed Watch Content */,
+				B015E06133BF9E5602198038 /* [CP] Embed Pods Frameworks */,
+				F2673E2920A6E5B6BC8983C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,6 +399,7 @@
 			buildPhases = (
 				AF98B06D1CCCB0B900A97A94 /* Resources */,
 				AF98B0911CCCB0B900A97A94 /* Embed App Extensions */,
+				DCD449A91FAFF8800C9AEFE5 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,9 +415,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF98B08E1CCCB0B900A97A94 /* Build configuration list for PBXNativeTarget "Poggy WatchKit Extension" */;
 			buildPhases = (
+				DBF0034C51A8C75A966FDF70 /* [CP] Check Pods Manifest.lock */,
 				AF98B07A1CCCB0B900A97A94 /* Sources */,
 				AF98B07B1CCCB0B900A97A94 /* Frameworks */,
 				AF98B07C1CCCB0B900A97A94 /* Resources */,
+				A911F09AA3A2F2B6E8A7D4A1 /* [CP] Embed Pods Frameworks */,
+				542C375DD9ABC6B3D6CEFE96 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,12 +438,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Francesco Pretelli";
 				TargetAttributes = {
 					AF98B0461CCCB0B900A97A94 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = J73C7W7YKH;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -393,19 +454,23 @@
 					};
 					AF98B05A1CCCB0B900A97A94 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = AF98B0461CCCB0B900A97A94;
 					};
 					AF98B0651CCCB0B900A97A94 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = AF98B0461CCCB0B900A97A94;
 					};
 					AF98B06E1CCCB0B900A97A94 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = J73C7W7YKH;
+						LastSwiftMigration = 0800;
 					};
 					AF98B07D1CCCB0B900A97A94 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = J73C7W7YKH;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -480,6 +545,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08821C92FA3137CA6883822E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		542C375DD9ABC6B3D6CEFE96 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A911F09AA3A2F2B6E8A7D4A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poggy WatchKit Extension/Pods-Poggy WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B015E06133BF9E5602198038 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poggy/Pods-Poggy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBF0034C51A8C75A966FDF70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F2673E2920A6E5B6BC8983C4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poggy/Pods-Poggy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF98B0431CCCB0B900A97A94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -489,10 +647,12 @@
 				AFE180951CCEBF0A00A5BFC6 /* ActionCell.swift in Sources */,
 				AF467ABE1CD58B8200A744EA /* PoggyConstants.swift in Sources */,
 				AFE180901CCEBB3E00A5BFC6 /* PoggyAction.swift in Sources */,
-				AF467ABC1CD58B6C00A744EA /* SingleActionViewController.swift in Sources */,
+				AF4B8B601CE28A8F0074701C /* Slack.swift in Sources */,
+				AF64FC331CDFE75300D156F2 /* SlackActionViewController.swift in Sources */,
 				AF98B04B1CCCB0B900A97A94 /* AppDelegate.swift in Sources */,
 				AF467AB81CD4A5E500A744EA /* PoggyToolbar.swift in Sources */,
 				AFE180981CCEC0BC00A5BFC6 /* ActionsHelper.swift in Sources */,
+				AF64FC351CE14DE400D156F2 /* SlackHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,10 +677,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE1809E1CCF69D800A5BFC6 /* PoggyAction.swift in Sources */,
+				AF93D4C31D6D1E5400ECB555 /* SendingController.swift in Sources */,
+				AF4B8B611CE299690074701C /* Slack.swift in Sources */,
+				AF4B8B631CE3DC3F0074701C /* SlackHelper.swift in Sources */,
 				AF98B0861CCCB0B900A97A94 /* ExtensionDelegate.swift in Sources */,
 				AF98B0841CCCB0B900A97A94 /* InterfaceController.swift in Sources */,
-				AF98B0881CCCB0B900A97A94 /* GlanceController.swift in Sources */,
 				AF467ABF1CD58B8700A744EA /* PoggyConstants.swift in Sources */,
+				13C225B01D6955C10075A29A /* ActionRowController.swift in Sources */,
 				AFE180A01CCF69F400A5BFC6 /* ActionsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,8 +755,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -615,11 +780,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -638,8 +804,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -655,9 +823,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -665,7 +835,9 @@
 		};
 		AF98B08F1CCCB0B900A97A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B724A44558AD8D8EBFF2464 /* Pods-Poggy WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Poggy WatchKit Extension/Poggy WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "Poggy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -673,14 +845,17 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
 		AF98B0901CCCB0B900A97A94 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C184797B985ABC8B79F4DF /* Pods-Poggy WatchKit Extension.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Poggy WatchKit Extension/Poggy WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "Poggy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -688,18 +863,19 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
 		AF98B0931CCCB0B900A97A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-watch";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Poggy_WatchKit_Extension;
 				INFOPLIST_FILE = "Poggy WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy.watchkitapp;
@@ -707,18 +883,19 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
 		AF98B0941CCCB0B900A97A94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-watch";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Poggy_WatchKit_Extension;
 				INFOPLIST_FILE = "Poggy WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy.watchkitapp;
@@ -726,35 +903,57 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
 		AF98B0971CCCB0B900A97A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A2899CCF419A3F45306A4FB /* Pods-Poggy.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Poggy/Poggy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Francesco Pretelli (J89CYEGYT4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Poggy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Poggy/Poggy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		AF98B0981CCCB0B900A97A94 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C95E49CB5E3CB11401495349 /* Pods-Poggy.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Poggy/Poggy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Francesco Pretelli (J89CYEGYT4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Poggy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.Poggy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Poggy/Poggy-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -767,6 +966,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.PoggyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Poggy.app/Poggy";
 			};
 			name = Debug;
@@ -779,6 +979,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.PoggyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Poggy.app/Poggy";
 			};
 			name = Release;
@@ -790,6 +991,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.PoggyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = Poggy;
 			};
 			name = Debug;
@@ -801,6 +1003,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.timelabs.PoggyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = Poggy;
 			};
 			name = Release;

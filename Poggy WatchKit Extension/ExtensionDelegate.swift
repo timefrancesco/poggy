@@ -34,9 +34,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
         // Use this method to pause ongoing tasks, disable timers, etc.
     }
     
+    func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+        
+    }
+    
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         NSKeyedUnarchiver.setClass(PoggyAction.self, forClassName: PoggyConstants.DATA_SERIALIZATION_ID)
-        if let data = NSKeyedUnarchiver.unarchiveObjectWithData(applicationContext[PoggyConstants.ACTIONS_DICT_ID] as! NSData) as? [PoggyAction] {
+        if let data = applicationContext[PoggyConstants.ACTIONS_DICT_ID] as? String { 
             ActionsHelper.instance.setActions(data)
             
             let nc = NSNotificationCenter.defaultCenter()

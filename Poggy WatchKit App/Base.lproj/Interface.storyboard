@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -10,79 +10,60 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Poggy_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Contact Name" id="SiG-jf-xuy">
-                            <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                        </label>
-                        <label alignment="left" text="Description" id="Vj7-f7-Jbb">
-                            <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <table alignment="left" id="ecx-MF-lxv">
+                            <items>
+                                <tableRow identifier="ActionRow" id="a39-3s-Nbl" customClass="ActionRowController" customModule="Poggy_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="Ua6-JX-2y3">
+                                        <items>
+                                            <label alignment="left" text="Description" textAlignment="left" id="Nnk-kz-YC3">
+                                                <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label alignment="left" text="Team" id="ta3-qG-cJN">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                            <label alignment="left" text="Channel" id="cmE-7n-DGb">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="actionDescriptionLabel" destination="Nnk-kz-YC3" id="KN7-dj-oZA"/>
+                                        <outlet property="slackChannelLabel" destination="cmE-7n-DGb" id="aF0-Ec-Wyu"/>
+                                        <outlet property="slackTeamLabel" destination="ta3-qG-cJN" id="X7a-lC-sea"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <label width="156" height="95" alignment="left" text="No Messages Defined  Use the iOS app to set up canned Slack messages " textAlignment="center" numberOfLines="0" id="oW2-yN-o90">
+                            <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
-                        <separator alignment="left" id="KS2-fV-kce">
-                            <color key="color" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                        </separator>
-                        <button width="1" height="67.5" alignment="left" verticalAlignment="bottom" title="Send" id="Nfi-KA-szQ">
-                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="onSendButtonTouchUpInside" destination="AgC-eL-Hgc" id="XfP-Oi-l6Q"/>
-                            </connections>
-                        </button>
-                        <separator alignment="left" verticalAlignment="bottom" id="kWq-uy-BgP">
-                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </separator>
                     </items>
                     <connections>
-                        <outlet property="contactNameLabel" destination="SiG-jf-xuy" id="CgW-Bu-MdZ"/>
-                        <outlet property="descriptionLabel" destination="Vj7-f7-Jbb" id="zti-Ru-7xm"/>
-                        <outlet property="sendButton" destination="Nfi-KA-szQ" id="jcw-hO-PSD"/>
+                        <outlet property="actionsTable" destination="ecx-MF-lxv" id="dHK-tz-VAs"/>
+                        <outlet property="noMsgLabel" destination="oW2-yN-o90" id="jnv-1b-UOV"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="164" y="217"/>
+            <point key="canvasLocation" x="163.89743589743591" y="200.94871794871796"/>
         </scene>
-        <!--Glance Interface Controller-->
-        <scene sceneID="rjY-Ar-IMT">
+        <!--LoadingController-->
+        <scene sceneID="fxF-xF-uAI">
             <objects>
-                <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="Poggy_WatchKit_App" customModuleProvider="target">
+                <controller identifier="LoadingController" id="r4w-oI-4wB" customClass="SendingController" customModule="Poggy_WatchKit_Extension">
                     <items>
-                        <group alignment="left" layout="vertical" id="gv7-I2-MZq">
-                            <items>
-                                <label alignment="left" text="Contact Name" id="H4z-5U-j5e">
-                                    <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </label>
-                                <label alignment="left" text="Description" id="i9A-rr-oOW">
-                                    <color key="textColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
-                            </items>
-                        </group>
-                        <group alignment="left" contentMode="scaleAspectFit" layout="vertical" id="eew-Gs-W6Y">
-                            <items>
-                                <group width="90" height="90" alignment="center" radius="45" id="o6k-8f-XEi">
-                                    <items>
-                                        <group width="84" height="84" alignment="center" verticalAlignment="center" radius="42" id="frv-Yk-mBy">
-                                            <items>
-                                                <imageView width="90" height="90" alignment="center" verticalAlignment="center" image="UserWatch" contentMode="scaleAspectFit" id="U30-qX-R0m">
-                                                    <color key="tintColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                </imageView>
-                                            </items>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </group>
-                                    </items>
-                                    <color key="backgroundColor" red="0.12549019610000001" green="0.80392156859999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </group>
-                            </items>
-                        </group>
+                        <imageView width="156" height="119" alignment="left" image="Activity1" contentMode="center" id="hNp-Fe-27y"/>
+                        <label width="156" alignment="left" text="SENDING" textAlignment="center" id="ASh-Ke-oek">
+                            <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
                     </items>
-                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
-                        <outlet property="contactAvatarImage" destination="U30-qX-R0m" id="jMf-Tf-Aml"/>
-                        <outlet property="contactNameLabel" destination="H4z-5U-j5e" id="Zbh-lB-Bci"/>
-                        <outlet property="descriptionLabel" destination="i9A-rr-oOW" id="ftQ-6Y-uQ9"/>
+                        <outlet property="loadingAnimationImage" destination="hNp-Fe-27y" id="7kH-rG-om3"/>
+                        <outlet property="statusLabel" destination="ASh-Ke-oek" id="tZp-Rt-Ea0"/>
                     </connections>
-                </glanceController>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="164" y="514"/>
+            <point key="canvasLocation" x="435.89743589743591" y="200.94871794871796"/>
         </scene>
     </scenes>
 </document>

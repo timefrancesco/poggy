@@ -1,0 +1,56 @@
+PODS:
+  - Alamofire (3.4.1)
+  - AlamofireObjectMapper (3.0.2):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
+  - BuddyBuildSDK (1.0.11)
+  - Eureka (1.7.0)
+  - OAuthSwift (0.6.0)
+  - ObjectMapper (1.4.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+
+DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift2.3`)
+  - AlamofireObjectMapper
+  - BuddyBuildSDK
+  - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `swift2.3`)
+  - OAuthSwift (from `https://github.com/OAuthSwift/OAuthSwift.git`, branch `swift2.3`)
+  - ObjectMapper
+  - SDWebImage
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift2.3
+    :git: https://github.com/Alamofire/Alamofire.git
+  Eureka:
+    :branch: swift2.3
+    :git: https://github.com/xmartlabs/Eureka.git
+  OAuthSwift:
+    :branch: swift2.3
+    :git: https://github.com/OAuthSwift/OAuthSwift.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 1ac83593aaea0bb31c5d22c86d5a2cf90498ee71
+    :git: https://github.com/Alamofire/Alamofire.git
+  Eureka:
+    :commit: b8f35699244c9f7c9ff4c8355fc8542a16a731bc
+    :git: https://github.com/xmartlabs/Eureka.git
+  OAuthSwift:
+    :commit: 2fb345eb836990aceb5de1ebf543795a86f65a82
+    :git: https://github.com/OAuthSwift/OAuthSwift.git
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
+  BuddyBuildSDK: d5398183a8b50432d5cefeb1080f02b8c9b3928a
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  OAuthSwift: 8895267fbd6437a52aea26541572a617c7a8c7c1
+  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+
+PODFILE CHECKSUM: 6e01fbcb4f6bce5b439aadb1f76b06b2e00a30ef
+
+COCOAPODS: 1.1.0.beta.1
