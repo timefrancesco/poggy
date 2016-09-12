@@ -24,6 +24,7 @@ class ActionsViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         readActions()
+        addNavBarButtons()
         
         if (WCSession.isSupported()) {
             let session = WCSession.defaultSession()
