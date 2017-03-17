@@ -8,13 +8,6 @@ The quickest way to send Slack messages from your  Watch.
 <br/>
 <p>
 
-<p align="center">
-<br>
-[![Language Swift 2](https://img.shields.io/badge/Language-Swift%202-orange.svg)](https://developer.apple.com/swift) [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=572691537ef57f01003942dd&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/572691537ef57f01003942dd/build/latest) 
-[![App Store](https://img.shields.io/badge/App%20Store-Download-blue.svg)](https://itunes.apple.com/us/app/poggy-text-quickly/id1109936777?ls=1&mt=8&at=1001lpzu)
-<br><br>
-<p>
-
 <div align = "center">
 <br>
 <a href="https://developer.apple.com/swift" target="blank"><img src="https://img.shields.io/badge/Language-Swift%202-orange.svg?style=flat" /></a>
