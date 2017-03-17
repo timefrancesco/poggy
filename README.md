@@ -47,7 +47,7 @@ These are just few of the very common case scenarios where Poggy will help be mo
 Save time, feel better and enjoy living longer!
 
 
-### Watch App Screenshots:  
+##  Watch App Screenshots:  
 <p align="center">
 <br/>
 <img src="/Assets/App Store Screenshots/Watch/Poggy-Watch-Main.png" width="160"> `  ` `  ` <img src="/Assets/App Store Screenshots/Watch/Poggy-Watch-Sending.png" width="160">
@@ -55,7 +55,8 @@ Save time, feel better and enjoy living longer!
 <br/>
 <p>
 
-###iPhone App Screenshots
+## iPhone App Screenshots
+
 <p align="center">
 <br/>
 <img src="/Assets/App Store Screenshots/Phone/PoggyTranspCreate.png" width="260"> `  ` `  ` <img src="/Assets/App Store Screenshots/Phone/PoggyTranspMain.png" width="260">
